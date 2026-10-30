@@ -317,7 +317,7 @@ h1, h2, h3 { font-family: var(--head); letter-spacing: -.015em; }
 .warn-note { background: var(--gold-soft) !important; border-color: var(--gold-line) !important; }
 .notice { max-width: 980px; padding: 12px 16px; border-radius: 12px; background: var(--green-soft); border: 1px solid #bfe3d1; }
 
-/* ---------- confidence, plain lines, ask (Я9/Я11/Я14) ---------- */
+/* ---------- confidence, plain lines, ask ---------- */
 .sure { margin-left: 6px; font-size: 11px; letter-spacing: 0; text-transform: none; font-weight: 600; }
 .sure.high { color: var(--green); } .sure.mid { color: #b47d18; } .sure.low { color: #d9772b; }
 details.plain { margin-top: 4px; font-size: 13px; }
@@ -328,7 +328,7 @@ details.plain ul { margin: 6px 0 0; padding-left: 18px; color: #3d4b4c; }
 .ncard.ask button { width: 34px; height: 34px; border-radius: 50%; border: 0; background: var(--teal); color: #fff; font-size: 18px; cursor: pointer; }
 #answer p { margin: 4px 0 6px; font-size: 13.5px; }
 
-/* ---------- laws (Я10) ---------- */
+/* ---------- laws ---------- */
 .laws-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
 .lawcard { padding: 12px 14px; border-radius: 14px; background: rgba(255,253,249,.94); border: 1px solid var(--line); box-shadow: var(--shadow); display: grid; gap: 4px; align-content: start; }
 .lawcard.yes { border-left: 4px solid var(--green); } .lawcard.check { border-left: 4px solid var(--gold); }

@@ -1,4 +1,4 @@
-"""After "Send" (pack A, Я18): tracker, reminders, and the insurer's reply read from a photo.
+"""After "Send" (pack A): tracker, reminders, and the insurer's reply read from a photo.
 The reply letter and the model answers are SYNTHETIC; the photo is drawn here and read by the real local OCR."""
 
 import io

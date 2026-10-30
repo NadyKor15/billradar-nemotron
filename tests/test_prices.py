@@ -150,7 +150,7 @@ def test_the_demo_hospitals_real_file_publishes_a_cash_price_for_a_lab_code():
     assert units == 1 and p.cash < p.gross
 
 
-# --- Я24 part 2: the plan's published rate --------------------------------------------------
+# --- the plan's published rate -------- --------------------------------------------------
 
 def plan_mrf_text() -> str:
     out = io.StringIO()

@@ -354,7 +354,7 @@ def verify(case: Case, report: Report, letters: list[Letter]) -> Verdict:
     return check_letters(case, report, letters, check_findings(case, report))
 
 
-# --- confidence (Я11) ---------------------------------------------------------------------
+# --- confidence ---------------------------------------------------------------------------
 
 CONFIRMED = 0.7  # below this a finding is borderline: shown under "worth asking", without a sum
 

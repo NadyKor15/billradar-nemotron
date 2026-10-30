@@ -1,4 +1,4 @@
-"""A model acting for a family uses BillRadar's MCP tools (Я23). The model's turns are SYNTHETIC:
+"""A model acting for a family uses BillRadar's MCP tools. The model's turns are SYNTHETIC:
 `function_call` items in the Responses shape."""
 
 import asyncio

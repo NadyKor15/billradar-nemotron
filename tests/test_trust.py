@@ -62,7 +62,7 @@ def test_example_is_replayed_offline_fast_and_matches_its_key(monkeypatch):
     _no_network(monkeypatch)
     t = time.monotonic()
     run = run_pack(example.PACK, example.EXAMPLE_ID)
-    assert time.monotonic() - t < 90  # Я21: findings, letters and the screen offline; 18–24 s on default OCR threads, 32–34 s on 2 (a judge's slower machine)
+    assert time.monotonic() - t < 90  # findings, letters and the screen offline; 18–24 s on default OCR threads, 32–34 s on 2 (a judge's slower machine)
     assert run.replayed and run.case.demo
     s = ev.score(_key(), ev.from_report(run.report))
     assert all(c.found == c.n and not c.false and not c.wrong_amount and not c.wrong_deadline

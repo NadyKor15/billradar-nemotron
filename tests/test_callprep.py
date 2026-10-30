@@ -1,4 +1,4 @@
-"""Call cheat sheet (pack A, Я8). Fixtures are SYNTHETIC (fictional families, hospital letterhead, insurer)."""
+"""Call cheat sheet (pack A). Fixtures are SYNTHETIC (fictional families, hospital letterhead, insurer)."""
 
 import re
 from decimal import Decimal

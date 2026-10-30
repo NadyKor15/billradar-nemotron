@@ -1,6 +1,6 @@
 """Build runs/demo-price: a FICTIONAL insured family checked against a REAL plan's published rate.
 
-Nadya's choice (TG 2807): compare with a real plan as if it were the family's plan. The family, the hospital
+Compare with a real plan as if it were the family's plan. The family, the hospital
 statement and the insurance statement here are made up (SAMPLE); the plan (Aetna Qualified Health Plan) and its
 case rate for a vaginal delivery (MS-DRG 807) come from the policy hospital's public price file, read from
 .cache/mrf (run scripts/fetch_prices.py first). No Aetna document is imitated.

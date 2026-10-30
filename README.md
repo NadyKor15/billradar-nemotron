@@ -33,6 +33,14 @@ The model choices were measured on fictional bill packs with `scripts/eval_routi
 
 The example case's receipt: 15 model calls, $0.146 at list price (the recorded live runs it replays): 7 calls to find the sheets $0.002, 7 calls to read them $0.099 (3 batches, then 4 sheets read again on their own where the device saw a share the reading missed), the second read on Ultra $0.045.
 
+## Where Tavily comes in
+
+Every hospital has its own financial assistance policy, and without it you cannot tell a family whether a discount applies. Tavily finds the document on the hospital's own site only (search with include_domains and the page text in the answer; extract as the fallback), Nemotron reads it, code checks it. It works for hospitals in any state that post their policy. Tested on 5 real hospitals in 4 states: the policy was found for all five. One was confirmed in full with a revision date: Memorial Regional, 5 of 5 tiers, exactly as in our hand-checked base. For three, only some tiers could be confirmed or the page has no date, and BillRadar labels them so. One page has no tier table, so BillRadar shows the link. In the same run BillRadar set aside Form 990 tax returns and community needs reports, Korean, Russian and Spanish versions, a 2018 policy, and Wikipedia and directory pages instead of the hospital's site. 20 Tavily credits for the five.
+
+If the hospital is not in BillRadar's base, it finds that hospital's own financial assistance policy with Tavily. It searches only the hospital's own site: the site printed on the bill, or, if the bill has none, a site found by name and city that shows the same name and city or ZIP. When in doubt it asks "Is this your hospital?". Nemotron 3 Super copies the income tiers and discounts, and code keeps a tier only if its quote is in the policy text and the quote itself prints the tier's percentages. Anything unconfirmed is shown as a link: "we found the policy, check it yourself". When the page has no date, BillRadar says it may be out of date.
+
+`/policy-finder` in the app replays the recorded live run of October 29, 2026 for 5 real hospitals in 4 states. A live search needs `TAVILY_API_KEY`, `BILLRADAR_LIVE=1` and `BILLRADAR_POLICY_FINDER=1` (see `.env.example`); the step is off by default.
+
 ## Proof that Nemotron ran
 
 Every request is written to `runs/requests.jsonl` with:

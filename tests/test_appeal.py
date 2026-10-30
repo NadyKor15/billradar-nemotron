@@ -1,4 +1,4 @@
-"""Insurance appeal (pack A, Я7): the plan document as quoted data, denials, the deadline, the letter and the form.
+"""Insurance appeal (pack A): the plan document as quoted data, denials, the deadline, the letter and the form.
 Fixture `sample-appeal` is SYNTHETIC: fictional family, hospital letterhead and insurer."""
 
 import io

@@ -1,4 +1,4 @@
-"""PDF report (pack A, Я16) and fixed wording in three languages (i18n). Fixtures are SYNTHETIC."""
+"""PDF report (pack A) and fixed wording in three languages (i18n). Fixtures are SYNTHETIC."""
 
 import io
 import re

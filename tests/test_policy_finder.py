@@ -498,7 +498,7 @@ def test_the_mcp_tool_never_goes_live_with_the_flag_off(monkeypatch):
     assert out["replayed"] and out["status"] == "error"
 
 
-# --- guards on the recorded run (NM2, 29.10) ----------------------------------------------------
+# --- guards on the recorded run (second review, 29.10) -------------------------------------------
 
 @recorded
 def test_recorded_memorial_tiers_are_exactly_the_checked_base():

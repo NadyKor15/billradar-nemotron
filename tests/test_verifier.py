@@ -107,7 +107,7 @@ def test_reminder_calendar_file(tmp_path, monkeypatch):
     assert "DTSTART;VALUE=DATE:20260902" in res.text and "TRIGGER:-P7D" in res.text
 
 
-# --- confidence (Я11) -------------------------------------------------------------------------
+# --- confidence -------------------------------------------------------------------------------
 
 @needs_text
 def test_every_shown_finding_gets_a_confidence_and_clean_ones_are_sure():

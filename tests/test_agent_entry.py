@@ -1,4 +1,4 @@
-"""The entry for AI agents (Я23): agent_api, the MCP server (spec 2026-07-28, mcp==2.2.0) and the A2A agent
+"""The entry for AI agents: agent_api, the MCP server (spec 2026-07-28, mcp==2.2.0) and the A2A agent
 (protocol 1.0, a2a-sdk==1.1.2). Everything runs in this process: MCP in memory and over real Streamable HTTP
 through an ASGI transport, A2A JSON-RPC the same way. The cases are the fictional sample packs."""
 

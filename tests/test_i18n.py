@@ -1,4 +1,4 @@
-"""Translations (pack A, Я15). Model answers are SYNTHETIC: a fake transport answers in the documented
+"""Translations (pack A). Model answers are SYNTHETIC: a fake transport answers in the documented
 Responses SSE format, and the tests check what our code does with good and bad translations."""
 
 import io
