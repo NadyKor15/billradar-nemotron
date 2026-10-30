@@ -1,0 +1,67 @@
+{
+ "request_id": "4105f82d1d40a58415f43ddc649065f0",
+ "response": {
+  "id": "chatcmpl-4105f82d1d40a58415f43ddc649065f0",
+  "choices": [
+   {
+    "finish_reason": "tool_calls",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": null,
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": [
+      {
+       "id": "chatcmpl-tool-a67e7cbaec42e8db",
+       "function": {
+        "arguments": "{\"case_id\": \"aa170072d0dc2\"}",
+        "name": "get_deadlines"
+       },
+       "type": "function"
+      }
+     ],
+     "reasoning": "We need to output summary: what may come off and why (with source points), earliest deadline, which letters ready for review and sign.\n\nFrom data: total_may_come_off = \"1636.53\". Sources include various findings and protections. We'll summarize key points: duplicate charge ($196.82), overpayment $40, unclear balance $719.03, etc., financial assistance eligibility leading to $1399.71 discount. Earliest deadline from get_deadlines hasn't been called yet. Need get_deadlines.",
+     "reasoning_content": "We need to output summary: what may come off and why (with source points), earliest deadline, which letters ready for review and sign.\n\nFrom data: total_may_come_off = \"1636.53\". Sources include various findings and protections. We'll summarize key points: duplicate charge ($196.82), overpayment $40, unclear balance $719.03, etc., financial assistance eligibility leading to $1399.71 discount. Earliest deadline from get_deadlines hasn't been called yet. Need get_deadlines."
+    },
+    "stop_reason": null,
+    "token_ids": null,
+    "routed_experts": null
+   }
+  ],
+  "created": 1793113149,
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.1.dev1+g5001743e3-tp2-05adddbc",
+  "usage": {
+   "completion_tokens": 161,
+   "prompt_tokens": 9639,
+   "total_tokens": 9800,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 123,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": {
+    "audio_tokens": null,
+    "cached_tokens": 9408,
+    "created_cache_tokens": 0,
+    "multimodal_tokens": null
+   },
+   "prompt_cache_hit_tokens": 9408,
+   "prompt_cache_miss_tokens": 231
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "prompt_text": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+ }
+}

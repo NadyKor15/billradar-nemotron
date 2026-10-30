@@ -1,0 +1,90 @@
+{
+ "pack": "brs1-birth-clean-control",
+ "note": "Control: same kind of papers, nothing planted, income above every assistance threshold. Expected: no money findings.",
+ "fictional": true,
+ "planted": [
+  {
+   "class": "F1",
+   "planted": false,
+   "fpl_pct": 614.9,
+   "amount": null,
+   "where": [
+    "01-hospital-statement.pdf",
+    "02-hospital-itemized-mother.pdf"
+   ],
+   "what": "Hospital papers only invite an assistance application; no assistance line or discount.",
+   "patient_balance": 1848.52,
+   "income_vs_household": [
+    168000,
+    3
+   ]
+  },
+  {
+   "class": "E2",
+   "planted": false
+  },
+  {
+   "class": "B1",
+   "planted": false
+  },
+  {
+   "class": "E3",
+   "planted": false
+  },
+  {
+   "class": "E4",
+   "planted": false
+  },
+  {
+   "class": "P1",
+   "planted": false
+  }
+ ],
+ "background": [
+  "Hospital merges insurance payments and contractual adjustments into one line (statement and itemized).",
+  "Newborn itemized bill: 'Summary by Rev Code' labels drift away from their amounts (wrapped labels).",
+  "Pediatric statement: small balance with a collections warning.",
+  "Control point: the patient balance on the hospital statement equals deductible + co-insurance on the hospital EOB (1848.52)."
+ ],
+ "files": {
+  "01-hospital-statement.pdf": "pdf",
+  "02-hospital-itemized-mother.pdf": "pdf",
+  "03-hospital-itemized-newborn.pdf": "pdf",
+  "06-eob-june-p1.jpg": "photo: 06-eob-june p1",
+  "06-eob-june-p2.jpg": "photo: 06-eob-june p2",
+  "06-eob-june-p3.jpg": "photo: 06-eob-june p3",
+  "06-eob-june-p4.jpg": "photo: 06-eob-june p4",
+  "07-eob-hospital-p1.jpg": "photo: 07-eob-hospital p1",
+  "table-1.jpg": "photo: 04-eob-prenatal p1, 04-eob-prenatal p2, 05-eob-ob p1, 10-pediatric-statement p1",
+  "table-2.jpg": "photo: 08-anesthesia-bill p1, 08-anesthesia-bill p2, 08-anesthesia-bill p3",
+  "table-3.jpg": "photo: 09-obgyn-statement p1, 09-obgyn-statement p2, 11-neonatal-letter p1"
+ },
+ "eob_pages": {
+  "04-eob-prenatal": 2,
+  "05-eob-ob": 1,
+  "06-eob-june": 4,
+  "07-eob-hospital": 1
+ },
+ "sheets": {
+  "S1": "06-eob-june p1",
+  "S2": "06-eob-june p2",
+  "S3": "06-eob-june p3",
+  "S4": "06-eob-june p4",
+  "S5": "07-eob-hospital p1",
+  "S6": "04-eob-prenatal p1",
+  "S7": "04-eob-prenatal p2",
+  "S8": "05-eob-ob p1",
+  "S9": "10-pediatric-statement p1",
+  "S10": "08-anesthesia-bill p1",
+  "S11": "08-anesthesia-bill p2",
+  "S12": "08-anesthesia-bill p3",
+  "S13": "09-obgyn-statement p1",
+  "S14": "09-obgyn-statement p2",
+  "S15": "11-neonatal-letter p1"
+ },
+ "digital": {
+  "01-hospital-statement.pdf": "D1",
+  "02-hospital-itemized-mother.pdf": "D2",
+  "03-hospital-itemized-newborn.pdf": "D3"
+ }
+}

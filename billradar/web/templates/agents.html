@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}For AI agents · BillRadar{% endblock %}
+{% block body %}
+<section class="how agents-page">
+  <h1>For AI agents</h1>
+  <p class="lead">Any agent can use billradar the way a family does: send a pack of bills and insurance statements, get back every finding with the quote and page it rests on, the protections that apply, letters, a call cheat sheet and the deadlines.</p>
+  {% if static %}<p class="notice warn-note">This read-only copy has no server, so the agent entry is not live here. Run the app from the <a href="{{ repo_tree }}">code on GitHub</a>; the addresses below are for that local run.</p>{% endif %}
+  <div class="facts agents">
+    <div class="fact"><span class="ic"><b>MCP</b></span><div><h3>Model Context Protocol</h3><div class="sub"><code>{{ base }}/mcp</code></div><p>Streamable HTTP. Config: <code>{"mcpServers": {"billradar": {"url": "{{ base }}/mcp"}}}</code></p></div></div>
+    <div class="fact"><span class="ic"><b>A2A</b></span><div><h3>Agent2Agent</h3><div class="sub"><a href="/.well-known/agent-card.json">Agent card</a> · <code>POST {{ base }}/a2a</code></div><p>JSON-RPC, method <code>SendMessage</code>, skill <code>analyze_case</code>.</p></div></div>
+    <div class="fact"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h8l4 4v14H6z"/><path d="M9 12h6M9 16h6"/></svg></span><div><h3>{% if static %}On your local run: try it without a key{% else %}Try it without a key{% endif %}</h3><p>The fictional sample packs are open, 30 requests a minute per address, answers replayed: {% for p in packs %}<code>{{ p }}</code>{{ ", " if not loop.last }}{% endfor %}.</p></div></div>
+  </div>
+  <p class="small">Full guide: <a href="{{ repo_blob('docs/AGENTS.md') }}">docs/AGENTS.md</a>. Real papers never go to a model without the family's own yes; nothing is ever sent for them.</p>
+</section>
+{% endblock %}

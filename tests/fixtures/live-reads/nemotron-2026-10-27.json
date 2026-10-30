@@ -1,0 +1,778 @@
+{
+ "_note": "SYNTHETIC packs (BRS1 generator, fictional people). Fields as read live by NVIDIA Nemotron 3.5 Super VL in lane SLK1 on 2026-10-27 (runs live-1, live-1t, live-priv); only the fields the page and people checks use.",
+ "reads": {
+  "live-1/brs1-birth-all-errors": {
+   "people": [
+    {
+     "token": "PATIENT_1",
+     "role": "mother",
+     "name": "Daniela Castillo"
+    },
+    {
+     "token": "PATIENT_2",
+     "role": "newborn",
+     "name": "Adrian James Castillo"
+    }
+   ],
+   "documents": [
+    {
+     "doc_id": "S1",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "DANIELA CASTILLO",
+     "provider": "QUILLFORD, AUGUSTINE P.",
+     "page_no": 1,
+     "page_count": 4
+    },
+    {
+     "doc_id": "S2",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "DANIELA CASTILLO",
+     "provider": "VOSKUIJLEN, PETRA",
+     "page_no": 2,
+     "page_count": 4
+    },
+    {
+     "doc_id": "S3",
+     "source": "paper",
+     "kind": "other",
+     "patient": "",
+     "provider": "",
+     "page_no": 4,
+     "page_count": 4
+    },
+    {
+     "doc_id": "S4",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "DANIELA CASTILLO",
+     "provider": "SEASIDE REGIONAL HOSPITAL",
+     "page_no": 1,
+     "page_count": 1
+    },
+    {
+     "doc_id": "S5",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "DANIELA CASTILLO",
+     "provider": "COASTLINE DIAGNOSTICS REFERENCE LABORATORY SERVICES",
+     "page_no": 1,
+     "page_count": 2
+    },
+    {
+     "doc_id": "S6",
+     "source": "paper",
+     "kind": "other",
+     "patient": "",
+     "provider": "",
+     "page_no": 2,
+     "page_count": 2
+    },
+    {
+     "doc_id": "S7",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "DANIELA CASTILLO",
+     "provider": "HALVERSEN, MARIT",
+     "page_no": 1,
+     "page_count": 1
+    },
+    {
+     "doc_id": "S8",
+     "source": "paper",
+     "kind": "hospital_statement",
+     "patient": "DANIELA CASTILLO",
+     "provider": "Little Harbor Pediatrics",
+     "page_no": 1,
+     "page_count": 1
+    },
+    {
+     "doc_id": "S9",
+     "source": "paper",
+     "kind": "hospital_statement",
+     "patient": "Daniela Castillo",
+     "provider": "Meridian Physician Services",
+     "page_no": 1,
+     "page_count": 3
+    },
+    {
+     "doc_id": "S10",
+     "source": "paper",
+     "kind": "hospital_statement",
+     "patient": "Daniela Castillo",
+     "provider": "Meridian Physician Services",
+     "page_no": 2,
+     "page_count": 3
+    },
+    {
+     "doc_id": "S11",
+     "source": "paper",
+     "kind": "hospital_statement",
+     "patient": "",
+     "provider": "Meridian Physician Services",
+     "page_no": 3,
+     "page_count": 3
+    },
+    {
+     "doc_id": "S12",
+     "source": "paper",
+     "kind": "hospital_statement",
+     "patient": "Castillo, Daniela",
+     "provider": "Seaside Regional Hospital (IP) 300",
+     "page_no": null,
+     "page_count": null
+    },
+    {
+     "doc_id": "S13",
+     "source": "paper",
+     "kind": "hospital_statement",
+     "patient": "Castillo, Daniela",
+     "provider": "",
+     "page_no": null,
+     "page_count": null
+    },
+    {
+     "doc_id": "S14",
+     "source": "paper",
+     "kind": "other",
+     "patient": "CASTILLO, ADRIAN",
+     "provider": "Cradleview-Obstetrix Medical Group",
+     "page_no": null,
+     "page_count": null
+    },
+    {
+     "doc_id": "D1",
+     "source": "pdf",
+     "kind": "hospital_statement",
+     "patient": "CASTILLO,DANIELA",
+     "provider": "Seaside Healthcare System",
+     "page_no": 1,
+     "page_count": 2
+    },
+    {
+     "doc_id": "D2",
+     "source": "pdf",
+     "kind": "itemized_bill",
+     "patient": "Castillo,Daniela",
+     "provider": "Seaside Regional Hospital",
+     "page_no": 1,
+     "page_count": 4
+    },
+    {
+     "doc_id": "D3",
+     "source": "pdf",
+     "kind": "itemized_bill",
+     "patient": "Castillo,Adrian James",
+     "provider": "Seaside Regional Hospital",
+     "page_no": 1,
+     "page_count": 4
+    }
+   ]
+  },
+  "live-1t/brs1-birth-all-errors": {
+   "people": [
+    {
+     "token": "PATIENT_1",
+     "role": "mother",
+     "name": "Daniela Castillo"
+    },
+    {
+     "token": "PATIENT_2",
+     "role": "newborn",
+     "name": "Adrian James Castillo"
+    }
+   ],
+   "documents": [
+    {
+     "doc_id": "S1",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "DANIELA CASTILLO",
+     "provider": "QUILLFORD, AUGUSTINE P.",
+     "page_no": 1,
+     "page_count": 4
+    },
+    {
+     "doc_id": "S2",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "DANIELA CASTILLO",
+     "provider": "VOSKUIJLEN, PETRA",
+     "page_no": 2,
+     "page_count": 4
+    },
+    {
+     "doc_id": "S3",
+     "source": "paper",
+     "kind": "other",
+     "patient": "",
+     "provider": "",
+     "page_no": 4,
+     "page_count": 4
+    },
+    {
+     "doc_id": "S4",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "DANIELA CASTILLO",
+     "provider": "SEASIDE REGIONAL HOSPITAL",
+     "page_no": 1,
+     "page_count": 1
+    },
+    {
+     "doc_id": "S5",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "DANIELA CASTILLO",
+     "provider": "COASTLINE DIAGNOSTICS REFERENCE LABORATORY SERVICES",
+     "page_no": 1,
+     "page_count": 2
+    },
+    {
+     "doc_id": "S6",
+     "source": "paper",
+     "kind": "other",
+     "patient": "",
+     "provider": "",
+     "page_no": 2,
+     "page_count": 2
+    },
+    {
+     "doc_id": "S7",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "DANIELA CASTILLO",
+     "provider": "HALVERSEN, MARIT",
+     "page_no": 1,
+     "page_count": 1
+    },
+    {
+     "doc_id": "S8",
+     "source": "paper",
+     "kind": "hospital_statement",
+     "patient": "DANIELA CASTILLO",
+     "provider": "Greta I . V Vanterpool, MD",
+     "page_no": 1,
+     "page_count": 1
+    },
+    {
+     "doc_id": "S9",
+     "source": "paper",
+     "kind": "hospital_statement",
+     "patient": "Daniela Castillo",
+     "provider": "Meridian Physician Services",
+     "page_no": 1,
+     "page_count": 3
+    },
+    {
+     "doc_id": "S10",
+     "source": "paper",
+     "kind": "itemized_bill",
+     "patient": "Daniela Castillo",
+     "provider": "Meridian Physician Services",
+     "page_no": 2,
+     "page_count": 3
+    },
+    {
+     "doc_id": "S11",
+     "source": "paper",
+     "kind": "hospital_statement",
+     "patient": "",
+     "provider": "Meridian Physician Services",
+     "page_no": 3,
+     "page_count": 3
+    },
+    {
+     "doc_id": "S12",
+     "source": "paper",
+     "kind": "hospital_statement",
+     "patient": "Castillo , Daniela",
+     "provider": "Seaside Regional Hospital (IP) 300 / 300_Women First OB/GYN Care, LLC",
+     "page_no": null,
+     "page_count": null
+    },
+    {
+     "doc_id": "S13",
+     "source": "paper",
+     "kind": "hospital_statement",
+     "patient": "Castillo , Daniela",
+     "provider": "300_Women First OB/GYN Care, LLC",
+     "page_no": null,
+     "page_count": null
+    },
+    {
+     "doc_id": "S14",
+     "source": "paper",
+     "kind": "other",
+     "patient": "CASTILLO, ADRIAN",
+     "provider": "Cradleview-Obstetrix Medical Group",
+     "page_no": null,
+     "page_count": null
+    },
+    {
+     "doc_id": "D1",
+     "source": "pdf",
+     "kind": "hospital_statement",
+     "patient": "CASTILLO,DANIELA",
+     "provider": "Seaside Healthcare System",
+     "page_no": 1,
+     "page_count": 2
+    },
+    {
+     "doc_id": "D2",
+     "source": "pdf",
+     "kind": "itemized_bill",
+     "patient": "Castillo,Daniela",
+     "provider": "Seaside Regional Hospital",
+     "page_no": 1,
+     "page_count": 4
+    },
+    {
+     "doc_id": "D3",
+     "source": "pdf",
+     "kind": "itemized_bill",
+     "patient": "Castillo,Adrian James",
+     "provider": "Seaside Regional Hospital",
+     "page_no": 1,
+     "page_count": 4
+    }
+   ]
+  },
+  "live-priv/brs1-birth-all-errors": {
+   "people": [
+    {
+     "token": "PATIENT_1",
+     "role": "mother",
+     "name": "Daniela Castillo"
+    },
+    {
+     "token": "PATIENT_2",
+     "role": "newborn",
+     "name": "Adrian James Castillo"
+    }
+   ],
+   "documents": [
+    {
+     "doc_id": "S1",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "PATIENT_1",
+     "provider": "QUILLFORD, AUGUSTINE P.",
+     "page_no": 1,
+     "page_count": 4
+    },
+    {
+     "doc_id": "S2",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "PATIENT_1",
+     "provider": "VOSKUIJLEN, PETRA",
+     "page_no": 2,
+     "page_count": 4
+    },
+    {
+     "doc_id": "S3",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "",
+     "provider": "",
+     "page_no": 4,
+     "page_count": 4
+    },
+    {
+     "doc_id": "S4",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "PATIENT_1",
+     "provider": "SEASIDE REGIONAL HOSPITAL",
+     "page_no": 1,
+     "page_count": 1
+    },
+    {
+     "doc_id": "S5",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "PATIENT_1",
+     "provider": "COASTLINE DIAGNOSTICS REFERENCE LABORATORY SERVICES",
+     "page_no": 1,
+     "page_count": 2
+    },
+    {
+     "doc_id": "S6",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "",
+     "provider": "",
+     "page_no": 2,
+     "page_count": 2
+    },
+    {
+     "doc_id": "S7",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "PATIENT_1",
+     "provider": "HALVERSEN, MARIT",
+     "page_no": 1,
+     "page_count": 1
+    },
+    {
+     "doc_id": "S8",
+     "source": "paper",
+     "kind": "hospital_statement",
+     "patient": "PATIENT_1",
+     "provider": "LITTLE HARBOR PEDIATRICS",
+     "page_no": 1,
+     "page_count": 1
+    },
+    {
+     "doc_id": "S9",
+     "source": "paper",
+     "kind": "hospital_statement",
+     "patient": "PATIENT_1",
+     "provider": "Meridian Physician Services",
+     "page_no": 1,
+     "page_count": 3
+    },
+    {
+     "doc_id": "S10",
+     "source": "paper",
+     "kind": "itemized_bill",
+     "patient": "PATIENT_1",
+     "provider": "Meridian Physician Services",
+     "page_no": 2,
+     "page_count": 3
+    },
+    {
+     "doc_id": "S11",
+     "source": "paper",
+     "kind": "hospital_statement",
+     "patient": "",
+     "provider": "Meridian Physician Services",
+     "page_no": 3,
+     "page_count": 3
+    },
+    {
+     "doc_id": "S12",
+     "source": "paper",
+     "kind": "hospital_statement",
+     "patient": "Castillo , Daniela",
+     "provider": "Seaside Regional Hospital (IP)",
+     "page_no": null,
+     "page_count": null
+    },
+    {
+     "doc_id": "S13",
+     "source": "paper",
+     "kind": "hospital_statement",
+     "patient": "Castillo , Daniela",
+     "provider": "",
+     "page_no": null,
+     "page_count": null
+    },
+    {
+     "doc_id": "S14",
+     "source": "paper",
+     "kind": "other",
+     "patient": "CASTILLO, ADRIAN",
+     "provider": "Cradleview-Obstetrix Medical Group",
+     "page_no": null,
+     "page_count": null
+    }
+   ]
+  },
+  "live-priv/brs1-birth-clean-control": {
+   "people": [
+    {
+     "token": "PATIENT_1",
+     "role": "mother",
+     "name": "Daniela Moreno"
+    },
+    {
+     "token": "PATIENT_2",
+     "role": "newborn",
+     "name": "Mateo Rafael Moreno"
+    }
+   ],
+   "documents": [
+    {
+     "doc_id": "S1",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "PATIENT_1",
+     "provider": "",
+     "page_no": 1,
+     "page_count": 4
+    },
+    {
+     "doc_id": "S2",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "PATIENT_3",
+     "provider": "",
+     "page_no": 2,
+     "page_count": 4
+    },
+    {
+     "doc_id": "S3",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "PATIENT_1",
+     "provider": "",
+     "page_no": 3,
+     "page_count": 4
+    },
+    {
+     "doc_id": "S4",
+     "source": "paper",
+     "kind": "other",
+     "patient": "",
+     "provider": "",
+     "page_no": 4,
+     "page_count": 4
+    },
+    {
+     "doc_id": "S5",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "PATIENT_1",
+     "provider": "",
+     "page_no": 1,
+     "page_count": 1
+    },
+    {
+     "doc_id": "S6",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "PATIENT_1",
+     "provider": "",
+     "page_no": 1,
+     "page_count": 2
+    },
+    {
+     "doc_id": "S7",
+     "source": "paper",
+     "kind": "other",
+     "patient": "",
+     "provider": "",
+     "page_no": 2,
+     "page_count": 2
+    },
+    {
+     "doc_id": "S8",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "PATIENT_1",
+     "provider": "",
+     "page_no": 1,
+     "page_count": 1
+    },
+    {
+     "doc_id": "S9",
+     "source": "paper",
+     "kind": "hospital_statement",
+     "patient": "PATIENT_1",
+     "provider": "Little Harbor Pediatrics",
+     "page_no": 1,
+     "page_count": 1
+    },
+    {
+     "doc_id": "S10",
+     "source": "paper",
+     "kind": "hospital_statement",
+     "patient": "PATIENT_1",
+     "provider": "Meridian Physician Services",
+     "page_no": 1,
+     "page_count": 3
+    },
+    {
+     "doc_id": "S11",
+     "source": "paper",
+     "kind": "itemized_bill",
+     "patient": "PATIENT_1",
+     "provider": "Meridian Physician Services",
+     "page_no": 2,
+     "page_count": 3
+    },
+    {
+     "doc_id": "S12",
+     "source": "paper",
+     "kind": "hospital_statement",
+     "patient": "",
+     "provider": "Meridian Physician Services",
+     "page_no": 3,
+     "page_count": 3
+    },
+    {
+     "doc_id": "S13",
+     "source": "paper",
+     "kind": "hospital_statement",
+     "patient": "Moreno, Daniela",
+     "provider": "Seaside Regional Hospital (IP) 300",
+     "page_no": null,
+     "page_count": null
+    },
+    {
+     "doc_id": "S14",
+     "source": "paper",
+     "kind": "hospital_statement",
+     "patient": "Moreno, Daniela",
+     "provider": "300_Women First OB/GYN Care, LLC",
+     "page_no": null,
+     "page_count": null
+    },
+    {
+     "doc_id": "S15",
+     "source": "paper",
+     "kind": "other",
+     "patient": "MORENO, MATEO",
+     "provider": "Cradleview-Obstetrix Medical Group",
+     "page_no": null,
+     "page_count": null
+    }
+   ]
+  },
+  "live-priv/brs1-birth-newborn-duplicate": {
+   "people": [
+    {
+     "token": "PATIENT_1",
+     "role": "mother",
+     "name": "Maria Ortega"
+    },
+    {
+     "token": "PATIENT_2",
+     "role": "newborn",
+     "name": "Noah Andres Ortega"
+    }
+   ],
+   "documents": [
+    {
+     "doc_id": "S1",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "PATIENT_1",
+     "provider": "QUILLFORD, AUGUSTINE P.",
+     "page_no": 1,
+     "page_count": 4
+    },
+    {
+     "doc_id": "S2",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "PATIENT_1",
+     "provider": "VOSKUIJLEN, PETRA",
+     "page_no": 2,
+     "page_count": 4
+    },
+    {
+     "doc_id": "S3",
+     "source": "paper",
+     "kind": "other",
+     "patient": "",
+     "provider": "",
+     "page_no": 4,
+     "page_count": 4
+    },
+    {
+     "doc_id": "S4",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "PATIENT_1",
+     "provider": "SEASIDE REGIONAL HOSPITAL",
+     "page_no": 1,
+     "page_count": 1
+    },
+    {
+     "doc_id": "S5",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "PATIENT_1",
+     "provider": "COASTLINE DIAGNOSTICS REFERENCE LABORATORY SERVICES",
+     "page_no": 1,
+     "page_count": 2
+    },
+    {
+     "doc_id": "S6",
+     "source": "paper",
+     "kind": "other",
+     "patient": "",
+     "provider": "",
+     "page_no": 2,
+     "page_count": 2
+    },
+    {
+     "doc_id": "S7",
+     "source": "paper",
+     "kind": "eob",
+     "patient": "PATIENT_1",
+     "provider": "HALVERSEN, MARIT",
+     "page_no": 1,
+     "page_count": 1
+    },
+    {
+     "doc_id": "S8",
+     "source": "paper",
+     "kind": "hospital_statement",
+     "patient": "PATIENT_1",
+     "provider": "LITTLE HARBOR PEDIATRICS",
+     "page_no": 1,
+     "page_count": 1
+    },
+    {
+     "doc_id": "S9",
+     "source": "paper",
+     "kind": "hospital_statement",
+     "patient": "PATIENT_1",
+     "provider": "Meridian",
+     "page_no": 1,
+     "page_count": 3
+    },
+    {
+     "doc_id": "S10",
+     "source": "paper",
+     "kind": "itemized_bill",
+     "patient": "PATIENT_1",
+     "provider": "Meridian",
+     "page_no": 2,
+     "page_count": 3
+    },
+    {
+     "doc_id": "S11",
+     "source": "paper",
+     "kind": "hospital_statement",
+     "patient": "",
+     "provider": "Meridian",
+     "page_no": 3,
+     "page_count": 3
+    },
+    {
+     "doc_id": "S12",
+     "source": "paper",
+     "kind": "itemized_bill",
+     "patient": "Ortega , Maria",
+     "provider": "Seaside Regional Hospital (IP) 300",
+     "page_no": null,
+     "page_count": null
+    },
+    {
+     "doc_id": "S13",
+     "source": "paper",
+     "kind": "itemized_bill",
+     "patient": "Ortega , Maria",
+     "provider": "Seaside Regional Hospital (IP) 300",
+     "page_no": null,
+     "page_count": null
+    },
+    {
+     "doc_id": "S14",
+     "source": "paper",
+     "kind": "other",
+     "patient": "ORTEGA, NOAH",
+     "provider": "Cradleview-Obstetrix Medical Group",
+     "page_no": null,
+     "page_count": null
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}{{ sheet.title }} · BillRadar{% endblock %}
+{% block body %}
+<div class="call-grid">
+  <aside class="side">
+    <a class="back" href="/cases/{{ case_id }}">‹ Back to the case</a>
+    <div class="who">
+      <strong>{{ case.letterhead or "Your hospital" }}</strong>
+      {% if span %}<span>{{ span }}</span>{% endif %}
+      {% for p in case.profile.people if p.role.value in ("mother", "newborn") %}<span>{{ p.name or p.token }} ({{ "Mother" if p.role.value == "mother" else "Newborn" }})</span>{% endfor %}
+    </div>
+    <nav class="side-links" aria-label="Calls">
+      {% for c in sheets %}<a href="/cases/{{ case_id }}/call/{{ c.to }}" class="{{ 'on' if c.to == sheet.to }}"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.6 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.6 3.6a1 1 0 01-.25 1z"/></svg>Call {{ c.who }}</a>{% endfor %}
+    </nav>
+  </aside>
+
+  <section class="cheat">
+    <div class="eyebrow">Call cheat sheet</div>
+    <h1>{{ sheet.title }}</h1>
+    <div class="cstep"><span class="n">1</span><div><h2>Say this first</h2><p class="say">“{{ sheet.say_first }}”</p></div></div>
+    {% if sheet.numbers %}
+    <div class="cstep"><span class="n">2</span><div><h2>Have these numbers ready</h2>
+      <div class="nums">{% for n in sheet.numbers %}<div class="num-card"><span><small>{{ n.label }}</small><b>{{ n.value }}</b></span><button type="button" data-copy="{{ n.value }}" aria-label="Copy {{ n.label }}">Copy</button></div>{% endfor %}</div></div></div>
+    {% endif %}
+    {% if sheet.objections %}
+    <div class="cstep"><span class="n">3</span><div><h2>If they say</h2>
+      {% for o in sheet.objections %}<div class="obj"><div class="they">“{{ o.they_say }}”</div><div aria-hidden="true">→</div><div class="ans">“{{ o.answer }}”{% if answers[loop.index0] %}<small>{% for c in answers[loop.index0] %}<span class="law" title="{{ c.title }}">{{ c.label }}</span> {% endfor %}</small>{% endif %}</div></div>{% endfor %}
+    </div></div>
+    {% endif %}
+    <div class="cstep"><span class="n">4</span><div><h2>Ask for</h2><ul>{% for a in sheet.ask_for %}<li>{{ a }}</li>{% endfor %}</ul></div></div>
+    <p class="small">💡 {{ sheet.tip }}</p>
+  </section>
+
+  {% if mdl.voice %}<aside>
+    <div class="phone">
+      <h2>After the call, tell us what they said</h2>
+      <p>We'll turn it into notes and a paragraph for your letter.</p>
+      <button type="button" class="mic" id="mic" aria-label="Tap to record"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg></button>
+      <div id="mic-label">Tap to record</div>
+      <div class="vlangs" role="group" aria-label="Language of your voice note">{% for code, name in voice_langs.items() %}<label><input type="radio" name="vlang" value="{{ code }}"{% if loop.first %} checked{% endif %}> {{ name }}</label>{% endfor %}</div>
+      {% if mdl.voice %}<p class="small"><span class="model">{{ mdl.voice }}</span> <span class="model read">{{ mdl.text }}</span><br>Voice notes: English or Spanish. Audio is not kept.</p>{% else %}<p class="small"><span class="model read">{{ mdl.text }}</span><br>Voice transcription is not in this version: type the note after the call.</p>{% endif %}
+      <div class="note-out" id="note-out" aria-live="polite"></div>
+    </div>
+  </aside>{% endif %}
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+  document.querySelectorAll('[data-copy]').forEach(b => b.addEventListener('click', () => navigator.clipboard.writeText(b.dataset.copy).then(() => b.textContent = 'Copied')));
+
+  // Record -> 16 kHz mono 16-bit WAV in the browser (the API takes WAV only) -> server -> notes.
+  const mic = document.getElementById('mic'), label = document.getElementById('mic-label'), out = document.getElementById('note-out');
+  if (mic) {  // no speech model on this provider: no record button
+  let rec = null;
+  function wav(samples, rate) {
+    const buf = new ArrayBuffer(44 + samples.length * 2), v = new DataView(buf);
+    const w = (o, s) => { for (let i = 0; i < s.length; i++) v.setUint8(o + i, s.charCodeAt(i)); };
+    w(0, 'RIFF'); v.setUint32(4, 36 + samples.length * 2, true); w(8, 'WAVE'); w(12, 'fmt ');
+    v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true); v.setUint32(24, rate, true);
+    v.setUint32(28, rate * 2, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true); w(36, 'data'); v.setUint32(40, samples.length * 2, true);
+    for (let i = 0; i < samples.length; i++) v.setInt16(44 + i * 2, Math.max(-1, Math.min(1, samples[i])) * 0x7fff, true);
+    return new Blob([buf], {type: 'audio/wav'});
+  }
+  async function start() {
+    const stream = await navigator.mediaDevices.getUserMedia({audio: true});
+    const ctx = new AudioContext(), src = ctx.createMediaStreamSource(stream), node = ctx.createScriptProcessor(4096, 1, 1), chunks = [];
+    node.onaudioprocess = e => chunks.push(new Float32Array(e.inputBuffer.getChannelData(0)));
+    src.connect(node); node.connect(ctx.destination);
+    rec = {stream, ctx, node, chunks};
+    mic.classList.add('rec'); label.textContent = 'Recording… tap to stop';
+  }
+  async function stop() {
+    const {stream, ctx, node, chunks} = rec; rec = null;
+    node.disconnect(); stream.getTracks().forEach(t => t.stop());
+    const all = new Float32Array(chunks.reduce((n, c) => n + c.length, 0)); let o = 0; chunks.forEach(c => { all.set(c, o); o += c.length; });
+    const off = new OfflineAudioContext(1, Math.ceil(all.length * 16000 / ctx.sampleRate), 16000);
+    const b = off.createBuffer(1, all.length, ctx.sampleRate); b.copyToChannel(all, 0);
+    const s = off.createBufferSource(); s.buffer = b; s.connect(off.destination); s.start();
+    const pcm = (await off.startRendering()).getChannelData(0); ctx.close();
+    mic.classList.remove('rec'); label.textContent = 'Reading your note…';
+    const lang = document.querySelector('input[name=vlang]:checked').value;
+    const r = await fetch(location.pathname + '/note?lang=' + lang, {method: 'POST', body: wav(pcm, 16000), headers: {'Content-Type': 'audio/wav'}});
+    const j = await r.json(); label.textContent = 'Tap to record';
+    out.textContent = '';
+    if (!r.ok) { out.textContent = j.error; return; }
+    const add = (t, cls) => { const p = document.createElement('p'); p.textContent = t; if (cls) p.className = cls; out.append(p); };
+    if (j.rep_name) add('Spoke with: ' + j.rep_name);
+    if (j.reference) add('Reference: ' + j.reference);
+    j.promises.forEach(x => add('Promised: “' + x.words + '”' + (x.english !== x.words ? ' (' + x.english + ')' : '')));
+    if (j.paragraph) add('For your letter: ' + j.paragraph, 'say');
+    if (j.replayed) add('replay', 'replay');
+  }
+  mic.addEventListener('click', () => (rec ? stop() : start()).catch(e => { label.textContent = 'Microphone not available: ' + e.message; }));
+  }
+</script>
+{% endblock %}

@@ -1,0 +1,223 @@
+{% extends "base.html" %}
+{% from "_policy_finder.html" import policy_result, pf_style %}
+{% block title %}{{ s.case_title }} · BillRadar{% endblock %}
+{% block body_class %}case-page{% if example %} is-example{% endif %}{% endblock %}
+{% macro level_icon(level) -%}
+{% if level == "ok" %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12.5l4 4L18 8"/></svg>
+{% else %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><path d="M12 6v8"/><path d="M12 18.2v.1"/></svg>{% endif %}
+{%- endmacro %}
+{% macro model_chip(t) -%}
+<span class="model {{ t.role }}" title="{{ t.title }}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4z" fill="currentColor"/></svg>{{ t.label }}{% if t.replayed %}<em>replay</em>{% endif %}</span>
+{%- endmacro %}
+{% block nav_right %}<span class="case-pill"><span class="avatar">{{ s.case_title[0] }}</span>{% if example %}Example case{% else %}Case {{ case_id[:10] }}{% endif %}</span>{% endblock %}
+{% block body %}
+<div class="case-grid">
+  <aside class="side">
+    <a class="back" href="/cases">‹ {% if example %}See examples{% else %}All cases{% endif %}</a>
+    <div class="who">
+      <strong>{{ s.letterhead or "Your hospital" }}</strong>
+      {% if span %}<span>{{ span }}</span>{% endif %}
+      {% for p in case.profile.people if p.role.value in ("mother", "newborn") %}<span>{{ p.name or p.token }} ({{ "Mother" if p.role.value == "mother" else "Newborn" }})</span>{% endfor %}
+    </div>
+    <nav class="side-links" aria-label="This case">
+      <a href="#overview" class="on"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>Case overview</a>
+      <a href="#documents"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h8l4 4v14H6z"/><path d="M9 12h6M9 16h6"/></svg>All documents</a>
+      <a href="#findings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v5.5M12 16.2v.1"/></svg>Findings</a>
+      <a href="#letters"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="6" width="17" height="12" rx="2"/><path d="M4 7l8 6 8-6"/></svg>Letters</a>
+      {% if report.apply_by %}<a href="#deadlines"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>Deadlines</a>{% endif %}
+      {% if laws.cards %}<a href="#laws"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/></svg>Your protections</a>{% endif %}
+      <a href="#how-made"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 5h14v14H5z"/><path d="M8 9h8M8 13h5"/></svg>How we checked</a>
+    </nav>
+    {% if example %}<span class="callout c1"><b>1</b>We found the sheets</span>{% else %}
+    <div class="history">
+      <h3>Case history</h3>
+      <ol>
+        <li class="on"><b>{{ created_on }}</b>Checked: {{ board.serious + board.checking }} finding{{ "s" if board.serious + board.checking != 1 }}</li>
+        <li><b>{{ created_on }}</b>Read: {{ case.documents|length }} documents</li>
+        <li><b>{{ created_on }}</b>Found {{ sheets|length }} sheet{{ "s" if sheets|length != 1 }}</li>
+        <li><b>{{ created_on }}</b>Case created</li>
+      </ol>
+    </div>{% endif %}
+  </aside>
+
+  <section class="docs" id="documents" aria-label="Documents">
+    <div class="docs-head"><h2>{{ case.documents|length }} documents</h2></div>
+    <div class="docs-tabs" role="tablist">
+      <button type="button" class="on" data-tab="sheets">Sheets</button>
+      <button type="button" data-tab="photos">Photos</button>
+      {% if sent %}<button type="button" data-tab="sent">What the models saw</button>{% endif %}
+    </div>
+    <div class="tab tab-sheets">
+      <div class="thumbs">
+        {% for sid in sheets %}<a class="thumb" href="/cases/{{ case_id }}/sheet/{{ sid }}.jpg" data-doc="{{ sid }}"><img src="/cases/{{ case_id }}/sheet/{{ sid }}.jpg" alt="Sheet {{ sid[1:] }}" loading="lazy"><span class="n">{{ sid[1:] }}</span></a>{% endfor %}
+        {% for d in s.digital %}{% if d.doc_id in previews %}<a class="thumb file has-img" href="/cases/{{ case_id }}/file/{{ d.doc_id }}.jpg" data-doc="{{ d.doc_id }}"><span class="pv"><img src="/cases/{{ case_id }}/file/{{ d.doc_id }}.jpg" alt="File {{ d.doc_id[1:] }}, page 1" loading="lazy"><span class="n">F{{ d.number }}</span></span><small>{{ d.label }}</small></a>{% else %}<div class="thumb file" data-doc="{{ d.doc_id }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 16h6"/></svg><span class="n">F{{ d.number }}</span><small>{{ d.label }}</small></div>{% endif %}{% endfor %}
+      </div>
+    </div>
+    <div class="tab tab-photos" hidden>
+      {% for src in s.overlays %}<a href="{{ src }}"><img src="{{ src }}" alt="Your papers on the table, each sheet numbered" loading="lazy"></a>{% endfor %}
+    </div>
+    {% if sent %}
+    <div class="tab tab-sent" hidden>
+      <p class="small">{% if example %}Photos and PDF pages leave the device like this: names, member IDs, account numbers and addresses covered. This example is that run.{% else %}Names and account numbers are hidden before anything leaves this device. This is the exact copy the models got.{% endif %}</p>
+      {% if sent_sheets %}<div class="sent-grid">{% for src in sent_sheets %}<a href="{{ src }}"><img src="{{ src }}" alt="What the model got: names and numbers covered" loading="lazy"></a>{% endfor %}</div>
+      {% for src in sent[1:] %}<a href="{{ src }}"><img src="{{ src }}" alt="PDF pages as the model got them" loading="lazy"></a>{% endfor %}
+      {% else %}{% for src in sent %}<a href="{{ src }}"><img src="{{ src }}" alt="What the models got: names and numbers covered" loading="lazy"></a>{% endfor %}{% endif %}
+    </div>
+    {% endif %}
+  </section>
+
+  <section class="main" id="overview">
+    {% if example %}<div class="example-bar" role="note"><span class="warn">!</span><span class="ex-text">Example case — all data is made up.</span><span class="callout c3"><b>3</b>Here is what you may get back</span></div>{% endif %}
+    <div class="hero-card">
+      <div class="hero-text">
+        <div class="eyebrow">{% if example %}Example case result{% else %}Case result{% endif %}{% if s.replayed %}<span class="replay" title="Model answers were replayed from a recording, not a live call">replay</span>{% endif %}</div>
+        {% if report.total_may_come_off > 0 %}
+        <h1>Up to <span class="gold">{{ amount }}</span><br>may come off your bills.</h1>
+        {% else %}<h1>We checked<br>every sheet.</h1>{% endif %}
+        <p>We found possible errors, duplicates and financial help based on {{ case.documents|length }} documents.</p>
+      </div>
+      <div class="stack" aria-hidden="true">
+        {% for sid in sheets[:3] %}<img class="paper p{{ loop.index }}" src="/cases/{{ case_id }}/sheet/{{ sid }}.jpg" alt="">{% endfor %}
+        <div class="badge-3d">{% if example and report.total_may_come_off > 0 %}<small>Potential savings</small>{{ amount }}{% else %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Checked<br>for you{% endif %}</div>
+      </div>
+      <div class="levels">
+        <span class="lv serious"><i>!</i>{{ board.serious }} serious</span>
+        <span class="lv checking"><i>!</i>{{ board.checking }} worth checking</span>
+        <span class="lv ok"><i>✓</i>All other items look good</span>
+      </div>
+    </div>
+
+    <h2 class="section-title" id="findings">Main findings</h2>
+    <div class="rows">
+      {% if example %}<span class="callout c2"><b>2</b>We read every line</span>{% endif %}
+      {% for r in board.rows %}
+      <article class="frow {{ r.level|replace(' ', '-') }}" data-kind="{{ r.kind }}">
+        <div class="ficon">{{ level_icon(r.level) }}</div>
+        <div class="fbody">
+          <div class="flabel">{{ r.label }}{% if r.sure %} <span class="sure {{ r.sure }}" title="Checker confidence {{ (r.confidence * 100)|round|int }}%{% if r.unsure %}: {{ r.unsure }}{% endif %}">● {{ (r.confidence * 100)|round|int }}% sure</span>{% endif %}</div>
+          <h3>{{ r.title }}</h3>
+          {% if r.where %}<div class="fwhere">{{ r.where }}</div>{% endif %}
+          <p title="{{ r.full }}">{{ r.detail }}</p>
+          {% if r.explain %}<p class="explain">{{ r.explain }}</p>{% endif %}
+          {% if r.unsure %}<p class="funsure"><b>Why it is not confirmed:</b> {{ r.unsure }}</p>{% endif %}
+          {% if r.lines %}<details class="plain"><summary>What these lines mean</summary><ul>{% for x in r.lines %}<li>{{ x }}</li>{% endfor %}</ul></details>{% endif %}
+          {% if r.refs or r.laws %}<div class="laws">{% for l in (r.refs + r.laws)|unique(attribute='label') %}<span class="law" title="{{ l.title }}">{{ l.label }}</span>{% endfor %}</div>{% endif %}
+          <div class="fmodels">{% for t in r.models %}{{ model_chip(t) }}{% endfor %}</div>
+        </div>
+        <div class="fvalue"><strong{% if not r.value.startswith('$') %} class="words"{% endif %}>{{ r.value }}</strong>{% if r.caption %}<small>{{ r.caption }}</small>{% endif %}</div>
+        <div class="chev" aria-hidden="true">›</div>
+      </article>
+      {% endfor %}
+    </div>
+    <p class="note">Estimates from the hospital's published policy. The hospital decides.
+      {% if checker %}A separate checker re-did every amount and date from the sheets: {{ checker.checked }} checked{% if held %}, {{ held }} held back until they can be confirmed{% endif %}.{% endif %}</p>
+    {% if receipt_rows %}
+    <details class="receipt" id="receipt">
+      <summary>Receipt: {{ receipt.rows|length }} model calls, ${{ "%.3f"|format(receipt.total_usd) }}{% if receipt.replayed %} when this run was live{% endif %}</summary>
+      <table>
+        <thead><tr><th>Step</th><th>Model</th><th>Calls</th><th>Tokens</th><th>Seconds</th><th>Cost</th></tr></thead>
+        <tbody>{% for r in receipt_rows %}<tr><td>{{ r.step }}</td><td>{{ r.model }}</td><td>{{ r.calls }}</td><td>{{ "{:,}".format(r.tokens) }}</td><td>{% if r.seconds is none %}–{% else %}{{ "%.1f"|format(r.seconds) }}{% endif %}</td><td>${{ "%.3f"|format(r.usd) }}</td></tr>{% endfor %}</tbody>
+      </table>
+      <p class="small">Each step goes to the smallest Nemotron that does it well; the big model reads only where it changes the answer. Amounts and dates are counted by code, never by a model.{% if receipt.replayed %} This page replays a recorded run on Nebius Token Factory: the costs are what that run cost, the seconds were not recorded.{% endif %}</p>
+    </details>
+    {% endif %}
+
+    {% if found_policy %}{{ pf_style() }}<h2 class="section-title" id="policy">Your hospital's own policy</h2>{{ policy_result(found_policy, pf_form) }}{% endif %}
+
+    {% if laws.cards %}
+    <h2 class="section-title" id="laws">Your protections</h2>
+    {% set yes = laws.cards|selectattr("applies", "in", ["yes", "check"])|list %}
+    {% set rest = laws.cards|rejectattr("applies", "in", ["yes", "check"])|list %}
+    {% macro lawcard(c) -%}
+    <article class="lawcard {{ c.applies }}" data-law="{{ c.id }}">
+      <div class="lhead"><span class="ln">{{ c.n }}</span><h3>{{ c.title }}</h3></div>
+      <p>{{ c.plain }}</p>
+      <p class="why">{{ c.why }}</p>
+      {% if c.deadline %}<span class="ldate">{{ c.deadline_label|capitalize }}: {{ c.deadline.strftime("%b %-d, %Y") }}{% if case is defined and case.today and c.deadline < case.today %} (passed){% endif %}{% if c.id == "fap-240-days" and fap_policy_by and fap_policy_by > c.deadline %}, the federal minimum. The hospital's policy gives you until {{ fap_policy_by.strftime("%b %-d, %Y") }}, and the later date counts.{% endif %}</span>{% endif %}
+      <div class="laws">{% for q in c.quotes %}<a class="law" href="{{ q.url }}" title="{{ q.text }}" target="_blank" rel="noopener">{{ c.cite if loop.first else q.title.split(",")[0] }}</a>{% endfor %}</div>
+    </article>
+    {%- endmacro %}
+    <div class="laws-grid">{% for c in yes %}{{ lawcard(c) }}{% endfor %}</div>
+    {% if rest %}<details class="laws-more"><summary>{{ rest|length }} more protection{{ 's' if rest|length != 1 else '' }} checked: not for this case, or for other states</summary><div class="laws-grid">{% for c in rest %}{{ lawcard(c) }}{% endfor %}</div><p class="small">{{ laws.what_next }}</p></details>{% endif %}
+    {% endif %}
+    {% if chips %}<p class="small">You said: {% for c in chips %}<span class="law">{{ c.label }}</span> {% endfor %}</p>{% endif %}
+
+    <h2 class="section-title" id="how-made">How this case was checked</h2>
+    {% if example %}<p class="small">Checked against the hospital's current public policy.</p>{% endif %}
+    <ol class="made">
+      {% for st in steps %}<li><span class="step-n">{{ st.n }}</span><div><b>{{ st.title }}</b><span>{{ st.detail }}</span></div>{{ model_chip(st.tag) }}</li>{% endfor %}
+    </ol>
+  </section>
+
+  <aside class="next" id="letters">
+    {% if example %}<span class="callout c4"><b>4</b>Your letters are ready</span>{% endif %}
+    <h2>Next steps</h2>
+    <div class="ncard letters">
+      <div class="nhead"><span class="nic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="6" width="17" height="12" rx="2"/><path d="M4 7l8 6 8-6"/></svg></span><b>Letters</b></div>
+      <div class="seg" role="group" aria-label="Letter language">{% for code in langs %}<a class="{{ 'on' if loop.first }}" href="/cases/{{ case_id }}/letters/{{ (letters + appeals)[0].kind if (letters + appeals) else '' }}?lang={{ code }}">{{ code|upper }}</a>{% endfor %}</div>
+      <ul class="letter-list">{% for l in letters %}<li><a href="/cases/{{ case_id }}/letters/{{ l.kind }}">{{ l.button }}</a></li>{% endfor %}</ul>
+      <p class="small">You review and sign every letter.</p>
+    </div>
+    {% for l in appeals %}
+    <a class="ncard link" href="/cases/{{ case_id }}/letters/{{ l.kind }}"><span class="nic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 13h6M9 17h4"/></svg></span><span><b>Insurance appeal</b><small>{{ l.button }}. Our draft, quoted from your plan.</small></span><i>›</i></a>
+    {% endfor %}
+    {% for c in calls %}
+    <a class="ncard link" href="/cases/{{ case_id }}/call/{{ c.to }}"><span class="nic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.6 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.6 3.6a1 1 0 01-.25 1z"/></svg></span><span><b>Call cheat sheet</b><small>Key points for your call with {{ c.who }}.</small></span><i>›</i></a>
+    {% endfor %}
+    <a class="ncard link" href="/cases/{{ case_id }}/appeals"><span class="nic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12l5 5L20 6"/></svg></span><span><b>Track letters and appeals</b><small>From sent to resolved, with reminders.</small></span><i>›</i></a>
+    <div class="ncard link pdfcard"><span class="nic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h8l4 4v14H6z"/><path d="M9 12h6M9 16h6"/></svg></span><span><b>PDF report</b><small>Every finding with the sheets and quotes behind it:
+      {% for code, name in langs.items() %}<a href="/cases/{{ case_id }}/report.pdf?lang={{ code }}">{{ name }}</a>{{ " · " if not loop.last }}{% endfor %}</small></span><i></i></div>
+    {% if has_form %}
+    <a class="ncard link" href="/cases/{{ case_id }}/form.pdf"><span class="nic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 13h6M9 17h4"/></svg></span><span><b>Hospital form</b><small>The hospital's own financial assistance form, filled in on this device.</small></span><i>›</i></a>
+    {% endif %}
+    {% if report.apply_by %}
+    <a class="ncard link" id="deadlines" href="/cases/{{ case_id }}/reminder.ics"><span class="nic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><span><b>Deadline reminder</b><small>Apply by {{ report.apply_by.strftime("%b %-d, %Y") }}. Reminders 30 and 7 days before.</small></span><i>›</i></a>
+    {% endif %}
+    <a class="ncard link" href="/cases/{{ case_id }}/report.json"><span class="nic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h8l4 4v14H6z"/><path d="M9 12h6M9 16h6"/></svg></span><span><b>Case data (JSON, for agents)</b><small>Every finding with its numbers, as other AI agents read it.</small></span><i>›</i></a>
+    <div class="ncard ask">
+      <div class="nhead"><span class="nic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v11H9l-5 4z"/></svg></span><b>Ask about this case</b></div>
+      {% if static %}<p class="small">Questions run live on {{ mdl.ask }}, so they are off on this read-only copy. Run the app from the <a href="{{ repo_tree }}">code on GitHub</a> to ask.</p>{% else %}<form id="ask"><textarea name="q" rows="2" placeholder="Ask a question about these bills…" maxlength="500"></textarea><button type="submit" aria-label="Ask">↑</button></form>{% endif %}
+      <div id="answer" aria-live="polite"></div>
+      <small><span class="model read">{{ mdl.ask }}</span> Answers use only your documents and the policy, each with its quote. No medical advice.</small>
+    </div>
+    {% if example %}
+    {% if static %}<a class="try" href="{{ repo_tree }}">Run it with your own bills <span>→</span></a><p class="small try-note">Upload is off on this read-only copy; the code and the steps to run it are on GitHub.</p>{% else %}<a class="try" href="/upload">Try with my bills <span>→</span></a>{% endif %}
+    <p class="small center">See what we can find in your bills, too.</p>
+    {% else %}
+    <div class="trust">
+      <a href="/safe?case={{ case_id }}">Is it safe?</a>
+      {% if deletable %}<form method="post" action="/cases/{{ case_id }}/delete" onsubmit="return confirm('Delete this case and everything made for it? This cannot be undone.')"><button type="submit" class="danger">Delete this case</button></form>{% endif %}
+    </div>
+    {% endif %}
+  </aside>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+  document.querySelectorAll('.docs-tabs button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.docs-tabs button').forEach(x => x.classList.toggle('on', x === b));
+    document.querySelectorAll('.docs .tab').forEach(t => t.hidden = !t.classList.contains('tab-' + b.dataset.tab));
+  }));
+  document.getElementById('ask').addEventListener('submit', async e => {
+    e.preventDefault();
+    const q = e.target.q.value.trim(), out = document.getElementById('answer'); if (!q) return;
+    out.textContent = '…';
+    const r = await fetch(location.pathname.replace(/\/$/, '') + '/ask', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({question: q})});
+    const j = await r.json(); out.textContent = '';
+    const p = document.createElement('p'); p.textContent = j.error || j.text; out.append(p);
+    (j.citations || []).forEach(c => {
+      const el = document.createElement(c.url ? 'a' : 'span'); el.className = 'law'; el.textContent = c.label; el.title = c.quote;
+      if (c.url) { el.href = c.url; el.target = '_blank'; el.rel = 'noopener'; }
+      out.append(el, ' ');
+    });
+  });
+  {% if not example %}
+  try {  // this browser's own list of cases (no accounts); the server never lists them on a public deploy
+    const key = 'billradar.cases', list = JSON.parse(localStorage.getItem(key) || '[]').filter(c => c.id !== {{ case_id|tojson }});
+    list.unshift({id: {{ case_id|tojson }}, title: {{ s.case_title|tojson }}, letterhead: {{ s.letterhead|tojson }},
+                  created: {{ created|tojson }}, total: {{ report.total_may_come_off|string|tojson }}});
+    localStorage.setItem(key, JSON.stringify(list.slice(0, 50)));
+  } catch (e) {}
+  {% endif %}
+</script>
+{% endblock %}

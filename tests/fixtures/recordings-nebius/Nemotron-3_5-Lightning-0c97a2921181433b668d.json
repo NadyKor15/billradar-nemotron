@@ -1,0 +1,53 @@
+{
+ "request_id": "2f102632cd42e1d2106c4f18c41f60af",
+ "response": {
+  "id": "chatcmpl-2f102632cd42e1d2106c4f18c41f60af",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"answer\": \"Sheet 13 has a contradiction: it says your balance is $0.00 and also asks for a payment of $719.03. Do not pay either amount until the office explains which one is correct.\", \"refused\": false, \"citations\": [{\"source\": \"sheet\", \"ref\": \"S13\", \"quote\": \"patient_balance: 0.00\"}, {\"source\": \"sheet\", \"ref\": \"S13\", \"quote\": \"amount_due_coupon: 719.03\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": null,
+     "reasoning_content": null
+    },
+    "stop_reason": null,
+    "token_ids": null
+   }
+  ],
+  "created": 1793106722,
+  "model": "nvidia/Nemotron-3_5-Lightning",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+   "completion_tokens": 125,
+   "prompt_tokens": 13628,
+   "total_tokens": 13753,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 0,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": {
+    "audio_tokens": null,
+    "cached_tokens": 10480
+   },
+   "prompt_cache_hit_tokens": 10480,
+   "prompt_cache_miss_tokens": 3148
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null
+ }
+}

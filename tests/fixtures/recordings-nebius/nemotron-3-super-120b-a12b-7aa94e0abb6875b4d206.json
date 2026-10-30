@@ -1,0 +1,58 @@
+{
+ "request_id": "46fd6681601c625a398e342cbae9ff4e",
+ "response": {
+  "id": "chatcmpl-ac9b290debd29ee8",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"sections\": [{\"section\": \"127435\", \"quote\": \"(a)A hospital shall provide to the department a copy of its discount payment policy, charity care policy, eligibility procedures for those policies, review process, and the application for charity care or discounted payment programs, as well as a copy of its debt collection policy.\", \"date_quote\": \"(Amended by Stats. 2024, Ch. 511, Sec. 6. (AB 2297) Effective January 1, 2025.)\"}, {\"section\": \"127435\", \"quote\": \"(c)A patient shall not be denied financial assistance that would be available pursuant to the policy published on the department\u2019s internet website at the time the patient was first billed.\", \"date_quote\": \"\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": "We need up to two duties: providing policies (a). Also patient cannot be denied financial assistance per c. Provide quotes.",
+     "reasoning_content": "We need up to two duties: providing policies (a). Also patient cannot be denied financial assistance per c. Provide quotes."
+    },
+    "stop_reason": null,
+    "token_ids": null,
+    "routed_experts": null
+   }
+  ],
+  "created": 1793314922,
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.1.dev1+g5001743e3-tp2-05adddbc",
+  "usage": {
+   "completion_tokens": 206,
+   "prompt_tokens": 2244,
+   "total_tokens": 2450,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 25,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": {
+    "audio_tokens": null,
+    "cached_tokens": 0,
+    "created_cache_tokens": 0,
+    "multimodal_tokens": null
+   },
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 2244
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "prompt_text": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+ }
+}

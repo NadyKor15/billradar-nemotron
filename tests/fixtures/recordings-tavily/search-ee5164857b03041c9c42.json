@@ -1,0 +1,48 @@
+{
+ "request": {
+  "query": "California Health and Safety Code hospital fair pricing financial assistance policy 127405",
+  "search_depth": "advanced",
+  "include_domains": [
+   "leginfo.legislature.ca.gov"
+  ],
+  "include_raw_content": true,
+  "max_results": 3
+ },
+ "response": {
+  "query": "California Health and Safety Code hospital fair pricing financial assistance policy 127405",
+  "follow_up_questions": null,
+  "answer": null,
+  "images": [],
+  "results": [
+   {
+    "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=HSC&sectionNum=127435.",
+    "title": "California Code,  HSC 127435.",
+    "content": "Title: California Code,  HSC 127435.\nLegislative Information header image: click to go to the home page. home image: click to go to the home page. Bill Search image: click to go to the bill search page. back button image: click to go to previous page. # Code Section. ## Code Text. #### **Health and Safety Code - HSC**. #### **DIVISION 107. HEALTH CARE ACCESS AND INFORMATION [127000 - 130079]**. HEALTH POLICY AND PLANNING [127280 - 127697]**. #### **CHAPTER 2.5. Fair Pricing Policies [127400 - 127471]**. ##### **ARTICLE 1. Hospital Fair Pricing Policies [127400 - 127446]**. (a)\u00a0A hospital shall provide to the department a copy of its discount payment policy, charity care policy, eligibility procedures for those policies, review process, and the application for charity care or discounted payment programs, as well as a copy of its debt collection policy. The department may determine whether the information is to be provided electronically or in some other similar manner. The information shall be provided at least biennially on January 1, or when a significant change is made. If no significant change has been made by the hospital since the information was previously provided, notifying the department of the lack of change shall meet the requirements of this section. The department shall make this information. available to the public on its internet website. (b)\u00a0The department shall review a hospital\u2019s policy for compliance with this article by January 1, 2023, and whenever a significant change is made and submitted to the department. (c)\u00a0A patient shall not be denied financial assistance that would be available pursuant to the policy published on the department\u2019s internet website at the time the patient was first billed.",
+    "score": 0.9661403610793485,
+    "raw_content": null,
+    "id": "0f07a6-00"
+   },
+   {
+    "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=127405.&lawCode=HSC",
+    "title": "California Code,  HSC 127405.",
+    "content": "Title: California Code,  HSC 127405.\nLegislative Information header image: click to go to the home page. Uninsured patients or patients with high medical costs who are at or below 400 percent of the federal poverty level, as defined in subdivision (b) of Section 127400, shall be eligible for participation under a hospital\u2019s charity care policy or discount payment policy. Notwithstanding any other provision of this article, a hospital may choose to grant eligibility for its discount payment policy or charity care policies to patients with incomes over 400 percent of the federal poverty level. care policy and the discount payment policy shall state the process used by the hospital to determine whether a patient is eligible for charity care or discounted payment. (B)\u00a0The written policy regarding discount payments shall also include a statement that an emergency physician, as defined in Section 127450, who provides emergency medical services in a hospital that provides emergency care is also required by law to provide discounts to uninsured patients or patients with high medical costs who are at or below 400 percent of the federal poverty level. (b)\u00a0(1)\u00a0A hospital\u2019s discount payment policy and charity care policy shall clearly state eligibility criteria based upon income consistent with the application of the federal poverty level. In determining eligibility under its discount payment policy or charity care policy, a hospital shall not consider the monetary assets of the patient. (2)\u00a0A hospital shall not require a patient to apply for Medicare, Medi-Cal, or other coverage before the patient is screened for, or provided, discount payment. (d)\u00a0(1)\u00a0A hospital shall limit expected payment for services it provides to a patient at or below 400 percent of the federal poverty level, as defined in subdivision (b) of Section 127400, eligible under its discount payment policy to the amount of payment the hospital would expect, in good faith, to receive for providing services from Medicare or Medi-Cal, whichever is greater. If a patient does not submit an application or documentation of income, a hospital may presumptively determine that a patient is eligible for charity care or discounted payment based on information other than that provided by the patient or based on a prior eligibility determination.",
+    "score": 0.9474147955602609,
+    "raw_content": null,
+    "id": "d50ab2-01"
+   },
+   {
+    "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=HSC&sectionNum=127430",
+    "title": "California Code, HSC 127430",
+    "content": "# Code Section. #### **Health and Safety Code - HSC**. _( Heading of Division 107 amended by Stats. #### **CHAPTER 2.5. Fair Pricing Policies [127400 - 127471]**. _( Chapter 2.5 heading added by Stats. Hospital Fair Pricing Policies [127400 - 127446]**. _( Heading of Article 1 renumbered from Article 3 (of Chapter 2) by Stats. (a)Prior to commencing collection activities against a patient, the hospital, any assignee of the hospital, or other owner of the patient debt, including a collection agency, shall provide the patient with a clear and conspicuous written notice containing both of the following:. (1)A plain language summary of the patient\u2019s rights pursuant to this article, the Rosenthal Fair Debt Collection Practices Act (Title 1.6C (commencing with Section 1788) of Part 4 of Division 3 of the Civil Code), and the federal Fair Debt Collection Practices Act (Subchapter V (commencing with Section 1692) of Chapter 41 of Title 15 of the United States Code). The summary shall include a statement that the Federal Trade Commission enforces the federal act. The summary shall be sufficient if it appears in substantially the following form: \u201cState and federal law require debt collectors to treat you fairly and prohibit debt collectors from making false statements or threats of violence, using obscene or profane language, and making improper communications with third parties, including your employer. Except under unusual circumstances, debt collectors may not contact you before 8:00 a.m. or after 9:00 p.m. In general, a debt collector may not give information about your debt to another person, other than your attorney or spouse. A debt collector may contact another person to confirm your location or to enforce a judgment. For more information about debt collection activities, you may contact the Federal Trade Commission by telephone at 1-877-FTC-HELP (382-4357) or online at. (b)The notice required by subdivision (a) shall also accompany any document indicating that the commencement of collection activities may occur. (c)The requirements of this section shall apply to the entity engaged in the collection activities. If a hospital assigns or sells the debt to another entity, the obligations shall apply to the entity, including a collection agency, engaged in the debt collection activity.",
+    "score": 0.940059974360872,
+    "raw_content": null,
+    "id": "a9f97b-02"
+   }
+  ],
+  "response_time": 2.84,
+  "usage": {
+   "credits": 2
+  },
+  "request_id": "bc641153-8185-48a2-b61d-a8081599755c"
+ }
+}

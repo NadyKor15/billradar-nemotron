@@ -1,0 +1,58 @@
+{
+ "request_id": "c4eb019a9394001eb9793ecac84df93d",
+ "response": {
+  "id": "chatcmpl-c4eb019a9394001eb9793ecac84df93d",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"items\": [{\"id\": \"subject\", \"text\": \"Solicitud de un estado de cuenta detallado\"}, {\"id\": \"p0\", \"text\": \"Estoy solicitando un estado de cuenta detallado para cada una de estas cuentas: \u27e6V2\u27e7, cuenta 4788416, servicios del 11 de marzo de 2025 al 11 de marzo de 2025; \u27e6V3\u27e7, cuenta 44932556, servicios del 11 de febrero de 2025 al 11 de febrero de 2025; \u27e6V3\u27e7, cuenta 44932556, servicios del 11 de febrero de 2025 al 11 de febrero de 2025; \u27e6V3\u27e7, cuenta 44932556, servicios del 11 de febrero de 2025 al 11 de febrero de 2025; \u27e6V3\u27e7, cuenta \u27e6V8\u27e7, servicios del 11 de febrero de 2025 al 13 de febrero de 2025; \u27e6V3\u27e7, cuenta \u27e6V8\u27e7, servicios del 11 de febrero de 2025 al 13 de febrero de 2025.\"}, {\"id\": \"p1\", \"text\": \"La ley de Florida establece que el hospital debe proporcionarlo despu\u00e9s del alta bajo solicitud, dentro de los 7 d\u00edas posteriores a mi solicitud (Florida Statutes 395.301(1)(e)).\"}, {\"id\": \"p2\", \"text\": \"Por favor env\u00edelo a la direcci\u00f3n siguiente. Gracias.\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": "We need translate text except quoted parts? No quotes here. Keep markers unchanged. Provide JSON-like list? Return items with id and translated text. We'll do array.",
+     "reasoning_content": "We need translate text except quoted parts? No quotes here. Keep markers unchanged. Provide JSON-like list? Return items with id and translated text. We'll do array."
+    },
+    "stop_reason": null,
+    "token_ids": null,
+    "routed_experts": null
+   }
+  ],
+  "created": 1793106846,
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.1.dev1+g5001743e3-tp2-05adddbc",
+  "usage": {
+   "completion_tokens": 439,
+   "prompt_tokens": 544,
+   "total_tokens": 983,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 34,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": {
+    "audio_tokens": null,
+    "cached_tokens": 0,
+    "created_cache_tokens": 0,
+    "multimodal_tokens": null
+   },
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 544
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "prompt_text": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+ }
+}

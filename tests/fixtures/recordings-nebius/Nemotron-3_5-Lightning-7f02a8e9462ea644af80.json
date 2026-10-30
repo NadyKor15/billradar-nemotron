@@ -1,0 +1,50 @@
+{
+ "request_id": "694226792a76c00aeeeb4c4c43779c1d",
+ "response": {
+  "id": "chatcmpl-694226792a76c00aeeeb4c4c43779c1d",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"items\": [{\"id\": \"subject\", \"text\": \"Solicitud de asistencia financiera\"}, {\"id\": \"p0\", \"text\": \"Solicito asistencia financiera. Mi hogar tiene 4 personas y nuestro ingreso anual es de $74,000.00, que es el 224.2% de las directrices de pobreza federal de 2026.\"}, {\"id\": \"p1\", \"text\": \"El Plan de Asistencia Financiera, revisado en mayo de 2026, lista un descuento del 90% en este nivel de ingresos.\"}, {\"id\": \"p2\", \"text\": \"Solicito antes del 8 de abril de 2026, dentro del per\u00edodo de solicitud.\"}, {\"id\": \"p3\", \"text\": \"El Formulario de Evaluaci\u00f3n Financiera completado y los documentos que lista est\u00e1n adjuntos.\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": null,
+     "reasoning_content": null
+    },
+    "stop_reason": null,
+    "token_ids": null
+   }
+  ],
+  "created": 1793106838,
+  "model": "nvidia/Nemotron-3_5-Lightning",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+   "completion_tokens": 205,
+   "prompt_tokens": 341,
+   "total_tokens": 546,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 0,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": null,
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 341
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "request_id": "430a6d30acfa444291562ceb6dd4213a",
+ "response": {
+  "id": "chatcmpl-430a6d30acfa444291562ceb6dd4213a",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"answer\": \"Yes. Sheet S10 lists two lines (1 and 2) with the same code 01960 on Feb 11, 2025, each $4,944.00. Your insurance paid $196.82 on the second line, which is too much. The finding E2 states you were overcharged $196.82 on that duplicate line.\", \"refused\": false, \"citations\": [{\"source\": \"sheet\", \"ref\": \"S10\", \"quote\": \"Lines 1 and 2 are the same code 01960 on Feb 11, 2025 for $4,944.00 each. Your insurance statement shows $196.82 for the second one.\"}, {\"source\": \"sheet\", \"ref\": \"S10\", \"quote\": \"Amount: $196.82\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": null,
+     "reasoning_content": null
+    },
+    "stop_reason": null,
+    "token_ids": null
+   }
+  ],
+  "created": 1793106717,
+  "model": "nvidia/Nemotron-3_5-Lightning",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+   "completion_tokens": 209,
+   "prompt_tokens": 13626,
+   "total_tokens": 13835,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 0,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": {
+    "audio_tokens": null,
+    "cached_tokens": 10480
+   },
+   "prompt_cache_hit_tokens": 10480,
+   "prompt_cache_miss_tokens": 3146
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null
+ }
+}

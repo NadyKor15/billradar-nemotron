@@ -1,0 +1,42 @@
+{
+ "policy_id": "memorial-2026-05",
+ "letterhead": "Seaside Regional Hospital",
+ "today": "2025-04-28",
+ "fictional": true,
+ "profile": {
+  "household_size": 4,
+  "annual_income": "74000",
+  "liquid_assets": "3200",
+  "insured": true,
+  "people": [
+   {
+    "token": "PATIENT_1",
+    "role": "mother",
+    "name": "Maria Ortega",
+    "birth_date": "04/17/1994",
+    "relationship": "Self",
+    "employer": "Harbor Point Dental Studio"
+   },
+   {
+    "token": "PATIENT_2",
+    "role": "newborn",
+    "name": "Noah Andres Ortega",
+    "birth_date": "02/17/2025",
+    "relationship": "Son"
+   }
+  ],
+  "local": {
+   "street": "7843 Coral Reef Way Apt 441",
+   "city": "Coral Haven",
+   "state": "FL",
+   "zip": "33019",
+   "phone": "(954) 555-0161",
+   "tokens": {
+    "ACCT_1": "5058164046",
+    "ACCT_2": "5058164059",
+    "MEMBER_1": "33901862407",
+    "MEMBER_2": "69989129452"
+   }
+  }
+ }
+}

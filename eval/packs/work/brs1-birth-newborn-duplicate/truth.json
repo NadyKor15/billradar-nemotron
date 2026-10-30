@@ -1,0 +1,134 @@
+{
+ "pack": "brs1-birth-newborn-duplicate",
+ "note": "Second family: duplicate anesthesia line, newborn care on the mother's ID, a missing EOB page; OB statement is clean.",
+ "fictional": true,
+ "planted": [
+  {
+   "class": "F1",
+   "planted": true,
+   "fpl_pct": 224.2,
+   "amount": 1615.73,
+   "where": [
+    "01-hospital-statement.pdf",
+    "02-hospital-itemized-mother.pdf"
+   ],
+   "what": "Hospital papers only invite an assistance application; no assistance line or discount.",
+   "patient_balance": 1795.25,
+   "income_vs_household": [
+    74000,
+    4
+   ]
+  },
+  {
+   "class": "F2",
+   "planted": true,
+   "where": [
+    "01-hospital-statement.pdf",
+    "02-hospital-itemized-mother.pdf"
+   ],
+   "what": "Last day to apply for assistance under the policy window.",
+   "deadline": "2026-04-08",
+   "from": {
+    "service_plus_365": "2026-02-19",
+    "last_insurance_payment_plus_12m": "2026-04-08",
+    "first_statement_plus_240": "2025-12-05"
+   }
+  },
+  {
+   "class": "E2",
+   "planted": true,
+   "where": [
+    "08-anesthesia-bill",
+    "06-eob-june"
+   ],
+   "what": "Anesthesia 01960 billed twice for the same date and amount; both lines paid with co-insurance.",
+   "date": "2025-02-17",
+   "code": "01960",
+   "charge_each": 4108.0,
+   "extra_patient_cost": 177.41,
+   "claim_no": "731816426800"
+  },
+  {
+   "class": "B1",
+   "planted": true,
+   "where": [
+    "06-eob-june",
+    "11-neonatal-letter"
+   ],
+   "what": "Newborn care (99460/99462/99238 and nursery rev 0170) filed on the mother's member ID and denied A27; the doctors' letter says the plan cannot match the patient to the member ID.",
+   "claims": [
+    "731824842800",
+    "731828950500",
+    "731830134600",
+    "731837417100"
+   ],
+   "letter_balance": 250.0,
+   "letter_date": "2025-04-04"
+  },
+  {
+   "class": "P1",
+   "planted": true,
+   "where": [
+    "06-eob-june"
+   ],
+   "what": "EOB pages are numbered 'Page N of M' and a page is not in the pack.",
+   "pages_total": 4,
+   "missing_pages": [
+    3
+   ]
+  },
+  {
+   "class": "E3",
+   "planted": false
+  },
+  {
+   "class": "E4",
+   "planted": false
+  }
+ ],
+ "background": [
+  "Hospital merges insurance payments and contractual adjustments into one line (statement and itemized).",
+  "Newborn itemized bill: 'Summary by Rev Code' labels drift away from their amounts (wrapped labels).",
+  "Pediatric statement: small balance with a collections warning.",
+  "Control point: the patient balance on the hospital statement equals deductible + co-insurance on the hospital EOB (1795.25)."
+ ],
+ "files": {
+  "01-hospital-statement.pdf": "pdf",
+  "02-hospital-itemized-mother.pdf": "pdf",
+  "03-hospital-itemized-newborn.pdf": "pdf",
+  "06-eob-june-p1.jpg": "photo: 06-eob-june p1",
+  "06-eob-june-p2.jpg": "photo: 06-eob-june p2",
+  "06-eob-june-p4.jpg": "photo: 06-eob-june p4",
+  "07-eob-hospital-p1.jpg": "photo: 07-eob-hospital p1",
+  "table-1.jpg": "photo: 04-eob-prenatal p1, 04-eob-prenatal p2, 05-eob-ob p1, 10-pediatric-statement p1",
+  "table-2.jpg": "photo: 08-anesthesia-bill p1, 08-anesthesia-bill p2, 08-anesthesia-bill p3",
+  "table-3.jpg": "photo: 09-obgyn-statement p1, 09-obgyn-statement p2, 11-neonatal-letter p1"
+ },
+ "eob_pages": {
+  "04-eob-prenatal": 2,
+  "05-eob-ob": 1,
+  "06-eob-june": 4,
+  "07-eob-hospital": 1
+ },
+ "sheets": {
+  "S1": "06-eob-june p1",
+  "S2": "06-eob-june p2",
+  "S3": "06-eob-june p4",
+  "S4": "07-eob-hospital p1",
+  "S5": "04-eob-prenatal p1",
+  "S6": "04-eob-prenatal p2",
+  "S7": "05-eob-ob p1",
+  "S8": "10-pediatric-statement p1",
+  "S9": "08-anesthesia-bill p1",
+  "S10": "08-anesthesia-bill p2",
+  "S11": "08-anesthesia-bill p3",
+  "S12": "09-obgyn-statement p1",
+  "S13": "09-obgyn-statement p2",
+  "S14": "11-neonatal-letter p1"
+ },
+ "digital": {
+  "01-hospital-statement.pdf": "D1",
+  "02-hospital-itemized-mother.pdf": "D2",
+  "03-hospital-itemized-newborn.pdf": "D3"
+ }
+}

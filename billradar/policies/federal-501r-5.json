@@ -1,0 +1,12 @@
+{
+  "policy_id": "federal-501r-5",
+  "hospital": "Any nonprofit 501(c)(3) hospital",
+  "title": "26 CFR 1.501(r)-5(a), limit on amounts charged (AGB)",
+  "url": "https://www.ecfr.gov/current/title-26/section-1.501(r)-5",
+  "fragments": {
+    "agb-limit": {
+      "page": 1,
+      "quote": "in the case of emergency or other medically necessary care, not more than the amounts generally billed to individuals who have insurance covering such care (AGB)"
+    }
+  }
+}

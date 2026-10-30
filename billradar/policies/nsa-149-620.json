@@ -1,0 +1,16 @@
+{
+  "policy_id": "nsa-149-620",
+  "hospital": "Providers and facilities (uninsured or self-pay patients)",
+  "title": "45 CFR 149.620, patient-provider dispute resolution",
+  "url": "https://www.ecfr.gov/current/title-45/section-149.620",
+  "fragments": {
+    "ppdr-400-over-estimate": {
+      "page": 1,
+      "quote": "Substantially in excess means, with respect to the total billed charges by a provider or facility, an amount that is at least $400 more than the total amount of expected charges listed on the good faith estimate for the provider or facility."
+    },
+    "ppdr-120-days": {
+      "page": 1,
+      "quote": "postmarked within 120 calendar days of receiving the initial bill containing charges for the item or service that is substantially"
+    }
+  }
+}

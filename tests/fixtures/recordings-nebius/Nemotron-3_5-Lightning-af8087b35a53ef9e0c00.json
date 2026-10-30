@@ -1,0 +1,50 @@
+{
+ "request_id": "e0ca82f2c3c2504fca19e215b3008698",
+ "response": {
+  "id": "chatcmpl-5a9a604d",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"items\": [{\"id\": \"subject\", \"text\": \"Aplicaci\u00f3n de asistencia financiera\"}, {\"id\": \"p0\", \"text\": \"Soy aplicando para asistencia financiera. Mi hogar tiene 3 personas y nuestro ingreso anual es de $58,000.00, que es 212.3% de las 2026 Federal Poverty Guidelines.\"}, {\"id\": \"p1\", \"text\": \"Su Pol\u00edtica de Ayuda Financiera lista un descuento del 90% en este nivel de ingresos.\"}, {\"id\": \"p2\", \"text\": \"El formulario de evaluaci\u00f3n financiera completado y los documentos que lista est\u00e1n adjuntos.\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": null,
+     "reasoning_content": null
+    },
+    "stop_reason": null,
+    "token_ids": null
+   }
+  ],
+  "created": 1793277491,
+  "model": "nvidia/Nemotron-3_5-Lightning",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+   "completion_tokens": 157,
+   "prompt_tokens": 413,
+   "total_tokens": 570,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 0,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": null,
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 413
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null
+ }
+}

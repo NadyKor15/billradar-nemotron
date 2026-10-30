@@ -1,0 +1,50 @@
+{
+ "request": {
+  "query": "New York Public Health Law 2807-k hospital financial assistance policy",
+  "search_depth": "advanced",
+  "include_domains": [
+   "www.nysenate.gov",
+   "nysenate.gov",
+   "legislation.nysenate.gov"
+  ],
+  "include_raw_content": true,
+  "max_results": 3
+ },
+ "response": {
+  "query": "New York Public Health Law 2807-k hospital financial assistance policy",
+  "follow_up_questions": null,
+  "answer": null,
+  "images": [],
+  "results": [
+   {
+    "url": "https://www.nysenate.gov/legislation/bills/2023/A6027/amendment/A",
+    "title": "NY State Assembly Bill 2023-A6027A",
+    "content": "hospital's financial assistance policy. 2807-k of the public health law is REPEALED. Amd \u00a72807-k, Relates to regulation of the billing by general hospitals and",
+    "score": 0.9735316117988276,
+    "raw_content": null,
+    "id": "df841a-00"
+   },
+   {
+    "url": "https://legislation.nysenate.gov/pdf/bills/2023/S1366A",
+    "title": "STATE OF NEW YORK IN SENATE",
+    "content": "Subdivision 9 of section 2807-k of the public health law, as. 14 amended by section 1 of subpart C of part Y of chapter 57 of the laws of. 15 2023, is amended",
+    "score": 0.9661673731542268,
+    "raw_content": null,
+    "id": "9822de-01"
+   },
+   {
+    "url": "https://legislation.nysenate.gov/pdf/bills/2017/s7507c",
+    "title": "STATE OF NEW YORK SENATE - ASSEMBLY",
+    "content": "Subdivision 5-d of section 2807-k of the public health law, as. 15 amended by section 1 of part E of chapter 57 of the laws of 2015, is. 16 amended to read as",
+    "score": 0.9658727151642799,
+    "raw_content": null,
+    "id": "f28d20-02"
+   }
+  ],
+  "response_time": 4.01,
+  "usage": {
+   "credits": 2
+  },
+  "request_id": "711e4739-ed37-47f4-a930-f2f78300b45e"
+ }
+}

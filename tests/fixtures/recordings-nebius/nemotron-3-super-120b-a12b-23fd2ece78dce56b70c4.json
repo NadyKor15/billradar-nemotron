@@ -1,0 +1,58 @@
+{
+ "request_id": "d743fa759e1399f21be21750ec107b66",
+ "response": {
+  "id": "chatcmpl-d743fa759e1399f21be21750ec107b66",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"items\": [{\"id\": \"subject\", \"text\": \"Solicitud de asistencia financiera\"}, {\"id\": \"p0\", \"text\": \"Estoy solicitando asistencia financiera. Mi hogar tiene 3 personas y nuestro ingreso anual es $58,000.00, lo que equivale al 212,3\u202f% de las directrices federales de pobreza para 2026.\"}, {\"id\": \"p1\", \"text\": \"Su pol\u00edtica de asistencia financiera, revisada en mayo de 2026, indica un descuento del 90\u202f% a este nivel de ingresos.\"}, {\"id\": \"p2\", \"text\": \"Estoy presentando la solicitud antes del 1 de abril de 2026, dentro del per\u00edodo de aplicaci\u00f3n.\"}, {\"id\": \"p3\", \"text\": \"El formulario de evaluaci\u00f3n financiera completado y los documentos que enumera est\u00e1n adjuntos.\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": "We need to output JSON list? Probably just lines per id with translation preserving numbers etc. Provide translations.",
+     "reasoning_content": "We need to output JSON list? Probably just lines per id with translation preserving numbers etc. Provide translations."
+    },
+    "stop_reason": null,
+    "token_ids": null,
+    "routed_experts": null
+   }
+  ],
+  "created": 1793106862,
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.1.dev1+g5001743e3-tp2-05adddbc",
+  "usage": {
+   "completion_tokens": 233,
+   "prompt_tokens": 349,
+   "total_tokens": 582,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 21,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": {
+    "audio_tokens": null,
+    "cached_tokens": 0,
+    "created_cache_tokens": 0,
+    "multimodal_tokens": null
+   },
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 349
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "prompt_text": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+ }
+}

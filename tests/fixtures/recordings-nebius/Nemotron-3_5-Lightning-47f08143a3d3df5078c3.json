@@ -1,0 +1,50 @@
+{
+ "request_id": "4f86e097d22c9cb8f1ef22e4ead8e1d2",
+ "response": {
+  "id": "chatcmpl-31300164",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"items\": [{\"id\": \"subject\", \"text\": \"Solicitud de factura detallada\"}, {\"id\": \"p0\", \"text\": \"Solicito una factura detallada para cada una de estas cuentas: \u27e6V19\u27e7, cuenta \u27e6V55\u27e7; \u27e6V19\u27e7, cuenta \u27e6V53\u27e7, servicios del 11 de febrero de 2025 al 13 de febrero de 2025; \u27e6V14\u27e7, cuenta \u27e6V54\u27e7, servicios del 11 de febrero de 2025 al 12 de febrero de 2025.\"}, {\"id\": \"p1\", \"text\": \"La ley de Florida exige que el hospital la brinde tras el alta, a solicitud del paciente, dentro de los 7 d\u00edas de mi solicitud (Florida Statutes 395.301(1)(e)).\"}, {\"id\": \"p2\", \"text\": \"Env\u00edela a la direcci\u00f3n de abajo. Gracias.\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": null,
+     "reasoning_content": null
+    },
+    "stop_reason": null,
+    "token_ids": null
+   }
+  ],
+  "created": 1793328009,
+  "model": "nvidia/Nemotron-3_5-Lightning",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+   "completion_tokens": 246,
+   "prompt_tokens": 504,
+   "total_tokens": 750,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 0,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": null,
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 504
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null
+ }
+}

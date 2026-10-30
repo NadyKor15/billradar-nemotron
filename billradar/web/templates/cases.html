@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Your cases · BillRadar{% endblock %}
+{% block body %}
+<section class="cases">
+  <h1>Your cases</h1>
+  <p class="small">No accounts. This list lives in this browser{% if not public %} and on this device{% endif %}.</p>
+  {% if deleted %}<p class="notice">Case {{ deleted }} and everything made for it were deleted.</p>{% endif %}
+  <ul class="case-list" id="case-list">
+    <li><div><a href="/example">Example case</a><small>Fictional papers, every kind of problem we look for</small></div><span class="tag">example</span><span></span></li>
+    {% for r in rows if not r.example %}
+    <li data-id="{{ r.case_id }}"><div><a href="/cases/{{ r.case_id }}">{{ r.title }}{% if r.letterhead %} · {{ r.letterhead }}{% endif %}</a><small>{{ r.created[:16]|replace("T", " ") }} UTC · {{ r.sheets }} sheets · {{ r.findings }} findings</small></div>{% if r.demo %}<span class="tag">sample</span>{% else %}<span></span>{% endif %}<span class="amt">${{ "{:,.0f}".format(r.total|float) }}</span></li>
+    {% endfor %}
+  </ul>
+  <a class="btn primary" href="/upload">Check new bills →</a>
+</section>
+{% endblock %}
+{% block scripts %}
+<script>
+  try {  // cases this browser made; each is checked with the server, gone ones drop off
+    const key = 'billradar.cases', ul = document.getElementById('case-list');
+    const seen = new Set([...ul.querySelectorAll('li[data-id]')].map(li => li.dataset.id));
+    const deleted = {{ deleted|tojson }};
+    let list = JSON.parse(localStorage.getItem(key) || '[]').filter(c => c.id !== deleted);
+    localStorage.setItem(key, JSON.stringify(list));
+    list.filter(c => !seen.has(c.id)).forEach(c => fetch('/cases/' + encodeURIComponent(c.id) + '/summary.json').then(r => {
+      if (!r.ok) { localStorage.setItem(key, JSON.stringify(JSON.parse(localStorage.getItem(key) || '[]').filter(x => x.id !== c.id))); return; }
+      return r.json().then(s => {
+        const li = document.createElement('li'); li.dataset.id = s.case_id;
+        const a = document.createElement('a'); a.href = '/cases/' + encodeURIComponent(s.case_id); a.textContent = s.title + (s.letterhead ? ' · ' + s.letterhead : '');
+        const sm = document.createElement('small'); sm.textContent = s.created.slice(0, 16).replace('T', ' ') + ' UTC · ' + s.sheets + ' sheets · ' + s.findings + ' findings';
+        const d = document.createElement('div'); d.append(a, sm);
+        const amt = document.createElement('span'); amt.className = 'amt'; amt.textContent = '$' + Math.floor(Number(s.total)).toLocaleString('en-US');
+        li.append(d, document.createElement('span'), amt); ul.append(li);
+      });
+    }).catch(() => {}));
+  } catch (e) {}
+</script>
+{% endblock %}

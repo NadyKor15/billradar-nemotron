@@ -1,0 +1,61 @@
+{
+ "request": {
+  "query": "Cedars-Sinai Medical Center Los Angeles CA",
+  "search_depth": "basic",
+  "max_results": 5,
+  "country": "united states"
+ },
+ "response": {
+  "query": "Cedars-Sinai Medical Center Los Angeles CA",
+  "follow_up_questions": null,
+  "answer": null,
+  "images": [],
+  "results": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Cedars-Sinai_Medical_Center",
+    "title": "Cedars-Sinai Medical Center - Wikipedia",
+    "content": "Cedars-Sinai Medical Center is a 919-bed teaching hospital and research center in Los Angeles, California.\n\nIt is part of the Cedars-Sinai Health System, which includes other hospitals and a network of local doctors' offices that display its name along with a number of research institutes.\n\nThe hospital is certified as a Level I trauma center. It has a staff of over 2,000 physicians and 10,000 employees, supported by 2,000 volunteers and more than 40 community groups. [...] | Cedars-Sinai Health System |\n| The North and South Towers of the Cedars-Sinai Medical Center |\n| Geography |\n| Location | 8700 Beverly Boulevard, Los Angeles, California, United States |\n| Coordinates | 34\u00b004\u203231\u2033N 118\u00b022\u203250\u2033W\ufeff / \ufeff34.075198\u00b0N 118.380676\u00b0W\ufeff / 34.075198; -118.380676: {{#parsoid\\u0000fragment:6}}[ 34\u00b004\u203231\u2033N 118\u00b022\u203250\u2033W\ufeff / \ufeff34.075198\u00b0N 118.380676\u00b0W\ufeff / 34.075198; -118.380676]\"}}\" id=\"mwCw\" about=\"#mwt10\" typeof=\"mw:Extension/indicator\"> |\n| Organization | [...] | Pediatric Level II |  Cedars-Sinai Medical Center  Children's Hospital of Orange County  Harbor\u2013UCLA Medical Center  Long Beach Memorial Medical Center  Los Angeles General Medical Center  Northridge Hospital Medical Center  Providence Mission Hospital  Riverside University Health System Medical Center  Santa Barbara Cottage Hospital  Santa Clara Valley Medical Center  Valley Children's Hospital |\n|  List of hospitals in California |",
+    "score": 0.959766,
+    "raw_content": null,
+    "id": "5f8b3a-00"
+   },
+   {
+    "url": "https://health.usnews.com/best-hospitals/area/ca/cedars-sinai-medical-center-6930444",
+    "title": "Cedars-Sinai Medical Center in Los Angeles, CA - Rankings & Ratings",
+    "content": "Located in Los Angeles, California, Cedars-Sinai Medical Center is a general medical and surgical hospital serving the Los Angeles County community. Cedars-Sinai Medical Center is on the Best Hospitals Honor Roll. It is nationally ranked in 10 adult specialties and rated high performing in 24 adult procedures and conditions, including Abdominal Aortic Aneurysm Repair, Aortic Valve Surgery, Back Surgery (Spinal Fusion), Chronic Obstructive Pulmonary Disease (COPD) and Colon Cancer Surgery. It is [...] Cedars-Sinai Medical Center is nationally ranked number 5 in Orthopedics by U.S. News & World Report. In addition to its national standing, it is the #1 ranked orthopedics center in California and the #1 ranked orthopedics center in the Los Angeles metro area. Cedars-Sinai Medical Center is rated High Performing in the following procedures and conditions related to Orthopedics: Back Surgery (Spinal Fusion), Hip Fracture, Hip Replacement and Knee Replacement. [...] Cedars-Sinai Medical Center is nationally ranked number 4 in Cardiology, Heart & Vascular Surgery by U.S. News & World Report. In addition to its national standing, it is the #1 ranked cardiology center in California and the #1 ranked cardiology center in the Los Angeles metro area. Cedars-Sinai Medical Center is rated High Performing in the following procedures and conditions related to Cardiology, Heart & Vascular Surgery: Abdominal Aortic Aneurysm Repair, Aortic Valve Surgery, Heart",
+    "score": 0.94608605,
+    "raw_content": null,
+    "id": "b686b0-01"
+   },
+   {
+    "url": "https://careers.cshs.org/locations",
+    "title": "Cedars-Sinai Locations",
+    "content": "| |  |  |  |  |  |  ---  ---  | Advanced Health Sciences Pavilion 127 S. San Vicente Blvd. Los Angeles, CA 90048 310-423-3277 | Medical Center \u2014 South Tower 8700 Beverly Blvd. Los Angeles, CA 90048 310-423-3277 | West Medical Office Tower 8635 W. Third St. Los Angeles, CA 90048 310-423-3277 | Samuel Oschin Comprehensive Cancer Institute 127 S. San Vicente Blvd. Pavilion, 7th Floor Los Angeles, CA 90048 310-423-8030 | Spielberg Building 8723 Alden Drive Los Angeles, CA 90048 310-423-3277 | | [...] 310-423-3277 | | Mark Goodson Building 444 S. San Vicente Blvd. Los Angeles, CA 90048 310-423-3277 | Mark Taper Foundation Imaging Center 8705 Gracie Allen Drive Los Angeles, CA 90048 310-423-5654 | Medical Center \u2014 North Tower 8700 Beverly Blvd. Los Angeles, CA 90048 310-423-3277 | East Medical Office Tower 8631 W. Third St. Los Angeles, CA 90048 310-423-3277 | Saperstein Critical Care Tower 8720 Beverly Blvd. Los Angeles, CA 90048 310-423-3277 | |  |  |  |  |  | | Thalians Health Center 8730 [...] Health Center 8730 Alden Drive Los Angeles, CA 90048 310-423-3277 |  |  | |",
+    "score": 0.8396422,
+    "raw_content": null,
+    "id": "9727cf-02"
+   },
+   {
+    "url": "https://hcai.ca.gov/facility/cedars-sinai-medical-center",
+    "title": "Cedars-Sinai Medical Center - HCAI",
+    "content": "Address: 8700 Beverly Boulevard  \n  Los Angeles, CA 90048\n HCAI ID: 106190555\n Facility License Type: General Acute Care Hospital\n License Category: General Acute Care Hospital\n\n Facility Level Description: Parent Facility\n Emergency Room Service Level: Basic\n Licensed Beds: 919\n Facility Status: Open\n\n## Net Patient Revenue [...] Skip to content\n\nCalifornia State Website Link to California State Website\n\n HCAI Logo\n\nCalifornia Department of Health Care Access and Information\n\nPlanned Service Outage for updates beginning Wednesday 10am PT (10/21/26) through TBD. During this emergency maintenance users may experience brief interruptions of service.\n\nFacility Finder\n\n# Hospital Profile\n\n More Profile Features \n\n## Cedars-Sinai Medical Center [...] $0\n\nThird Party Fee-for-service\n\n$20,094,676\n\nThird Party Managed Care\n\n$1,218,090,990\n\nOther Indigent\n\n$0\n\nOther Payers\n\n$32,616,409\n\nTotal\n\n$1,762,816,018\n\nDownload the full financial disclosure report\n\n## Payer Mix\n\nPayer mix refers to the percentage of hospital revenue coming from payer categories comprised of Medicare, Medi-Cal, Other Third Parties, Indigent, and Self-Pay.\n\nReporting period: July 1st, 2023 - June 30th, 2024\n\n### Inpatient\n\nPayer Mix\n\nThis Hospital\n\nStatewide",
+    "score": 0.81665546,
+    "raw_content": null,
+    "id": "797577-03"
+   },
+   {
+    "url": "https://www.cedars-sinai.org/home.html",
+    "title": "A Nonprofit Hospital in Los Angeles | Cedars-Sinai",
+    "content": "Cedars\u2011Sinai will serve as the adviser for medical services and clinics at the LA28 games and is caring for Team USA athletes through affiliation with the U.S. Olympic & Paralympic Medical Network.\n\nExplore Our Sports Partnerships about Cedars-Sinai and the LA28 Olympic Games\n\nImage 7: Cedars-Sinai is the official medical provider for the LA28 Olympics and Paralympics.\n\n## Find the Care You\u2019re Looking For [...] ## Breakthroughs and Breaking News\n\n1 of 6Image 21: Cedars-Sinai is partnering with LA28 and will serve as the Official Medical Provider for the 2028 Olympic and Paralympic Games. Illustration by Cedars-Sinai and LA28. ### Cedars-Sinai Named Official Medical Provider for Los Angeles 2028 Olympic and Paralympic Games Cedars-Sinai Will Provide Medical Services and Clinics at LA28 Games, and Is Caring for Team USA Ath... [...] Hospitals+\n\nCedars-Sinai Medical CenterCedars-Sinai Marina HospitalHuntington HealthTorrance Memorial Medical CenterView All Hospitals \u2192\n\nMedical Offices+\n\nAdult Primary CarePediatric Primary CareImaging ServicesLabsSurgery CentersView All Medical Offices \u2192\n\nHome \u203a Records & Billing\u2039 Records & Billing\nAccess medical records and find billing resources.\n\nSign into My CS-Link\n\nRecords\u2212\n\nMedical Records RequestAdvanced Healthcare Directive\n\nBilling+",
+    "score": 0.74541736,
+    "raw_content": null,
+    "id": "ef7e1d-04"
+   }
+  ],
+  "response_time": 1.73,
+  "usage": {
+   "credits": 1
+  },
+  "request_id": "666c4740-81fc-41d0-85b3-1e52adc5d010"
+ }
+}

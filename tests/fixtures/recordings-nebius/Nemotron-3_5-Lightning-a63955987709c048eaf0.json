@@ -1,0 +1,53 @@
+{
+ "request_id": "4d80f5d607d0929e99777a25df7ceaae",
+ "response": {
+  "id": "chatcmpl-4d80f5d607d0929e99777a25df7ceaae",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"answer\": \"Lines 1 and 2 on Sheet 10 are the same code 01960 on Feb 17, 2025, each for $4,108.00. Your insurance statement shows $177.41 for the second one. That is $177.41 too much charged.\", \"refused\": false, \"citations\": [{\"source\": \"sheet\", \"ref\": \"S10\", \"quote\": \"Lines 1 and 2 are the same code 01960 on Feb 17, 2025 for $4,108.00 each. Your insurance statement shows $177.41 for the second one.\"}, {\"source\": \"sheet\", \"ref\": \"S1\", \"quote\": \"line_no\\\": 5, \\\"service_date\\\": \\\"2025-02-17\\\", \\\"code\\\": \\\"01960\\\", \\\"description\\\": \\\"\\\", \\\"charges\\\": \\\"4108.00\\\", \\\"insurance_paid\\\": \\\"709.65\\\", \\\"adjustment\\\": \\\"3220.94\\\", \\\"fa_discount\\\": null, \\\"patient_responsibility\\\": \\\"177.41\\\", \\\"claim_ref\\\": \\\"731816426800\\\", \\\"denial_codes\\\": \\\"CDA\\\"\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": null,
+     "reasoning_content": null
+    },
+    "stop_reason": null,
+    "token_ids": null
+   }
+  ],
+  "created": 1793106726,
+  "model": "nvidia/Nemotron-3_5-Lightning",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+   "completion_tokens": 311,
+   "prompt_tokens": 13453,
+   "total_tokens": 13764,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 0,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": {
+    "audio_tokens": null,
+    "cached_tokens": 10480
+   },
+   "prompt_cache_hit_tokens": 10480,
+   "prompt_cache_miss_tokens": 2973
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null
+ }
+}

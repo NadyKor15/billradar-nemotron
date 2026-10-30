@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block body %}
+{% if static %}
+<section class="upload">
+  <h1>Put your hospital papers in one place</h1>
+  <p class="notice warn-note">This is a read-only copy of BillRadar: the example case below is a replay of a recorded run on NVIDIA Nemotron through Nebius Token Factory. Uploading papers is off here, so nobody's medical bills reach a public page.</p>
+  <p>To check papers yourself, run the app from the <a href="{{ repo_tree }}">code on GitHub</a> with your own Token Factory key (README, "Run it"). Live model calls are allowed only on fictional sample packs.</p>
+  <p><a class="btn primary" href="/example">See the example case →</a></p>
+</section>
+{% else %}
+<form class="upload" method="post" action="/cases" enctype="multipart/form-data">
+  <h1>Put your hospital papers in one place</h1>
+  {% if error %}<p class="notice warn-note" role="alert">{{ error }} <a href="/example">See the example →</a></p>{% endif %}
+  <p>Lay the paper sheets on a table without overlap and take one photo from above. Add PDFs or screenshots from the hospital portal.{% if not live %} <span class="replay">replay mode</span>{% endif %}</p>
+
+  <label for="photos">Photo of the table</label>
+  <input id="photos" name="photos" type="file" accept="image/*" multiple>
+  <label for="files">PDF files</label>
+  <input id="files" name="files" type="file" accept="application/pdf" multiple>
+
+  <fieldset class="ctx">
+    <legend>What happened? <span class="small">Each one switches on the rules and laws that fit.</span></legend>
+    {% for c in chips %}<label class="ctx-chip" title="{{ rules[c.id].laws|length }} protection(s), checks: {{ rules[c.id].checks|join(', ') or 'none' }}"><input type="checkbox" name="context" value="{{ c.id }}"{% if c.id in chosen %} checked{% endif %}> {{ c.label }}</label>{% endfor %}
+  </fieldset>
+
+  <label for="policy_id">Hospital policy to check against</label>
+  <select id="policy_id" name="policy_id">
+    {% for p in policies %}<option value="{{ p.policy_id }}">{{ p.hospital }} · {{ p.title }}</option>{% endfor %}
+  </select>
+  <label for="letterhead">Name printed on the bills</label>
+  <input id="letterhead" name="letterhead" placeholder="Lakeview Demo Hospital">
+
+  <div class="row">
+    <div><label for="household_size">People in your household</label><input id="household_size" name="household_size" type="number" min="1" value="4" required></div>
+    <div><label for="annual_income">Yearly household income, $</label><input id="annual_income" name="annual_income" type="number" min="0" step="1" required></div>
+  </div>
+  <div class="row">
+    <div><label for="mother_name">Your first name (stays on this device)</label><input id="mother_name" name="mother_name"></div>
+    <div><label for="baby_name">Baby's first name, if this is a birth</label><input id="baby_name" name="baby_name"></div>
+  </div>
+  <label for="liquid_assets">Savings, $ (optional)</label>
+  <input id="liquid_assets" name="liquid_assets" type="number" min="0" step="1">
+  <label class="check"><input type="checkbox" name="insured" value="true" checked> I have health insurance</label>
+  <label class="check"><input type="checkbox" name="fictional" value="true" checked> These are sample papers with fictional data (required while real-paper privacy is being built)</label>
+
+  <button class="btn primary" type="submit">Check my papers</button>
+  <p class="small">BillRadar helps with bills and insurance statements. It does not give medical advice. You review and sign every letter.</p>
+</form>
+{% endif %}
+{% endblock %}

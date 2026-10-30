@@ -1,0 +1,50 @@
+{
+ "request_id": "889e765e18438c54c8b32580fa8a57be",
+ "response": {
+  "id": "chatcmpl-ea025f82",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"items\": [{\"id\": \"subject\", \"text\": \"Aplicaci\u00f3n para ayuda financiera\"}, {\"id\": \"p0\", \"text\": \"Estoy solicitando ayuda financiera. Mi hogar tiene 3 personas y nuestro ingreso anual es de $58,000.00, que es el 212.3% de las pautas federales de pobreza de 2026.\"}, {\"id\": \"p1\", \"text\": \"La Pol\u00edtica de Ayuda Financiera de su lista ofrece un descuento del 90% en este nivel de ingreso.\"}, {\"id\": \"p2\", \"text\": \"Estoy solicitando antes del 1 de abril de 2026, dentro del per\u00edodo de solicitud.\"}, {\"id\": \"p3\", \"text\": \"El Formulario de Evaluaci\u00f3n Financiera completado y los documentos que enumera est\u00e1n adjuntos.\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": null,
+     "reasoning_content": null
+    },
+    "stop_reason": null,
+    "token_ids": null
+   }
+  ],
+  "created": 1793326564,
+  "model": "nvidia/Nemotron-3_5-Lightning",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+   "completion_tokens": 202,
+   "prompt_tokens": 444,
+   "total_tokens": 646,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 0,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": null,
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 444
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null
+ }
+}

@@ -1,0 +1,67 @@
+{
+ "request_id": "3c17d1df889f1a3cd6ec4c04d773a96a",
+ "response": {
+  "id": "chatcmpl-3c17d1df889f1a3cd6ec4c04d773a96a",
+  "choices": [
+   {
+    "finish_reason": "tool_calls",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": null,
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": [
+      {
+       "id": "chatcmpl-tool-a3ee05cf238a21b8",
+       "function": {
+        "arguments": "{\"case_id\": \"aa170072d0dc2\"}",
+        "name": "get_protections"
+       },
+       "type": "function"
+      }
+     ],
+     "reasoning": "We need to respond summarizing what may come off and why (citing sources), earliest deadline, and which letters are ready for them to review and sign.\n\nWe have case_id, get_findings gave details. Need protections? Not requested but maybe needed for reasons. We'll fetch get_protections and list_letters.",
+     "reasoning_content": "We need to respond summarizing what may come off and why (citing sources), earliest deadline, and which letters are ready for them to review and sign.\n\nWe have case_id, get_findings gave details. Need protections? Not requested but maybe needed for reasons. We'll fetch get_protections and list_letters."
+    },
+    "stop_reason": null,
+    "token_ids": null,
+    "routed_experts": null
+   }
+  ],
+  "created": 1793113146,
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.1.dev1+g5001743e3-tp2-05adddbc",
+  "usage": {
+   "completion_tokens": 104,
+   "prompt_tokens": 4604,
+   "total_tokens": 4708,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 66,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": {
+    "audio_tokens": null,
+    "cached_tokens": 1984,
+    "created_cache_tokens": 0,
+    "multimodal_tokens": null
+   },
+   "prompt_cache_hit_tokens": 1984,
+   "prompt_cache_miss_tokens": 2620
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "prompt_text": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+ }
+}

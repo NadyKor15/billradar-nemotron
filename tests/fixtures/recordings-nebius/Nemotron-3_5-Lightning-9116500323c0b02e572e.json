@@ -1,0 +1,53 @@
+{
+ "request_id": "d82cfe326159967c6c2734d397e5df89",
+ "response": {
+  "id": "chatcmpl-d82cfe326159967c6c2734d397e5df89",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"answer\": \"Yes, the baby's care was billed under the mother's insurance. Sheet S2 shows newborn care codes (0170, 99460, 99462) billed to mom (member MEMBER_1) on Feb 17, 2025, with three lines denied (denial code A27).\", \"refused\": false, \"citations\": [{\"source\": \"sheet\", \"ref\": \"S2\", \"quote\": \"Sheet 2 lists newborn care (0170, 99460, 99462) for mom (member MEMBER_1). 3 line(s) were denied. Ask the insurer and the provider to bill it under the baby, or add the baby to the plan, before the balance moves to you.\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": null,
+     "reasoning_content": null
+    },
+    "stop_reason": null,
+    "token_ids": null
+   }
+  ],
+  "created": 1793106728,
+  "model": "nvidia/Nemotron-3_5-Lightning",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+   "completion_tokens": 185,
+   "prompt_tokens": 13457,
+   "total_tokens": 13642,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 0,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": {
+    "audio_tokens": null,
+    "cached_tokens": 10480
+   },
+   "prompt_cache_hit_tokens": 10480,
+   "prompt_cache_miss_tokens": 2977
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "request_id": "059dd59438928302e809e944449b3903",
+ "response": {
+  "id": "chatcmpl-9e599780",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"items\": [{\"id\": \"subject\", \"text\": \"Solicitud de factura detallada\"}, {\"id\": \"p0\", \"text\": \"Solicito una factura detallada para cada una de estas cuentas: \u27e6V3\u27e7, cuenta \u27e6V6\u27e7, servicios del 14 de julio de 2026 al 16 de julio de 2026.\"}, {\"id\": \"p1\", \"text\": \"La ley de Florida dice que el hospital debe proporcionarla despu\u00e9s del alta y a solicitud, dentro de los 7 d\u00edas de mi solicitud (Florida Statutes 395.301(1)(e)).\"}, {\"id\": \"p2\", \"text\": \"Por favor, env\u00edela a la direcci\u00f3n de abajo. Gracias.\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": null,
+     "reasoning_content": null
+    },
+    "stop_reason": null,
+    "token_ids": null
+   }
+  ],
+  "created": 1793277506,
+  "model": "nvidia/Nemotron-3_5-Lightning",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+   "completion_tokens": 181,
+   "prompt_tokens": 441,
+   "total_tokens": 622,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 0,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": null,
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 441
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null
+ }
+}

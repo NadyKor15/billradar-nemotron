@@ -1,0 +1,12 @@
+{
+  "policy_id": "federal-501r-4",
+  "hospital": "Any nonprofit 501(c)(3) hospital",
+  "title": "26 CFR 1.501(r)-4(b)(3)(i), documents for an application",
+  "url": "https://www.ecfr.gov/current/title-26/section-1.501(r)-4",
+  "fragments": {
+    "no-denial-for-missing-documents": {
+      "page": 1,
+      "quote": "A hospital facility may not deny financial assistance under its FAP based on an applicant's failure to provide information or documentation unless that information or documentation is described in the FAP or FAP application form."
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+ "request_id": "a5e148b50e4e2abbb72391789ff947ee",
+ "response": {
+  "id": "chatcmpl-a5e148b50e4e2abbb72391789ff947ee",
+  "choices": [
+   {
+    "finish_reason": "tool_calls",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": null,
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": [
+      {
+       "id": "chatcmpl-tool-b093d77b47e4c580",
+       "function": {
+        "arguments": "{\"case_id\": \"aa170072d0dc2\"}",
+        "name": "list_letters"
+       },
+       "type": "function"
+      }
+     ],
+     "reasoning": "We need to present summary: what may come off and why citing sources, earliest deadline, which letters are ready.\n\nNow get list_letters.",
+     "reasoning_content": "We need to present summary: what may come off and why citing sources, earliest deadline, which letters are ready.\n\nNow get list_letters."
+    },
+    "stop_reason": null,
+    "token_ids": null,
+    "routed_experts": null
+   }
+  ],
+  "created": 1793113147,
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.1.dev1+g5001743e3-tp2-05adddbc",
+  "usage": {
+   "completion_tokens": 66,
+   "prompt_tokens": 9436,
+   "total_tokens": 9502,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 29,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": {
+    "audio_tokens": null,
+    "cached_tokens": 4576,
+    "created_cache_tokens": 0,
+    "multimodal_tokens": null
+   },
+   "prompt_cache_hit_tokens": 4576,
+   "prompt_cache_miss_tokens": 4860
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "prompt_text": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+ }
+}

@@ -1,0 +1,12 @@
+{
+  "policy_id": "nsa-149-610",
+  "hospital": "Providers and facilities (uninsured or self-pay patients)",
+  "title": "45 CFR 149.610, good faith estimate",
+  "url": "https://www.ecfr.gov/current/title-45/section-149.610",
+  "fragments": {
+    "gfe-uninsured-3-days": {
+      "page": 1,
+      "quote": "When a good faith estimate is requested by an uninsured (or self-pay) individual: Not later than 3 business days after the date of the request."
+    }
+  }
+}

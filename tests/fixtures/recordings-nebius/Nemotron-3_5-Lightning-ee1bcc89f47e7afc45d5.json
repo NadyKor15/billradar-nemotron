@@ -1,0 +1,50 @@
+{
+ "request_id": "9039e4f303390177d095bb14063258a4",
+ "response": {
+  "id": "chatcmpl-4d8dce9f",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"items\": [{\"id\": \"subject\", \"text\": \"Apelaci\\u00f3n de reclamo denegado CLM-7765301, miembro ID \u27e6V4\u27e7\"}, {\"id\": \"p0\", \"text\": \"Apelo la denegaci\\u00f3n del reclamo CLM-7765301 para \u27e6V3\u27e7 (Alojamiento y alimentaci\\u00f3n, 14 de julio de 2026). Su Explicaci\\u0031n de Beneficios fechada el 15 de octubre de 2026 la deniega con c\\u0032digo de observaci\\u0031n P31: \\u201cPrior authorization was not obtained for this service.\\u201d\"}, {\"id\": \"p1\", \"text\": \"Este reclamo es parte de mi estancia hospitalaria por el nacimiento de mi hijo. Mi documento de plan dice (p\\u0031gina 2): \\u201cMedically necessary inpatient care for childbirth and delivery is covered.\\u201d\"}, {\"id\": \"p2\", \"text\": \"Por favor, revise mi estancia contra esta regla antes de solicitar autorizaci\\u00f3n previa. Mi documento de plan dice (p\\u0031gina 2): \\u201cPrior authorization is not required for a hospital stay for childbirth of up to 48 hours after a vaginal delivery or 96 hours after a cesarean section.\\u201d\"}, {\"id\": \"p3\", \"text\": \"Si no se pudo obtener autorizaci\\u00f3n previa a tiempo, el plan no permite una denegaci\\u00f3n por ese motivo s\\u0033lo. Mi documento de plan dice (p\\u0031gina 2): \\u201cIn emergency situations or when prior authorization cannot be obtained, covered services will not be denied solely for lack of prior authorization.\\u201d\"}, {\"id\": \"p4\", \"text\": \"Su Explicaci\\u0031n de Beneficios deja $6,840.00 para que pague en este reclamo. Por favor, revise el reclamo y proc\\u0031selo como servicio cubierto bajo mi plan.\"}, {\"id\": \"p5\", \"text\": \"Estoy enviando esta apelaci\\u00f3n antes del 13 de abril de 2027, dentro del tiempo que el plan permite despu\\u00e9s de una denegaci\\u00f3n. Por favor, tambi\\u0031n env\\u0031ame copias gratuitas de todos los documentos, registros e informaci\\u0033n relevante a mi reclamo.\"}, {\"id\": \"p6\", \"text\": \"Las reglas federales para planes de salud empleadores dan por lo menos 180 d\\u00eda para apelar un reclamo denegado (29 CFR 2560.503-1(h)(3)(i)).\"}, {\"id\": \"p7\", \"text\": \"Por favor, env\\u0031e su decisi\\u0031n por escrito a la direcci\\u0033n de abajo. Gracias.\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": null,
+     "reasoning_content": null
+    },
+    "stop_reason": null,
+    "token_ids": null
+   }
+  ],
+  "created": 1793344094,
+  "model": "nvidia/Nemotron-3_5-Lightning",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+   "completion_tokens": 763,
+   "prompt_tokens": 821,
+   "total_tokens": 1584,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 0,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": null,
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 821
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null
+ }
+}

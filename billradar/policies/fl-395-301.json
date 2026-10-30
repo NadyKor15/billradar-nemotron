@@ -1,0 +1,28 @@
+{
+  "policy_id": "fl-395-301",
+  "hospital": "Any hospital licensed in Florida",
+  "title": "Florida Statutes 395.301, 2026",
+  "url": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0300-0399/0395/Sections/0395.301.html",
+  "fragments": {
+    "itemized-7-days": {
+      "page": 1,
+      "quote": "The initial statement or bill shall be provided within 7 days after the patient's discharge or release or after a request for such statement or bill, whichever is later."
+    },
+    "itemized-on-request": {
+      "page": 1,
+      "quote": "Upon request, and after the patient's discharge or release from a facility, the facility must provide to the patient or to the patient's survivor or legal guardian, as appropriate, an itemized statement or a bill detailing in plain language"
+    },
+    "grievance-7-days": {
+      "page": 1,
+      "quote": "The facility must provide an initial response to a patient grievance within 7 business days after the patient formally files a grievance disputing all or a portion of an itemized statement or bill."
+    },
+    "records-10-days": {
+      "page": 1,
+      "quote": "A licensed facility shall make available to a patient all records necessary for verification of the accuracy of the patient’s statement or bill within 10 business days after the request for such records."
+    },
+    "answer-7-days": {
+      "page": 1,
+      "quote": "Each facility shall establish a method for reviewing and responding to questions from patients concerning the patient’s itemized statement or bill. Such response shall be provided within 7 business days after the date a question is received."
+    }
+  }
+}

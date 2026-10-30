@@ -1,0 +1,54 @@
+{
+  "policy_id": "baptist-2026-09",
+  "hospital": "Baptist Health South Florida (Baptist Hospital of Miami)",
+  "title": "Financial Assistance Policy BHSF-355.14, revised 09/29/2026",
+  "url": "https://baptisthealth.net/-/media/FAB30007578640E2B1F902CBF6256B95.ashx",
+  "fpg_year": 2026,
+  "covers_insured_balances": false,
+  "min_request_total": null,
+  "liquid_assets_limit_for_free_care": null,
+  "income_cap_pct": null,
+  "tiers": [
+    {"max_fpl_pct": 200, "discount_pct": 100, "fragment": "levels"},
+    {"max_fpl_pct": 300, "discount_pct": 100, "fragment": "levels"}
+  ],
+  "window": {
+    "after_first_statement_days": 240,
+    "after_ecas_notice_days": 30,
+    "fragment": "window"
+  },
+  "fragments": {
+    "uninsured-only": {
+      "page": 5,
+      "quote": "The designation of uninsured does not extend to a patient for the patient's out-of-pocket obligation for co-pays, deductibles or co-insurance."
+    },
+    "applies-to": {
+      "page": 1,
+      "quote": "This policy applies to patient service charges which no health insurance or any other payor source"
+    },
+    "levels": {
+      "page": 4,
+      "quote": "Family income of 200% FPL or less 100% Special needs financial assistance 2 Vice President of Revenue Management Family income of 200 to 300% FPL 100%"
+    },
+    "free-care": {
+      "page": 4,
+      "quote": "Patients qualifying for financial assistance under this policy receive a 100% discount (i.e., free care)."
+    },
+    "window": {
+      "page": 5,
+      "quote": "ends on the later of the 240th day after the date that the first post-discharge billing statement for the care is provided or at least 30 days after Baptist Health provides the individual with a written notice"
+    },
+    "refund": {
+      "page": 9,
+      "quote": "Refund any payments received for the service covered by the financial assistance approval (unless such excess amount is less than $5"
+    },
+    "facility-only": {
+      "page": 3,
+      "quote": "This policy applies only to facility charges and employed physician charges."
+    },
+    "residence": {
+      "page": 3,
+      "quote": "In Miami-Dade County"
+    }
+  }
+}

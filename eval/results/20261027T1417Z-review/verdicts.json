@@ -1,0 +1,250 @@
+[
+ {
+  "model": "nvidia/Nemotron-3_5-Lightning",
+  "pack": "brs1-birth-all-errors",
+  "error": "answer cut at max_tokens (reasoning and answer share the budget); raise max_output_tokens"
+ },
+ {
+  "model": "nvidia/Nemotron-3_5-Lightning",
+  "pack": "brs1-birth-newborn-duplicate",
+  "error": "answer cut at max_tokens (reasoning and answer share the budget); raise max_output_tokens"
+ },
+ {
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-all-errors",
+  "subject": "E2 #1",
+  "right_by_key": false,
+  "model_said": "confirmed"
+ },
+ {
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-all-errors",
+  "subject": "E2 #2",
+  "right_by_key": false,
+  "model_said": "confirmed"
+ },
+ {
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-all-errors",
+  "subject": "E4 #1",
+  "right_by_key": true,
+  "model_said": "confirmed"
+ },
+ {
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-all-errors",
+  "subject": "B1 #1",
+  "right_by_key": true,
+  "model_said": "confirmed"
+ },
+ {
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-all-errors",
+  "subject": "P1 #1",
+  "right_by_key": true,
+  "model_said": "confirmed"
+ },
+ {
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-all-errors",
+  "subject": "F1 #1",
+  "right_by_key": true,
+  "model_said": "confirmed"
+ },
+ {
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-all-errors",
+  "subject": "F1 #2",
+  "right_by_key": false,
+  "model_said": "confirmed"
+ },
+ {
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-all-errors",
+  "subject": "F1 #3",
+  "right_by_key": false,
+  "model_said": "confirmed"
+ },
+ {
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-all-errors",
+  "subject": "F1 #4",
+  "right_by_key": false,
+  "model_said": "confirmed"
+ },
+ {
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-all-errors",
+  "subject": "F2 #1",
+  "right_by_key": true,
+  "model_said": "cannot_tell"
+ },
+ {
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-newborn-duplicate",
+  "subject": "B1 #1",
+  "right_by_key": true,
+  "model_said": "confirmed"
+ },
+ {
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-newborn-duplicate",
+  "subject": "P1 #1",
+  "right_by_key": true,
+  "model_said": "confirmed"
+ },
+ {
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-newborn-duplicate",
+  "subject": "F1 #1",
+  "right_by_key": true,
+  "model_said": "confirmed"
+ },
+ {
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-newborn-duplicate",
+  "subject": "F1 #2",
+  "right_by_key": false,
+  "model_said": "confirmed"
+ },
+ {
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-newborn-duplicate",
+  "subject": "F1 #3",
+  "right_by_key": false,
+  "model_said": "confirmed"
+ },
+ {
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-newborn-duplicate",
+  "subject": "F1 #4",
+  "right_by_key": false,
+  "model_said": "confirmed"
+ },
+ {
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-newborn-duplicate",
+  "subject": "F2 #1",
+  "right_by_key": true,
+  "model_said": "problem"
+ },
+ {
+  "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+  "pack": "brs1-birth-all-errors",
+  "subject": "E2 #1",
+  "right_by_key": false,
+  "model_said": "confirmed"
+ },
+ {
+  "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+  "pack": "brs1-birth-all-errors",
+  "subject": "E2 #2",
+  "right_by_key": false,
+  "model_said": "confirmed"
+ },
+ {
+  "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+  "pack": "brs1-birth-all-errors",
+  "subject": "E4 #1",
+  "right_by_key": true,
+  "model_said": "confirmed"
+ },
+ {
+  "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+  "pack": "brs1-birth-all-errors",
+  "subject": "B1 #1",
+  "right_by_key": true,
+  "model_said": "confirmed"
+ },
+ {
+  "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+  "pack": "brs1-birth-all-errors",
+  "subject": "P1 #1",
+  "right_by_key": true,
+  "model_said": "confirmed"
+ },
+ {
+  "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+  "pack": "brs1-birth-all-errors",
+  "subject": "F1 #1",
+  "right_by_key": true,
+  "model_said": "problem"
+ },
+ {
+  "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+  "pack": "brs1-birth-all-errors",
+  "subject": "F1 #2",
+  "right_by_key": false,
+  "model_said": "problem"
+ },
+ {
+  "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+  "pack": "brs1-birth-all-errors",
+  "subject": "F1 #3",
+  "right_by_key": false,
+  "model_said": "problem"
+ },
+ {
+  "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+  "pack": "brs1-birth-all-errors",
+  "subject": "F1 #4",
+  "right_by_key": false,
+  "model_said": "problem"
+ },
+ {
+  "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+  "pack": "brs1-birth-all-errors",
+  "subject": "F2 #1",
+  "right_by_key": true,
+  "model_said": "problem"
+ },
+ {
+  "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+  "pack": "brs1-birth-newborn-duplicate",
+  "subject": "B1 #1",
+  "right_by_key": true,
+  "model_said": "confirmed"
+ },
+ {
+  "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+  "pack": "brs1-birth-newborn-duplicate",
+  "subject": "P1 #1",
+  "right_by_key": true,
+  "model_said": "problem"
+ },
+ {
+  "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+  "pack": "brs1-birth-newborn-duplicate",
+  "subject": "F1 #1",
+  "right_by_key": true,
+  "model_said": "(not answered)"
+ },
+ {
+  "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+  "pack": "brs1-birth-newborn-duplicate",
+  "subject": "F1 #2",
+  "right_by_key": false,
+  "model_said": "problem"
+ },
+ {
+  "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+  "pack": "brs1-birth-newborn-duplicate",
+  "subject": "F1 #3",
+  "right_by_key": false,
+  "model_said": "problem"
+ },
+ {
+  "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+  "pack": "brs1-birth-newborn-duplicate",
+  "subject": "F1 #4",
+  "right_by_key": false,
+  "model_said": "problem"
+ },
+ {
+  "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+  "pack": "brs1-birth-newborn-duplicate",
+  "subject": "F2 #1",
+  "right_by_key": true,
+  "model_said": "problem"
+ }
+]

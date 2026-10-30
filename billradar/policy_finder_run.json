@@ -1,0 +1,66 @@
+{
+ "about": "Hospitals of the recorded live run of policy_finder (scripts/record_policy_finder.py). Real hospitals, public policies; no bill and no family data. The run order is the screen order.",
+ "recorded": "2026-10-29",
+ "runs": [
+  {
+   "hint": {
+    "name": "Houston Methodist Hospital",
+    "city": "Houston",
+    "zip": "",
+    "state": "TX",
+    "website": "houstonmethodist.org"
+   },
+   "confirmed": false
+  },
+  {
+   "hint": {
+    "name": "Mount Sinai Hospital",
+    "city": "New York",
+    "zip": "",
+    "state": "NY",
+    "website": "www.mountsinai.org"
+   },
+   "confirmed": false
+  },
+  {
+   "hint": {
+    "name": "Cedars-Sinai Medical Center",
+    "city": "Los Angeles",
+    "zip": "90048",
+    "state": "CA",
+    "website": ""
+   },
+   "confirmed": false
+  },
+  {
+   "hint": {
+    "name": "Orlando Health",
+    "city": "Orlando",
+    "zip": "",
+    "state": "FL",
+    "website": "Pay online at orlandohealth.com"
+   },
+   "confirmed": false
+  },
+  {
+   "hint": {
+    "name": "Memorial Regional Hospital",
+    "city": "Hollywood",
+    "zip": "33021",
+    "state": "FL",
+    "website": ""
+   },
+   "confirmed": false
+  },
+  {
+   "hint": {
+    "name": "Memorial Regional Hospital",
+    "city": "Hollywood",
+    "zip": "33021",
+    "state": "FL",
+    "website": "mhs.net"
+   },
+   "confirmed": true
+  }
+ ]
+}

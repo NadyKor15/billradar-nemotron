@@ -1,0 +1,48 @@
+{
+ "request": {
+  "query": "Texas Health and Safety Code hospital itemized bill patient charity care financial assistance",
+  "search_depth": "advanced",
+  "include_domains": [
+   "statutes.capitol.texas.gov"
+  ],
+  "include_raw_content": true,
+  "max_results": 3
+ },
+ "response": {
+  "query": "Texas Health and Safety Code hospital itemized bill patient charity care financial assistance",
+  "follow_up_questions": null,
+  "answer": null,
+  "images": [],
+  "results": [
+   {
+    "url": "https://statutes.capitol.texas.gov/GetStatute.aspx?Code=HS&Value=311.045",
+    "title": "Texas Constitution and Statutes",
+    "content": "Each hospital shall annually publish notice of the hospital's charity care program and policies in a local newspaper of general circulation in the county.",
+    "score": 0.9282438780821427,
+    "raw_content": null,
+    "id": "b68b38-00"
+   },
+   {
+    "url": "https://statutes.capitol.texas.gov/GetStatute.aspx?Code=IN&Value=845.151",
+    "title": "Texas Constitution and Statutes",
+    "content": "Chapter 62, Health and Safety Code; to provide health care services to beneficiaries of the medical assistance program under Chapter 32, Human Resources Code,",
+    "score": 0.9101684577432038,
+    "raw_content": null,
+    "id": "c1a4b4-01"
+   },
+   {
+    "url": "https://statutes.capitol.texas.gov/Docs/OC/pdf/OC.101.pdf",
+    "title": "OCCUPATIONS CODE CHAPTER 101. HEALTH ...",
+    "content": "Sep 1, 2007 \u2014 On the written request of a patient, a health care professional shall provide, in plain language, a written explanation of the charges for\u00a0...Read more",
+    "score": 0.8839749218214317,
+    "raw_content": null,
+    "id": "39b6ea-02"
+   }
+  ],
+  "response_time": 3.86,
+  "usage": {
+   "credits": 2
+  },
+  "request_id": "9fe758ba-c50d-4c45-8cdf-fbf29f34e049"
+ }
+}

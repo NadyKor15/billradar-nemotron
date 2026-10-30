@@ -1,0 +1,65 @@
+{
+  "policy_id": "memorial-2026-05",
+  "hospital": "Memorial Healthcare System (Memorial Regional Hospital, Hollywood FL)",
+  "title": "Financial Assistance Policy, Revised May 2026",
+  "url": "https://www.mhs.net/-/media/mhs/files/patients-and-visitors/financial-assistance/en/full-policy.pdf",
+  "fpg_year": 2026,
+  "covers_insured_balances": true,
+  "min_request_total": "500.00",
+  "liquid_assets_limit_for_free_care": "10000.00",
+  "income_cap_pct": 10,
+  "tiers": [
+    {"max_fpl_pct": 200, "discount_pct": 100, "fragment": "tier-200"},
+    {"max_fpl_pct": 250, "discount_pct": 90, "fragment": "scale-mrh"},
+    {"max_fpl_pct": 300, "discount_pct": 85, "fragment": "scale-mrh"},
+    {"max_fpl_pct": 350, "discount_pct": 83, "fragment": "scale-mrh"},
+    {"max_fpl_pct": 400, "discount_pct": 83, "fragment": "scale-mrh"}
+  ],
+  "window": {
+    "after_service_days": 365,
+    "after_last_insurance_payment_months": 12,
+    "fragment": "window"
+  },
+  "fragments": {
+    "insured-balances": {
+      "page": 3,
+      "quote": "This means all uninsured patient responsibility amounts as well as insured patient balances after insurance payment. This includes deductibles, coinsurance, copayments, and non-covered charges."
+    },
+    "min-request": {
+      "page": 2,
+      "quote": "The amount of the requested financial assistance must be more than $500, for all accounts combined."
+    },
+    "tier-200": {
+      "page": 3,
+      "quote": "has a total household income of less than or equal to 200% of the FPG"
+    },
+    "liquid-assets": {
+      "page": 3,
+      "quote": "The Patient or responsible party has household liquid assets less than $10,000."
+    },
+    "scale": {
+      "page": 4,
+      "quote": "Patient or responsible party has a total household income of between 201% and 400%"
+    },
+    "income-cap": {
+      "page": 4,
+      "quote": "At no point will a patient who qualifies for financial assistance be responsible for more than 10% of their annual total household income."
+    },
+    "prior-accounts": {
+      "page": 5,
+      "quote": "When MHS approves financial assistance for a Patient or responsible party, MHS will also consider accounts incurred within the prior twelve months."
+    },
+    "window": {
+      "page": 5,
+      "quote": "Patients or responsible parties can apply for financial assistance for up to one year after the date of service or twelve months after last insurance payment."
+    },
+    "facilities-only": {
+      "page": 5,
+      "quote": "This Financial Assistance Policy only applies to services provided by MHS at its facilities and services provided by MHS employed physicians."
+    },
+    "scale-mrh": {
+      "page": 11,
+      "quote": "Memorial Regional Hospital BALANCES DUE FROM PATIENT INCOME AMOUNT OF DISCOUNT Up to 200% of FPG 100% Discount 201% - 250% of FPG 90% Discount 251% - 300% of FPG 85% Discount 301% - 350% of FPG 83% Discount 351% - 400% of FPG 83% Discount"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+ "photo": {
+  "width": 3000,
+  "height": 3710
+ },
+ "boxes": [
+  {
+   "sheet": "S5",
+   "box": [
+    114,
+    81,
+    1374,
+    1773
+   ]
+  },
+  {
+   "sheet": "S6",
+   "box": [
+    1548,
+    81,
+    2844,
+    1773
+   ]
+  },
+  {
+   "sheet": "S7",
+   "box": [
+    144,
+    1914,
+    1392,
+    3594
+   ]
+  },
+  {
+   "sheet": "S8",
+   "box": [
+    1566,
+    1914,
+    2826,
+    3594
+   ]
+  }
+ ],
+ "find_model": "nvidia/Nemotron-3.5-Super-VL",
+ "find_recording": "Nemotron-3.5-Super-VL-a055ac540976e3b3af5b.json",
+ "sent": {
+  "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+  "recording": "Nemotron-3-Ultra-550b-a55b-0ee9d2c0495455b18704.json",
+  "excerpt": "\"people\": [{\"token\": \"PATIENT_1\", \"role\": \"mother\", \"name\": \"\", \"birth_date\": \"\", \"relationship\": \"Self\", \"employer\": \"\"}, {\"token\": \"PATIENT_2\", \"role\": \"newborn\", \"name\": \"\", \"birth_date\": \"\", \"relationship\": \"Son\", \"employer\": \"\"}], \"context\": [], \"plan\": null}, \"documents\": [{\"doc_id\": \"S1\", \"source\": \"paper\", \"kind\": \"eob\", \"patient\": \"PATIENT_1\", \"provider\": \"QUILLFORD, AUGUSTINE P.; TREMAYNE, OSWIN K.\", \"account_ref\": \"\", \"claim_ref\": \"[CLAIM_1], [CLAIM_2]\", \u2026"
+ }
+}

@@ -1,0 +1,109 @@
+{# The scroll story above the home page: four short episodes on the example case (fictional data). Each pins only
+   while it plays; with reduced motion every episode shows its end state. story.js sets --p (0..1) per episode. #}
+<div class="story" id="story" aria-label="How BillRadar works, in four steps">
+{% macro icon(name) %}<svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">{% if name == "baby" %}<circle cx="12" cy="9" r="5"/><path d="M10 8.5h.01M14 8.5h.01M10.5 11c.9.7 2.1.7 3 0M6 21c.8-3.5 3.2-5.5 6-5.5s5.2 2 6 5.5"/>{% elif name == "coin" %}<circle cx="15" cy="7" r="3.5"/><path d="M15 5.5v3M3 15h3l3.5-1.5c1-.4 2 .1 2.3 1l.2.5H16l3.5-2.5c.8-.5 1.8-.3 2.2.5l-6.2 5.5c-.6.5-1.3.7-2 .7H6M3 13v8"/>{% else %}<path d="M8 3.5h7l4 4v11a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-13a2 2 0 0 1 2-2z"/><path d="M15 3.5v4h4M9 12h6M9 15.5h6"/><path d="M4 7v12.5a2 2 0 0 0 2 2h9"/>{% endif %}</svg>{% endmacro %}
+{% macro plate(n) %}<picture class="plate"><source media="(max-width: 760px)" srcset="{{ asset('/static/story/p%d-900.webp' % n) }}"><img src="{{ asset('/static/story/p%d-1600.webp' % n) }}" alt="" width="1600" height="900" {{ 'fetchpriority=high' if n == 1 else 'loading=lazy' }}></picture>
+      <ol class="dots" aria-hidden="true">{% for i in range(1, 5) %}<li{% if i == n %} class="on"{% endif %}>{% if i == n %}{{ n }} of 4{% endif %}</li>{% endfor %}</ol>{% endmacro %}
+
+  <section class="ep ep1" data-ep="1">
+    <div class="ep-stick">
+      {{ plate(1) }}
+      <div class="ep-text">
+        <p class="ep-kicker">BillRadar finds billing errors and financial help in a family's hospital bills, on NVIDIA Nemotron.</p>
+        <h2>One photo<br>of the table.</h2>
+        <p class="ep-sub">Every sheet found, straightened and numbered.</p>
+        <span class="model find">{{ mdl.find }}</span>
+        {% if story.receipt %}<p class="receipt-line"><b class="calls" data-to="{{ story.receipt.calls }}">{{ story.receipt.calls }}</b> Nemotron calls · <b class="usd" data-to="{{ story.receipt.usd }}">${{ "%.3f"|format(story.receipt.usd) }}</b> <span>for the whole example case; letter translations not counted</span></p>{% endif %}
+      </div>
+      <p class="scroll-hint" aria-hidden="true">Scroll<i></i></p>
+      {% if story.found %}{% set f = story.found %}
+      <div class="ep-art stage" aria-hidden="true" style="--ar:{{ f.ar }}">
+        <figure class="photo" style="width:{{ f.card_w }}%;top:{{ f.card_top }}%;height:{{ f.card_h }}%"><img src="{{ asset('/static/story/table.webp') }}" alt="" loading="eager">
+          <svg viewBox="0 0 {{ f.w }} {{ f.h }}" preserveAspectRatio="none">{% for b in f.sheets %}<rect pathLength="1" style="--i:{{ loop.index0 }}" x="{{ b.box[0] }}" y="{{ b.box[1] }}" width="{{ b.box[2] - b.box[0] }}" height="{{ b.box[3] - b.box[1] }}" rx="30"/>{% endfor %}</svg>
+        </figure>
+        <p class="photo-cap">Boxes drawn by {{ mdl.find }} on the example photo</p>
+        {% for b in f.sheets %}<figure class="sheet2" style="--i:{{ loop.index0 }};--x0:{{ b.x0 }}%;--y0:{{ b.y0 }}%;--w0:{{ b.w0 }}%"><img src="{{ b.src }}" alt="" loading="lazy"><b>{{ b.n }}</b></figure>{% endfor %}
+      </div>
+      {% else %}
+      <div class="ep-art" aria-hidden="true">
+        <svg class="wave" viewBox="0 0 1000 300" preserveAspectRatio="none"><defs><linearGradient id="wg" x1="0" x2="1"><stop offset="0" stop-color="#f3d58b" stop-opacity="0"/><stop offset=".3" stop-color="#e2b453"/><stop offset="1" stop-color="#f6dc95"/></linearGradient></defs><path pathLength="1" d="M0 250 C 220 120, 420 60, 600 140 S 880 260, 1000 90"/></svg>
+        {% for src in story.sheets %}<figure class="sheet s{{ loop.index }}" style="--i:{{ loop.index0 }}"><img src="{{ src }}" alt="" loading="{{ 'eager' if loop.first else 'lazy' }}"><b>{{ loop.index }}</b></figure>{% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <section class="ep ep2" data-ep="2">
+    <div class="ep-stick">
+      {{ plate(2) }}
+      <div class="ep-text">
+        <h2>Names hidden before anything reaches the cloud.</h2>
+        <p class="ep-sub">On your device, first. The model gets the copy with tokens.</p>
+        <span class="model device">On this device</span>
+      </div>
+      <div class="ep-art" aria-hidden="true">
+        <div class="bill">
+          <div class="bill-head"><b>Itemized bill</b><span>{{ story.hospital }}</span><em>SAMPLE</em></div>
+          <dl class="bill-ids">
+            <div style="--r:0"><dt>Patient name</dt><dd><span class="real">{{ story.patient }}</span><span class="tok">🔒 [PATIENT_1]</span></dd></div>
+            <div style="--r:1"><dt>Member ID</dt><dd><span class="real">{{ story.member }}</span><span class="tok">🔒 [MEMBER_1]</span></dd></div>
+            <div style="--r:2"><dt>Account number</dt><dd><span class="real">{{ story.account }}</span><span class="tok">🔒 [ACCT_1]</span></dd></div>
+            <div style="--r:3"><dt>Address</dt><dd><span class="real">{{ story.address }}</span><span class="tok">🔒 [ADDR_1]</span></dd></div>
+          </dl>
+          <table class="bill-lines">{% for d, a in story.lines %}<tr><td>{{ d }}</td><td>{{ a }}</td></tr>{% endfor %}</table>
+          <i class="beam"></i>
+        </div>
+        {% if story.found %}<aside class="sent"><p class="sent-h">What {{ mdl.review }} got for the second read</p>
+          <pre>{% for t, tok in story.found.sent_parts %}{% if tok %}<mark>{{ t }}</mark>{% else %}{{ t }}{% endif %}{% endfor %}</pre>
+          <p class="sent-f short">Word for word from the recorded request {{ story.found.sent_recording.rsplit('-', 1)[-1][:8] }}…: names empty, people and claims as tokens. Sheet S1 is the insurer's statement (Harborlight); the bill is from Seaside.</p><p class="sent-f long">Cut word for word from the recorded request ({{ story.found.sent_recording.rsplit('-', 1)[-1][:8] }}…, the hash of that request). Names stay empty; people, claims and accounts left the device as tokens. Sheet S1 here is the insurer's statement (Harborlight Health); the bill above is from Seaside.</p></aside>{% endif %}
+      </div>
+    </div>
+  </section>
+
+  <section class="ep ep3" data-ep="3">
+    <div class="ep-stick">
+      {{ plate(3) }}
+      <div class="ep-center">
+                <p class="ep-sub">may come off your bills</p>
+        <p class="big" data-to="{{ story.amount }}">${{ "{:,}".format(story.amount) }}</p>
+        <ul class="cards">{% for c in story.cards %}<li style="--i:{{ loop.index0 }}">{{ icon(c.icon) }}{{ c.label }}</li>{% endfor %}</ul>
+        <p class="ep-note">Example case · fictional data · checked by code against the hospital's own policy</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ep ep4" data-ep="4">
+    <div class="ep-stick">
+      {{ plate(4) }}
+      <div class="ep-text">
+        <h2>Letters ready.</h2>
+        <p class="ep-sub">You read, you sign, you decide.</p>
+        <p class="ep-ctas"><a class="btn primary" href="/example">Explore the example case</a> <a class="btn ghost" href="/safe">Is it safe?</a></p>
+      </div>
+      <div class="ep-art">
+        <div class="letter-wrap">
+        <article class="letter-paper" aria-label="{{ story.letter_subject }}">
+          <p class="lp-to">To: {{ story.letter_to }}</p>
+          <h3>{{ story.letter_subject }}</h3>
+          <p class="lp-body"><span class="sr">{{ story.letter_body }}</span><span class="typed" aria-hidden="true">{{ story.letter_body }}</span></p>
+          <p class="lp-sign">Sincerely,</p>
+          <svg class="sig" viewBox="0 0 320 84" aria-hidden="true"><path pathLength="1" d="M30 64 C 28 44, 30 26, 34 16 M 22 22 C 52 6, 86 20, 82 44 C 78 66, 48 74, 26 66 C 18 62, 26 56, 36 58 M 96 60 C 100 58, 104 56, 106 60 M 150 40 C 136 30, 116 44, 120 60 C 124 72, 142 66, 150 58 M 158 52 C 168 44, 176 48, 170 58 C 166 66, 178 66, 186 54 M 200 50 C 190 48, 190 60, 200 62 C 210 64, 206 52, 196 56 M 214 40 L 206 66 M 210 50 L 222 50 M 232 46 L 226 66 M 242 30 L 234 66 M 252 30 L 244 66 C 250 68, 258 60, 264 54 C 276 46, 280 62, 268 64 C 260 64, 262 54, 272 52 C 284 50, 296 52, 312 44"/></svg>
+          <p class="lp-name">{{ story.signer }}</p>
+        </article>
+        <i class="envelope" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story-try" aria-labelledby="try-h">
+    <h2 id="try-h">Three steps, about a minute</h2>
+    <ol>
+      <li>Click "Explore the example case" below. A finished family case opens: 14 sheets, 3 files, and the amount that may come off the bills.</li>
+      <li>Look at the findings. Each one shows the sheet and lines with the error, the law or hospital policy section behind it when there is one, and which Nemotron model found and read the sheet. "What these lines mean" explains the lines in plain words.</li>
+      <li>Then open "Letter: request itemized bill" and "Call cheat sheet": a ready letter to the hospital and notes for the phone call.</li>
+    </ol>
+    <a class="btn gold" href="/example">Explore the example case</a>
+    <p class="note">Upload is off on this public copy — <a href="{{ repo_tree }}">run it with your own key from GitHub</a>.</p>
+  </section>
+</div>

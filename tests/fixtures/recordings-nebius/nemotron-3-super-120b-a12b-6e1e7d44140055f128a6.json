@@ -1,0 +1,58 @@
+{
+ "request_id": "a8a012c9e606dbd281bfe42181b20391",
+ "response": {
+  "id": "chatcmpl-bc716199551daff6",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"title\": \"Houston Methodist Hospital\", \"date_quote\": \"\", \"tiers\": [{\"from_fpl_pct\": 0, \"up_to_fpl_pct\": 200, \"benefit\": \"free\", \"discount_pct\": 100, \"quote\": \"Patients whose family income is at or below 200% of the Federal Poverty Level (FPL) are eligible to receive free services;\"}, {\"from_fpl_pct\": 200, \"up_to_fpl_pct\": 500, \"benefit\": \"discount\", \"discount_pct\": 0, \"quote\": \"patients whose family income is above 200% but not more than 500% of the FPL are eligible to receive services at a discounted amount.\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": "We need extract tiers: \u2264200% -> free. >200% to 500% -> discounted (no %). Also note \"may be eligible\" above 500% gives maybe discounted but unclear percentage - likely none? Not specify discount. Should we treat as discounted unknown => discount_pct 0? Might skip because no explicit percent. Provide quotes.",
+     "reasoning_content": "We need extract tiers: \u2264200% -> free. >200% to 500% -> discounted (no %). Also note \"may be eligible\" above 500% gives maybe discounted but unclear percentage - likely none? Not specify discount. Should we treat as discounted unknown => discount_pct 0? Might skip because no explicit percent. Provide quotes."
+    },
+    "stop_reason": null,
+    "token_ids": null,
+    "routed_experts": null
+   }
+  ],
+  "created": 1793314473,
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.1.dev1+g5001743e3-tp2-05adddbc",
+  "usage": {
+   "completion_tokens": 256,
+   "prompt_tokens": 915,
+   "total_tokens": 1171,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 79,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": {
+    "audio_tokens": null,
+    "cached_tokens": 0,
+    "created_cache_tokens": 0,
+    "multimodal_tokens": null
+   },
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 915
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "prompt_text": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+ }
+}

@@ -1,0 +1,69 @@
+{# One policy_finder result (fp = Found.to_dict()). form_to: where the "yes / type the site" forms post, or "" for none. #}
+{% macro pct_range(t) -%}
+{%- if t.from_fpl_pct and t.up_to_fpl_pct %}{{ t.from_fpl_pct }}–{{ t.up_to_fpl_pct }}%{% elif t.up_to_fpl_pct %}up to {{ t.up_to_fpl_pct }}%{% else %}above {{ t.from_fpl_pct }}%{% endif %} of the poverty level
+{%- endmacro %}
+{% macro benefit(t) -%}
+{%- if t.benefit == "free" or t.discount_pct == 100 %}Free care{% elif t.discount_pct %}{{ t.discount_pct }}% off{% else %}A discount, amount not stated{% endif %}
+{%- endmacro %}
+{% macro policy_result(fp, form_to="") %}
+<article class="pf-card pf-{{ fp.status }}" data-status="{{ fp.status }}">
+  <div class="pf-head">
+    <h3>{{ fp.hospital }}{% if fp.city or fp.state %} <small>{{ fp.city or fp.zip }}{% if (fp.city or fp.zip) and fp.state %}, {% endif %}{{ fp.state }}</small>{% endif %}</h3>
+    {% if fp.domain %}<span class="pf-site" title="{{ fp.domain_note }}">{{ fp.domain }} · {% if fp.domain_step == 1 %}site on the bill{% elif fp.domain_step == 2 %}name and city matched{% elif fp.domain_step == 3 %}you confirmed{% endif %}</span>{% endif %}
+  </div>
+  {% if fp.status in ("verified", "partial", "undated") %}
+  {% if fp.status == "undated" %}<p class="pf-warn"><b>May be out of date.</b> The page prints no date; the tiers below are its own words, but a newer policy may say otherwise.</p>{% endif %}
+  {% if fp.status == "partial" %}<p class="pf-warn"><b>Not every tier confirmed.</b> {{ fp.message|capitalize }}.</p>{% endif %}
+  <p>Financial assistance policy found on the hospital's own site: <a href="{{ fp.url }}" target="_blank" rel="noopener">{{ fp.title or fp.url }}</a>{% if fp.doc_date and fp.doc_date not in (fp.title or "") %}, <span class="pf-date">{{ fp.doc_date }}</span>{% endif %}.</p>
+  <table class="pf-tiers"><thead><tr><th>Household income</th><th>What the policy gives</th><th>The policy's words</th></tr></thead>
+    <tbody>{% for t in fp.tiers %}<tr><td>{{ pct_range(t) }}</td><td><b>{{ benefit(t) }}</b></td><td class="pf-quote">“{{ t.quote }}”</td></tr>{% endfor %}</tbody></table>
+  {% if fp.dropped %}<p class="small">{{ fp.dropped|length }} more tier{{ "s" if fp.dropped|length > 1 }} not shown: the quote or its numbers were not in the policy text.</p>{% endif %}
+  {% elif fp.status == "link_only" %}
+  <p>We found the policy, but could not confirm its tiers word for word. Check it yourself: <a href="{{ fp.url }}" target="_blank" rel="noopener">{{ fp.title or fp.url }}</a>{% if fp.doc_date %} ({{ fp.doc_date }}){% endif %}.</p>
+  {% elif fp.status == "ask_user" and fp.candidate %}
+  <p><b>Is this your hospital?</b> {{ fp.candidate.name }}, {{ fp.candidate.city }}, <a href="{{ fp.candidate.url }}" target="_blank" rel="noopener">{{ fp.candidate.site }}</a></p>
+  {% if form_to %}<form method="post" action="{{ form_to }}" class="pf-form"><input type="hidden" name="website" value="{{ fp.candidate.site }}"><input type="hidden" name="confirmed" value="1"><button type="submit">Yes, this is my hospital</button></form>{% endif %}
+  {% elif fp.status == "in_base" %}
+  <p>This hospital's policy is already in BillRadar's checked base.</p>
+  {% else %}
+  <p>{{ fp.message or "No policy found." }}</p>
+  {% endif %}
+  {% if fp.date_note and fp.status != "undated" %}<p class="pf-warn">{{ fp.date_note|capitalize }}.</p>{% endif %}
+  {% if form_to and fp.status in ("ask_user", "not_found", "error", "link_only", "undated", "partial") %}
+  <form method="post" action="{{ form_to }}" class="pf-form pf-type">
+    <label>Site printed on your bill <input name="website" placeholder="e.g. Pay online at www.hospital.org" maxlength="200"></label>
+    <label>City or ZIP on the bill <input name="place" maxlength="60" pattern="[A-Za-z0-9 .'\-]{0,60}"></label>
+    <label>State <input name="state" maxlength="2" size="3" pattern="[A-Za-z]{2}" value="{{ fp.state }}"></label>
+    <button type="submit">Search the hospital's site</button>
+  </form>
+  {% endif %}
+  <p class="small pf-how">{% if fp.tiers %}Searched with Tavily only on the hospital's own site; Nemotron 3 Super copied the tiers; code found every quote shown here in the page's text.{% elif fp.domain %}Searched with Tavily only on the hospital's own site.{% else %}Searched with Tavily for the hospital's own site.{% endif %} Only the hospital's name, city or ZIP, state and site were sent. {{ fp.note }}</p>
+  {% set sl = fp.state_laws %}
+  {% if sl and sl.status in ("shown", "link_only") %}
+  <div class="pf-law"><b>State law that may apply ({{ sl.state }})</b>
+    {% for x in sl.sections %}<p><span class="pf-quote">“{{ x.quote }}”</span><br><a href="{{ x.url }}" target="_blank" rel="noopener">{{ x.title or ("Section " ~ x.section) }}{% if x.section and x.section not in (x.title or "") %}, § {{ x.section }}{% endif %}</a> · {{ x.date_quote }} · <b>{{ x.label }}</b></p>{% endfor %}
+    {% if not sl.sections %}<p>We found the state's law page but could not confirm a section word for word: <a href="{{ sl.url }}" target="_blank" rel="noopener">read it yourself</a>. May apply to you; check.</p>{% endif %}
+    <p class="small">From the state's official law site only. {{ sl.note }}</p>
+  </div>
+  {% endif %}
+  {% if fp.tavily_calls or fp.nemotron_calls %}
+  <details class="pf-calls"><summary>{{ fp.tavily_calls|length }} Tavily call{{ "s" if fp.tavily_calls|length != 1 }}, {{ fp.credits }} credit{{ "s" if fp.credits != 1 }}{% if fp.nemotron_calls %} · {{ fp.nemotron_calls|length }} Nemotron call, ${{ "%.4f"|format(fp.nemotron_usd) }}{% endif %}{% if fp.checked_at %} · {{ fp.checked_at[:10] }}{% endif %}</summary>
+    <ul>{% for c in fp.tavily_calls %}<li>{{ c.label }} · Tavily request_id <code>{{ c.request_id or "–" }}</code> · {{ c.credits if c.credits is not none else "?" }} credits</li>{% endfor %}
+    {% for c in fp.nemotron_calls %}<li>{{ c.label }} · {{ c.answered_by or c.model }} · response <code>{{ c.response_id or "–" }}</code></li>{% endfor %}</ul>
+    {% if fp.rejected %}<p class="small">Not used: {% for r in fp.rejected %}{{ r.url }} ({{ r.why }}){{ "; " if not loop.last }}{% endfor %}</p>{% endif %}
+  </details>
+  {% endif %}
+</article>
+{% endmacro %}
+{% macro pf_style() %}<style>
+.pf-card{border:1px solid #e3ddd0;border-radius:12px;padding:14px 16px;margin:10px 0;background:#fffdf8}
+.pf-head{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;justify-content:space-between}
+.pf-head h3{margin:0;font-size:1.05rem}.pf-head small{font-weight:400;color:#6b6457}
+.pf-site{font-size:.8rem;color:#0F6B63;background:#e8f3f1;border-radius:999px;padding:2px 10px}
+.pf-tiers{width:100%;border-collapse:collapse;margin:8px 0;font-size:.92rem}
+.pf-tiers th,.pf-tiers td{text-align:left;padding:6px 8px;border-top:1px solid #eee7da;vertical-align:top}
+.pf-quote{color:#4a443a;font-style:italic}.pf-warn{color:#8a5a00}
+.pf-form{display:flex;flex-wrap:wrap;gap:8px;align-items:end;margin:8px 0}.pf-form label{display:flex;flex-direction:column;font-size:.85rem}
+.pf-law{border-top:1px dashed #e3ddd0;margin-top:10px;padding-top:8px;text-align:left}
+.pf-calls ul{margin:6px 0 0 18px;font-size:.85rem}
+</style>{% endmacro %}

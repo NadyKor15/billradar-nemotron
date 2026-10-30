@@ -1,0 +1,12 @@
+.env
+.env.*
+*.key
+__pycache__/
+node_modules/
+.DS_Store
+private/
+.venv/
+.cache/
+.pytest_cache/
+runs/
+!.env.example

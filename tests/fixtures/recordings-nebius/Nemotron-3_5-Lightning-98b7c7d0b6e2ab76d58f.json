@@ -1,0 +1,53 @@
+{
+ "request_id": "03f21e4b8eb37f4b11175f6e2ce40348",
+ "response": {
+  "id": "chatcmpl-03f21e4b8eb37f4b11175f6e2ce40348",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"answer\": \"You likely qualify for financial assistance\\n\\nFindings F1 and F2 say:\\n- Household of 4, income $74,000: 224.2% of the poverty guideline \u2192 90% off the policy gives.\\n- First bill after discharge: sheet D1, Apr 09, 2025. 345 days left.\\n- **Apply by Apr 08, 2026** (345 days from the first bill date).\", \"refused\": false, \"citations\": [{\"source\": \"policy\", \"ref\": \"F2\", \"quote\": \"Apply by Apr 08, 2026\"}, {\"source\": \"policy\", \"ref\": \"F1\", \"quote\": \"Household of 4, income $74,000: 224.2% of the poverty guideline. The policy gives 90% off at this level.\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": null,
+     "reasoning_content": null
+    },
+    "stop_reason": null,
+    "token_ids": null
+   }
+  ],
+  "created": 1793106724,
+  "model": "nvidia/Nemotron-3_5-Lightning",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+   "completion_tokens": 216,
+   "prompt_tokens": 13449,
+   "total_tokens": 13665,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 0,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": {
+    "audio_tokens": null,
+    "cached_tokens": 10480
+   },
+   "prompt_cache_hit_tokens": 10480,
+   "prompt_cache_miss_tokens": 2969
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null
+ }
+}

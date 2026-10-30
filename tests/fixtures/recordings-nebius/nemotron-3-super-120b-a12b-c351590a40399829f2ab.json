@@ -1,0 +1,58 @@
+{
+ "request_id": "0ef45967e67dd5a66dfe17302ebb6d23",
+ "response": {
+  "id": "chatcmpl-0ef45967e67dd5a66dfe17302ebb6d23",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"answer\": \"Sheet S4 shows the amount the insurance says you owe. In that Explanation\u2011of\u2011Benefits statement, line\u202f2 lists the \u2018patient_responsibility\u2019 for delivery as **$2575.10**.\\n\\n{\", \"refused\": false, \"citations\": [{\"source\": \"sheet\", \"ref\": \"S4\", \"quote\": \"\\\"patient_responsibility\\\": \\\"2575.10\\\"\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": "We need to answer: Which sheet shows the amount the insurance says I owe? The user wants to know which sheet indicates the amount the insurance says they owe.\n\nGiven documents:\n\nS1 is hospital statement showing patient balance etc; lines show patient_responsibility per line.\n\nS4 is EOB (Explanation of Benefits) from Sample Health Plan; lines show patient_responsibility values.\n\nSpecifically S4 shows for each line the patient_responsibility (what the patient owes according to insurance). For example line 1 description Room and board: patient_responsibility \"1624.50\". That matches S1 line 1 patient_responsibility also \"1624.50\"? Actually S1 line 1 patient_responsibility = \"1624.50\" yes. But S4 line 2 Delivery shows patient_responsibility \"2575.10\".\n\nThus the sheet that shows amount insurance says I owe is S4 (EOB). Provide citation: need to extract exact text from S4 describing patient_responsibility fields. Eg line_no 2 patient_responsibility \"2575.10\". Also maybe sum across lines equals something else. Use quoted numbers.\n\nSo answer: Sheet S4 shows the amount insurance says you owe; e.g., line 2 states patient_responsibility \"$2575.10\". Provide citation accordingly.\n\nMust include source type either sheet or policy. Here use sheet ref \"S4\" and quote the relevant piece.\n\nAnswer in plain english short.",
+     "reasoning_content": "We need to answer: Which sheet shows the amount the insurance says I owe? The user wants to know which sheet indicates the amount the insurance says they owe.\n\nGiven documents:\n\nS1 is hospital statement showing patient balance etc; lines show patient_responsibility per line.\n\nS4 is EOB (Explanation of Benefits) from Sample Health Plan; lines show patient_responsibility values.\n\nSpecifically S4 shows for each line the patient_responsibility (what the patient owes according to insurance). For example line 1 description Room and board: patient_responsibility \"1624.50\". That matches S1 line 1 patient_responsibility also \"1624.50\"? Actually S1 line 1 patient_responsibility = \"1624.50\" yes. But S4 line 2 Delivery shows patient_responsibility \"2575.10\".\n\nThus the sheet that shows amount insurance says I owe is S4 (EOB). Provide citation: need to extract exact text from S4 describing patient_responsibility fields. Eg line_no 2 patient_responsibility \"2575.10\". Also maybe sum across lines equals something else. Use quoted numbers.\n\nSo answer: Sheet S4 shows the amount insurance says you owe; e.g., line 2 states patient_responsibility \"$2575.10\". Provide citation accordingly.\n\nMust include source type either sheet or policy. Here use sheet ref \"S4\" and quote the relevant piece.\n\nAnswer in plain english short."
+    },
+    "stop_reason": null,
+    "token_ids": null,
+    "routed_experts": null
+   }
+  ],
+  "created": 1793106505,
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.1.dev1+g5001743e3-tp2-05adddbc",
+  "usage": {
+   "completion_tokens": 425,
+   "prompt_tokens": 3674,
+   "total_tokens": 4099,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 321,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": {
+    "audio_tokens": null,
+    "cached_tokens": 0,
+    "created_cache_tokens": 0,
+    "multimodal_tokens": null
+   },
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 3674
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "prompt_text": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+ }
+}

@@ -1,0 +1,58 @@
+{
+ "request_id": "b02af850fcf4b4942f163789da5e56c6",
+ "response": {
+  "id": "chatcmpl-b02af850fcf4b4942f163789da5e56c6",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"items\": [{\"id\": \"subject\", \"text\": \"Disputa de facturaci\u00f3n: el importe no coincide con mi seguro\"}, {\"id\": \"p0\", \"text\": \"Mi estado de cuenta para la cuenta 44932556 enumera el mismo servicio dos veces: l\u00edneas 1 y 2, c\u00f3digo 01960, el 11 de febrero de 2025, $4,944.00 cada uno. Por favor elimine el duplicado y el cargo a m\u00ed por ello.\"}, {\"id\": \"p1\", \"text\": \"Por favor corrija el saldo o expl\u00edquelo por escrito. La ley de Florida pide al hospital que d\u00e9 una primera respuesta a una disputa de facturaci\u00f3n dentro de los 7 d\u00edas h\u00e1biles (Florida Statutes 395.301(6)).\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": "We need translation preserving numbers etc. Provide JSON-like list? Probably output similar format.",
+     "reasoning_content": "We need translation preserving numbers etc. Provide JSON-like list? Probably output similar format."
+    },
+    "stop_reason": null,
+    "token_ids": null,
+    "routed_experts": null
+   }
+  ],
+  "created": 1793106856,
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.1.dev1+g5001743e3-tp2-05adddbc",
+  "usage": {
+   "completion_tokens": 209,
+   "prompt_tokens": 339,
+   "total_tokens": 548,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 17,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": {
+    "audio_tokens": null,
+    "cached_tokens": 0,
+    "created_cache_tokens": 0,
+    "multimodal_tokens": null
+   },
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 339
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "prompt_text": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+ }
+}

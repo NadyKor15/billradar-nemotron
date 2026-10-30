@@ -1,0 +1,53 @@
+{
+ "request_id": "9f7efd9744e31719450402dad022ef8a",
+ "response": {
+  "id": "chatcmpl-9f7efd9744e31719450402dad022ef8a",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"answer\": \"With household income of $58,000 for 3 people, you are at 212.3% of the federal poverty guideline. According to the financial assistance policy (F1), that qualifies you for a 90% discount. For the bills on sheet D1 alone, that could reduce what you owe by about $1,399.71. That is the amount listed in finding F1.\\n\\nSources: policy F1: \\\"Household of 3, income $58,000: 212.3% of the poverty guideline. The policy gives 90% off at this level. Sheet D1 has no discount yet.\\\" amount: \\\"1399.71\\\"; finding F1: \\\"Household of 3, income $58,000: 212.3% of the poverty guideline. The policy gives 90% off at this level.\\\"}\", \"refused\": false, \"citations\": [{\"source\": \"policy\", \"ref\": \"F1\", \"quote\": \"Household of 3, income $58,000: 212.3% of the poverty guideline. The policy gives 90% off at this level. Sheet D1 has no discount yet.\"}, {\"source\": \"policy\", \"ref\": \"F1\", \"quote\": \"amount: 1399.71\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": null,
+     "reasoning_content": null
+    },
+    "stop_reason": null,
+    "token_ids": null
+   }
+  ],
+  "created": 1793106714,
+  "model": "nvidia/Nemotron-3_5-Lightning",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+   "completion_tokens": 316,
+   "prompt_tokens": 13622,
+   "total_tokens": 13938,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 0,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": {
+    "audio_tokens": null,
+    "cached_tokens": 10480
+   },
+   "prompt_cache_hit_tokens": 10480,
+   "prompt_cache_miss_tokens": 3142
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null
+ }
+}

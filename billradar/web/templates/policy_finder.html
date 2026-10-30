@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% from "_policy_finder.html" import policy_result, pf_style %}
+{% block title %}Find your hospital's policy · BillRadar{% endblock %}
+{% block body %}
+{{ pf_style() }}
+<section class="how pf-page">
+  <h1>Find your hospital's policy</h1>
+  <p class="lead">When a bill comes from a hospital that is not in BillRadar's checked base, BillRadar looks for that hospital's own financial assistance policy: Tavily searches only the hospital's site, Nemotron 3 Super copies the income tiers word for word, and code keeps a tier only if its quote and its numbers are in the policy's text.</p>
+  <p class="small"><b>{% if recorded %}Recorded live run, {{ recorded }}{% else %}Not recorded yet{% endif %}</b>{% if hospitals %}: {{ hospitals }} real hospitals in {{ states }} states (public policies, no bills){% endif %}. This page replays that run{% if credits is not none %}: {{ credits }} Tavily credits, ${{ "%.4f"|format(usd) }} of Nemotron{% endif %}. Policies change; check the hospital's own site before you apply. Nothing here promises a discount.</p>
+  {% for fp in results %}{{ policy_result(fp) }}{% endfor %}
+  <p class="small">The site comes from the bill, not from the search: a site printed on the bill is searched alone; without one, a site is taken only if its page shows the hospital's name and its city or ZIP; in doubt BillRadar asks "Is this your hospital?". The last two cards are the same hospital: first the search, then the family's "yes".</p>
+</section>
+{% endblock %}

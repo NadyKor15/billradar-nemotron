@@ -1,0 +1,41 @@
+SAMPLE - FICTIONAL PLAN DOCUMENT
+This document belongs to a demo. Sample Health Plan is not a real insurer, and nothing here describes a real plan.
+
+Sample Health Plan
+Summary Plan Description
+Employer group health plan, plan year 2026
+
+Appeals Department, Sample Health Plan, PO Box 12345, Riverton, ST 12345
+Member Services: 1-800-555-0100
+\f
+Section 2. What this plan covers
+
+2.1 Hospital care
+Medically necessary inpatient care for childbirth and delivery is covered.
+Care for a newborn child during the mother's covered inpatient stay is covered.
+Covered services are paid at the in-network level after the deductible, minus coinsurance.
+
+2.2 Prior authorization
+Some planned hospital stays need prior authorization from the plan.
+Prior authorization is not required for a hospital stay for childbirth of up to 48 hours after a vaginal delivery or 96 hours after a cesarean section.
+In emergency situations or when prior authorization cannot be obtained, covered services will not be denied solely for lack of prior authorization.
+\f
+Section 5. Explanation of Benefits remark codes
+
+P31 Prior authorization was not obtained for this service.
+M12 This service was not found to be medically necessary.
+N05 The patient was not enrolled in the plan on the date of service.
+CO2 Coinsurance amount.
+DD1 Deductible amount.
+\f
+Section 7. If we deny a claim: appeals
+
+7.1 How to appeal
+You may file an appeal within 180 days after you receive notice of a denial.
+Send your appeal in writing to: Appeals Department, Sample Health Plan, PO Box 12345, Riverton, ST 12345.
+Include your name, member ID, claim number, and the reason you disagree. You may include documents, records and written comments.
+You may ask for free copies of all documents, records and other information relevant to your claim.
+
+7.2 When we decide
+We will decide an appeal about care you already received within 60 days after we receive it.
+If we uphold the denial, our letter will explain your right to an external review by an independent reviewer.

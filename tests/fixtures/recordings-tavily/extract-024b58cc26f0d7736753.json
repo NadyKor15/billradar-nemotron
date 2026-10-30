@@ -1,0 +1,31 @@
+{
+ "request": {
+  "urls": [
+   "https://statutes.capitol.texas.gov/GetStatute.aspx?Code=HS&Value=311.045",
+   "https://statutes.capitol.texas.gov/GetStatute.aspx?Code=IN&Value=845.151"
+  ],
+  "extract_depth": "basic"
+ },
+ "response": {
+  "results": [
+   {
+    "url": "https://statutes.capitol.texas.gov/GetStatute.aspx?Code=HS&Value=311.045",
+    "title": "Texas Constitution and Statutes",
+    "raw_content": "[![Image of the Texas State Capitol. Click to return to the Texas Constitution and Statutes Homepage](/assets/images/capitolLarge.jpg)](/)[* Texas Constitution\n* and Statutes](/) [Skip To Main Content](/#main-content) \n\n\n# Texas Constitution and Statutes Home page\n\ninfo\n\nSite Information\n\nsearch\n\nSearch Options\n\nSelect Statute\n\nFind Statute\n\n  \n\n* Article/\n* Chapter:\n\nArt./Sec.:\n\n Texas Constitution and Statutes \n\nTexas Constitution\n\nAgriculture Code\n\nAlcoholic Beverage Code\n\nAuxiliary Water Laws\n\nBusiness & Commerce Code\n\nBusiness Organizations Code\n\nCivil Practice and Remedies Code\n\nCode of Criminal Procedure\n\nEducation Code\n\nElection Code\n\nEstates Code\n\nFamily Code\n\nFinance Code\n\nGovernment Code\n\nHealth and Safety Code\n\nHuman Resources Code\n\nInsurance Code\n\nInsurance Code - Not Codified\n\nLabor Code\n\nLocal Government Code\n\nNatural Resources Code\n\nOccupations Code\n\nParks and Wildlife Code\n\nPenal Code\n\nProbate Code\n\nProperty Code\n\nSpecial District Local Laws Code\n\nTax Code\n\nTransportation Code\n\nUtilities Code\n\nWater Code\n\nVernon's Civil Statutes",
+    "images": []
+   },
+   {
+    "url": "https://statutes.capitol.texas.gov/GetStatute.aspx?Code=IN&Value=845.151",
+    "title": "Texas Constitution and Statutes",
+    "raw_content": "[![Image of the Texas State Capitol. Click to return to the Texas Constitution and Statutes Homepage](/assets/images/capitolLarge.jpg)](/)[* Texas Constitution\n* and Statutes](/) [Skip To Main Content](/#main-content) \n\n\n# Texas Constitution and Statutes Home page\n\ninfo\n\nSite Information\n\nsearch\n\nSearch Options\n\nSelect Statute\n\nFind Statute\n\n  \n\n* Article/\n* Chapter:\n\nArt./Sec.:\n\n Texas Constitution and Statutes \n\nTexas Constitution\n\nAgriculture Code\n\nAlcoholic Beverage Code\n\nAuxiliary Water Laws\n\nBusiness & Commerce Code\n\nBusiness Organizations Code\n\nCivil Practice and Remedies Code\n\nCode of Criminal Procedure\n\nEducation Code\n\nElection Code\n\nEstates Code\n\nFamily Code\n\nFinance Code\n\nGovernment Code\n\nHealth and Safety Code\n\nHuman Resources Code\n\nInsurance Code\n\nInsurance Code - Not Codified\n\nLabor Code\n\nLocal Government Code\n\nNatural Resources Code\n\nOccupations Code\n\nParks and Wildlife Code\n\nPenal Code\n\nProbate Code\n\nProperty Code\n\nSpecial District Local Laws Code\n\nTax Code\n\nTransportation Code\n\nUtilities Code\n\nWater Code\n\nVernon's Civil Statutes",
+    "images": []
+   }
+  ],
+  "failed_results": [],
+  "response_time": 0.02,
+  "usage": {
+   "credits": 0
+  },
+  "request_id": "0a542fa1-62fe-4958-b114-b6bdc52e29f4"
+ }
+}

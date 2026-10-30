@@ -1,0 +1,199 @@
+{
+  "_note": "The 13 patient protections shown in the Laws block. Every ref must pass policy.verified().",
+  "hospitals": {
+    "memorial-2026-05": {
+      "state": "FL",
+      "nonprofit": true,
+      "source": "the hospital research note §1 and LEGAL-BASE.md §2.1 (special hospital district, 501(c)(3))"
+    },
+    "baptist-2026-09": {
+      "state": "FL",
+      "nonprofit": true,
+      "source": "research-2026-10-18/REPORT.md h6 (Baptist Health of South Florida Inc, 501(c)(3), confirmed in the FAP text)"
+    }
+  },
+  "protections": [
+    {
+      "id": "itemized-bill-7-days",
+      "n": 1,
+      "applies_to": "florida_hospital",
+      "cite": "Fla. Stat. 395.301(1)(e)",
+      "title": "Itemized bill within 7 days",
+      "plain": "Ask the hospital for an itemized bill. A Florida hospital must send it within 7 days of your request.",
+      "refs": [
+        "fl-395-301#itemized-on-request",
+        "fl-395-301#itemized-7-days"
+      ],
+      "checks": [
+        "I1"
+      ]
+    },
+    {
+      "id": "billing-answers",
+      "n": 2,
+      "applies_to": "florida_hospital",
+      "cite": "Fla. Stat. 395.301(4), (5)",
+      "title": "Answers about your bill in 7 business days",
+      "plain": "A Florida hospital must answer a question about your bill within 7 business days, and show the records behind the bill within 10 business days.",
+      "refs": [
+        "fl-395-301#answer-7-days",
+        "fl-395-301#records-10-days"
+      ],
+      "checks": []
+    },
+    {
+      "id": "nsa-ancillary",
+      "n": 3,
+      "applies_to": "insured",
+      "cite": "45 CFR 149.420",
+      "title": "Out-of-network specialists at an in-network hospital",
+      "plain": "At an in-network hospital, an out-of-network anesthesiologist, neonatologist, pathologist or radiologist can bill you only your in-network share. You cannot sign this protection away.",
+      "refs": [
+        "nsa-149-420#in-network-facility-cost-sharing",
+        "nsa-149-420#ancillary-no-waiver"
+      ],
+      "checks": [
+        "N1"
+      ]
+    },
+    {
+      "id": "nsa-emergency",
+      "n": 4,
+      "applies_to": "insured",
+      "cite": "45 CFR 149.410",
+      "title": "Emergency care at in-network prices",
+      "plain": "For emergency care, an out-of-network hospital or doctor can bill you only your in-network share.",
+      "refs": [
+        "nsa-149-410#emergency-cost-sharing",
+        "nsa-149-410#emergency-provider"
+      ],
+      "checks": [
+        "N1"
+      ]
+    },
+    {
+      "id": "fap-240-days",
+      "n": 5,
+      "applies_to": "nonprofit_hospital",
+      "cite": "26 CFR 1.501(r)-1(b)(3)",
+      "title": "At least 240 days to apply for financial assistance",
+      "plain": "A nonprofit hospital must accept your application for financial assistance for at least 240 days after the first bill after you left the hospital.",
+      "refs": [
+        "federal-501r#application-period"
+      ],
+      "checks": [
+        "F2"
+      ]
+    },
+    {
+      "id": "fap-refund",
+      "n": 6,
+      "applies_to": "nonprofit_hospital",
+      "cite": "26 CFR 1.501(r)-6(c)(6)",
+      "title": "Money back if you are approved",
+      "plain": "If you are approved for financial assistance, the hospital must refund what you already paid above your new amount, and undo collection actions.",
+      "refs": [
+        "federal-501r-6#refund-overpaid",
+        "federal-501r-6#reverse-eca"
+      ],
+      "checks": [
+        "F1",
+        "F3"
+      ]
+    },
+    {
+      "id": "agb-limit",
+      "n": 7,
+      "applies_to": "nonprofit_hospital",
+      "cite": "26 CFR 1.501(r)-5(a)",
+      "title": "No more than insured patients pay",
+      "plain": "If you qualify for financial assistance, a nonprofit hospital cannot charge you more than it generally bills people who have insurance (AGB).",
+      "refs": [
+        "federal-501r-5#agb-limit"
+      ],
+      "checks": [
+        "F1",
+        "F3"
+      ]
+    },
+    {
+      "id": "no-collections-120-days",
+      "n": 8,
+      "applies_to": "nonprofit_hospital",
+      "cite": "26 CFR 1.501(r)-6(c)(3), (4)",
+      "title": "No collections for 120 days, and written notice first",
+      "plain": "A nonprofit hospital cannot send you to collections, report you to credit bureaus or sue for at least 120 days after the first bill, and must warn you in writing at least 30 days before.",
+      "refs": [
+        "federal-501r-6#no-eca-120-days",
+        "federal-501r-6#notice-30-days"
+      ],
+      "checks": []
+    },
+    {
+      "id": "collections-paused",
+      "n": 9,
+      "applies_to": "nonprofit_hospital",
+      "cite": "26 CFR 1.501(r)-6(c)(8)",
+      "title": "Collections stop while your application is reviewed",
+      "plain": "Once you apply for financial assistance in time, the hospital and its collectors must pause collection actions until it decides.",
+      "refs": [
+        "federal-501r-6#suspend-eca-pending"
+      ],
+      "checks": []
+    },
+    {
+      "id": "no-denial-missing-documents",
+      "n": 10,
+      "applies_to": "nonprofit_hospital",
+      "cite": "26 CFR 1.501(r)-4(b)(3)(i)",
+      "title": "No denial for a document the form never asked for",
+      "plain": "The hospital cannot deny financial assistance because you did not send a document that its policy or form does not list.",
+      "refs": [
+        "federal-501r-4#no-denial-for-missing-documents"
+      ],
+      "checks": []
+    },
+    {
+      "id": "appeal-180-days",
+      "n": 11,
+      "applies_to": "insured",
+      "cite": "29 CFR 2560.503-1(h)(3)(i)",
+      "title": "At least 180 days to appeal a denial",
+      "plain": "An employer health plan must give you at least 180 days after a denial to appeal it, and decide the appeal of a past service within 60 days.",
+      "refs": [
+        "erisa-2560-503-1#appeal-180-days",
+        "erisa-2560-503-1#decide-post-service-60"
+      ],
+      "checks": [
+        "A1"
+      ]
+    },
+    {
+      "id": "estimate-and-dispute",
+      "n": 12,
+      "applies_to": "uninsured",
+      "cite": "45 CFR 149.610, 149.620",
+      "title": "Without insurance: an estimate first, and a dispute if the bill is $400 over",
+      "plain": "Without insurance you can ask for a good faith estimate before care. If the bill is at least $400 more than the estimate, you can dispute it within 120 days of the bill.",
+      "refs": [
+        "nsa-149-610#gfe-uninsured-3-days",
+        "nsa-149-620#ppdr-400-over-estimate",
+        "nsa-149-620#ppdr-120-days"
+      ],
+      "checks": []
+    },
+    {
+      "id": "lawsuit-3-years",
+      "n": 13,
+      "applies_to": "florida_hospital",
+      "cite": "Fla. Stat. 95.11(4)",
+      "title": "3 years to sue over a hospital debt",
+      "plain": "In Florida, a lawsuit to collect a hospital debt must be filed within 3 years from when the hospital sent the debt to collections.",
+      "refs": [
+        "fl-95-11#medical-debt-3-years"
+      ],
+      "checks": []
+    }
+  ],
+  "what_next_other_states": "Outside Florida the federal protections above still apply. Rules on itemized bills, answers about a bill and collection lawsuits differ by state: look up your state's hospital billing law."
+}

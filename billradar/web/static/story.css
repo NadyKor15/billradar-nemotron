@@ -1,0 +1,214 @@
+/* Scroll story on the home page (light, in tone with the cream site). story.js writes --p (0..1) for each episode
+   while it plays; without JS or with reduced motion --p stays 1, so every episode shows its end state. */
+.story { --gutter: max(16px, 4vw); position: relative; z-index: 1; }
+.ep { --p: 1; position: relative; }
+.story.live .ep { height: 220vh; }
+.ep-stick { position: relative; min-height: 100vh; overflow: hidden; display: grid; align-items: center;
+  grid-template-columns: minmax(320px, 33%) 1fr; gap: 3vw; padding: 56px calc(var(--gutter) + 90px) 48px var(--gutter); background: var(--cream); }
+.story.live .ep-stick { position: sticky; top: 0; height: 100vh; height: 100svh; }  /* svh: the visible height in Safari, with its bars */
+.story.live .ep4 { height: auto; }  /* the letter plays by itself (story.js): no pin, nothing to scroll through */
+.story.live .ep4 .ep-stick { position: relative; }
+.plate, .plate img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.plate { z-index: 0; }
+.ep-stick::after { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;  /* a clean column for the text */
+  background: linear-gradient(90deg, rgba(248, 243, 234, .94) 0, rgba(248, 243, 234, .82) 26%, rgba(248, 243, 234, 0) 44%); }
+.ep3 .ep-stick::after { background: radial-gradient(ellipse 48% 52% at 50% 50%, rgba(248, 243, 234, .9), rgba(248, 243, 234, 0)); }
+.ep-text, .ep-art, .ep-center { position: relative; z-index: 1; }
+.ep-text h2 { font: 800 clamp(36px, 3.7vw, 60px)/1.04 var(--head); color: var(--teal-ink); letter-spacing: -.02em; margin: 0 0 18px; }
+.ep-sub { font: 500 clamp(18px, 1.7vw, 26px)/1.35 var(--head); color: var(--ink); margin: 0 0 22px; max-width: 30ch; }
+.ep-text .model { font-size: 15px; padding: 8px 14px; }
+.dots { position: absolute; right: var(--gutter); top: 50%; transform: translateY(-50%); list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 34px; z-index: 2; }
+.dots li { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--gold-line); background: var(--paper); }
+.dots li.on { background: var(--gold); border-color: var(--gold); font: 600 14px var(--head); color: var(--teal-ink); white-space: nowrap; text-indent: -58px; line-height: 9px; }
+.ep-art { position: relative; height: min(64vh, 600px); }
+.scroll-hint { position: absolute; z-index: 2; left: var(--gutter); bottom: 26px; margin: 0; text-align: left;
+  font: 600 13px var(--head); letter-spacing: .14em; text-transform: uppercase; color: var(--teal-ink); opacity: calc(.85 - var(--p) * 8); }
+.story:not(.live) .scroll-hint { display: none; }
+.scroll-hint i { display: block; width: 2px; height: 26px; margin: 8px 0 0 18px; background: linear-gradient(var(--gold), transparent); animation: hint 1.6s ease-in-out infinite; }
+@keyframes hint { 50% { transform: translateY(6px); } }
+
+/* 1 — the sheets lie in a glowing pile on the table, rise, stand up and line up along a gold arc, numbered */
+.ep1 { --pile-y: 34vh; --pile-x: 105%; --step-x: 82%; --step-y: 3vh; }  /* the pile: where sheet 1 lies, and how far each next one is from its place */
+.ep1 .ep-art { perspective: 1400px; }
+.wave { position: absolute; left: -6%; right: -4%; top: 0; width: 110%; height: 78%; overflow: visible; }
+.wave path { fill: none; stroke: url(#wg); stroke-width: 5; stroke-linecap: round; filter: drop-shadow(0 0 8px rgba(240, 196, 100, .9));
+  stroke-dasharray: 1; stroke-dashoffset: calc(1 - clamp(0, (var(--p) - .25) * 2, 1)); }
+.sheet { --a: clamp(0, (var(--p) - .04 - var(--i) * .06) * 2.2, 1); position: absolute; margin: 0; width: 22%; left: calc(var(--i) * 18%);
+  top: calc(2% + var(--i) * 7%); background: var(--paper); border-radius: 6px; transform-origin: 50% 100%;
+  box-shadow: 0 0 calc((1 - var(--a)) * 46px) rgba(245, 205, 110, calc(.9 - var(--a) * .9)), 0 30px 50px -18px rgba(70, 50, 20, .35), 0 4px 10px rgba(70, 50, 20, .12);
+  transform: translate(calc((1 - var(--a)) * (var(--pile-x) - var(--i) * var(--step-x) + var(--jx))), calc((1 - var(--a)) * (var(--pile-y) - var(--i) * var(--step-y))))
+    rotateX(calc((1 - var(--a)) * 62deg + var(--a) * 4deg)) rotateY(calc(var(--a) * -16deg)) rotate(calc((1 - var(--a)) * var(--r0) + var(--a) * var(--rz)))
+    scale(calc(.86 + var(--a) * .14)); }
+.sheet.s1 { --jx: -20%; --r0: -24deg; --rz: -3deg; } .sheet.s2 { --jx: 25%; --r0: 14deg; --rz: -1deg; } .sheet.s3 { --jx: -35%; --r0: 34deg; --rz: 1deg; }
+.sheet.s4 { --jx: 10%; --r0: -10deg; --rz: 2deg; } .sheet.s5 { --jx: 40%; --r0: 22deg; --rz: 3deg; }
+.sheet img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: top; border-radius: 6px; }
+.sheet b { position: absolute; top: -22px; left: 50%; width: 44px; height: 44px; margin-left: -22px; border-radius: 50%; display: grid; place-items: center;
+  font: 800 21px var(--head); color: #fff; background: radial-gradient(circle at 35% 30%, #f0cc7a, var(--gold) 70%);
+  box-shadow: 0 0 0 4px rgba(255, 240, 200, .75), 0 0 18px rgba(240, 196, 100, .8), var(--shadow); transform: scale(clamp(0, (var(--a) - .7) * 4, 1)); }
+
+/* 2 — a bright gold beam goes down the bill; behind it every name turns into a teal lock token */
+.ep2 .plate img { filter: sepia(.4) saturate(1.3) hue-rotate(-10deg) brightness(1.05); }
+.ep2 .ep-art { display: grid; place-items: center; perspective: 1600px; }
+.bill { position: relative; width: min(720px, 100%); background: var(--paper); border-radius: 12px; padding: 34px 40px; overflow: hidden;
+  box-shadow: 0 40px 70px -24px rgba(70, 50, 20, .4), 0 6px 16px rgba(70, 50, 20, .12); font-size: 16px;
+  transform: rotateY(-9deg) rotateX(5deg) rotate(-1.5deg); --b: clamp(0, (var(--p) - .1) * 1.4, 1); }
+.bill-head { display: flex; align-items: baseline; gap: 14px; border-bottom: 1px solid var(--line); padding-bottom: 14px; margin-bottom: 16px; }
+.bill-head b { font: 800 26px var(--head); color: var(--teal-ink); }
+.bill-head span { color: var(--muted); font-size: 15px; flex: 1; }
+.bill-head em { font: 800 14px var(--head); color: var(--red); border: 2px solid var(--red); border-radius: 4px; padding: 1px 7px; font-style: normal; opacity: .7; transform: rotate(-6deg); }
+.bill-ids { margin: 0 0 18px; display: grid; gap: 10px; }
+.bill-ids div { --t: clamp(0, (var(--b) - var(--r) * .17 - .12) * 8, 1); display: grid; grid-template-columns: 170px 1fr; align-items: center; min-height: 34px; }
+.bill-ids dt { color: var(--muted); font-size: 15px; }
+.bill-ids dd { margin: 0; display: grid; }
+.bill-ids dd > * { grid-area: 1 / 1; align-self: center; }
+.bill-ids .real { font-weight: 600; opacity: calc(1 - var(--t)); filter: blur(calc(var(--t) * 4px)); }
+.bill-ids .tok { justify-self: start; font: 700 15px var(--head); color: #fff; background: linear-gradient(180deg, #17867c, var(--teal-dark));
+  border-radius: 8px; padding: 6px 14px; box-shadow: 0 6px 14px rgba(13, 95, 89, .28); opacity: var(--t); transform: scale(calc(.85 + var(--t) * .15)); }
+.bill-lines { width: 100%; border-collapse: collapse; }
+.bill-lines td { padding: 7px 0; border-top: 1px dashed var(--line); }
+.bill-lines td:last-child { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+.beam { position: absolute; left: -10%; right: -10%; height: 150px; top: calc(var(--b) * 118% - 90px); pointer-events: none; mix-blend-mode: multiply;
+  background: linear-gradient(180deg, transparent, rgba(240, 190, 80, .28) 30%, rgba(232, 170, 50, .62) 49%, rgba(232, 170, 50, .62) 51%, rgba(240, 190, 80, .28) 70%, transparent);
+  opacity: calc(1 - clamp(0, (var(--b) - .92) * 12, 1)); }
+.beam::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 3px; margin-top: -1.5px; mix-blend-mode: normal;
+  background: linear-gradient(90deg, transparent, #fff8e0 20%, #fff 50%, #fff8e0 80%, transparent); box-shadow: 0 0 18px 6px rgba(255, 220, 140, .9); }
+
+/* 3 — the sum counts up, then the three reasons */
+.ep3 .ep-stick { grid-template-columns: 1fr; text-align: center; padding-left: calc(var(--gutter) + 90px); }
+.ep-center { display: grid; justify-items: center; }
+.ep3 .ep-sub { margin: 0; max-width: none; font-size: clamp(20px, 2vw, 30px); color: var(--teal-ink); }
+.big { font: 800 clamp(96px, 13vw, 210px)/1.05 var(--head); letter-spacing: -.03em; margin: 4px 0 26px; padding: 0 .05em; font-variant-numeric: tabular-nums;
+  background: linear-gradient(180deg, #2bb0a2 0%, #13807a 45%, #0b4f4a 100%); -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 8px 0 rgba(11, 79, 74, .12)) drop-shadow(0 0 42px rgba(236, 188, 90, .6));
+  transform: scale(calc(.9 + clamp(0, var(--p) * 2, 1) * .1)); }
+.cards { list-style: none; margin: 0 0 22px; padding: 0; display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; }
+.cards li { --a: clamp(0, (var(--p) - .5 - var(--i) * .1) * 6, 1); display: flex; align-items: center; gap: 12px; background: var(--paper); border: 1px solid var(--gold-line);
+  border-radius: 16px; box-shadow: 0 18px 34px -14px rgba(150, 105, 25, .35); padding: 14px 22px 14px 14px; font: 700 18px var(--head); color: var(--teal-ink);
+  opacity: var(--a); transform: translateY(calc((1 - var(--a)) * 30px)); }
+.cards .ic { width: 40px; height: 40px; padding: 8px; border-radius: 50%; color: #9a6f1e; background: var(--gold-soft); box-shadow: inset 0 0 0 1px var(--gold-line); flex: none; }
+.ep-note { color: var(--muted); font-size: 14px; margin: 0; opacity: clamp(0, (var(--p) - .8) * 6, 1); }
+
+/* 4 — the letter types itself, the pen signs, then the envelope and the buttons */
+.ep4 .ep-art { display: grid; place-items: center start; }
+.letter-wrap { position: relative; width: min(520px, 100%); }
+.letter-paper { position: relative; background: var(--paper); border-radius: 8px; padding: 32px 36px 26px;
+  box-shadow: 0 36px 60px -22px rgba(70, 50, 20, .38), 0 5px 14px rgba(70, 50, 20, .1); transform: rotate(-1.5deg); font-size: 15px; line-height: 1.55; }
+.lp-to { color: var(--muted); font-size: 13px; margin: 0 0 10px; }
+.letter-paper h3 { font: 800 22px var(--head); color: var(--teal-ink); margin: 0 0 12px; }
+.lp-body { margin: 0 0 14px; white-space: pre-line; min-height: 9.5em; }
+.lp-sign { margin: 0; }
+.sig { display: block; width: 210px; height: 60px; margin: 2px 0 0 -6px; }
+.sig path { fill: none; stroke: #1f3f8a; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1;
+  stroke-dashoffset: calc(1 - clamp(0, (var(--p) - .55) * 4.5, 1)); }
+.lp-name { margin: 0; font-weight: 600; }
+.envelope { position: absolute; z-index: -1; right: -168px; bottom: 26px; width: 240px; height: 150px; border-radius: 8px; background: #fbf6ec;
+  box-shadow: 0 24px 40px -16px rgba(70, 50, 20, .35); --a: clamp(0, (var(--p) - .82) * 7, 1); opacity: var(--a); transform: translate(calc((1 - var(--a)) * -60px), calc((1 - var(--a)) * 30px)) rotate(7deg); }
+.envelope::before { content: ""; position: absolute; inset: 0; background: linear-gradient(155deg, transparent 49%, var(--line) 50%, transparent 51%), linear-gradient(25deg, transparent 49%, var(--line) 50%, transparent 51%); }
+.envelope::after { content: ""; position: absolute; left: 50%; top: 48%; width: 30px; height: 30px; margin: -15px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #e7bf67, var(--gold) 70%); }
+.ep-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin: 6px 0 0; --a: clamp(0, (var(--p) - .82) * 7, 1); opacity: var(--a); transform: translateY(calc((1 - var(--a)) * 16px)); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* phones: text on top, the picture below; pins are shorter */
+@media (max-width: 760px) {
+  .story.live .ep { height: 190vh; height: 190svh; } .story.live .ep4 { height: auto; }
+  .ep-stick, .ep3 .ep-stick { grid-template-columns: 1fr; align-content: start; gap: 16px; padding: 60px 16px 20px; }  /* room for Safari's floating bar */
+  .ep-stick::after { background: linear-gradient(180deg, rgba(248, 243, 234, .95) 0, rgba(248, 243, 234, .86) 34%, rgba(248, 243, 234, 0) 58%); }
+  .ep-text h2 { font-size: 32px; margin-bottom: 10px; }
+  .ep-sub { font-size: 18px; margin-bottom: 14px; }
+  .ep-ctas { flex-wrap: wrap; gap: 8px; } .ep-ctas .btn { width: auto; flex: 0 0 auto; min-height: 44px; padding: 0 18px; font-size: 15px; }  /* both buttons whole on a phone */
+  .dots { display: none; }
+  .ep1 { --pile-y: 21vh; --pile-x: 90%; --step-x: 47%; --step-y: 4.7vh; }
+  .ep1 .plate img { object-position: 18% 100%; }
+  .ep4 .plate img { object-position: 85% 50%; }
+  .ep-art { height: 52vh; }
+  .sheet { width: 36%; left: calc(var(--i) * 17%); top: calc(10% + var(--i) * 9%); }
+  .sheet b { width: 34px; height: 34px; margin-left: -17px; top: -16px; font-size: 17px; }
+  .bill { padding: 18px; font-size: 14px; transform: rotate(-1.5deg); } .bill-head b { font-size: 20px; } .bill-head span { font-size: 12px; }
+  .bill-ids div { grid-template-columns: 110px 1fr; } .bill-ids .tok { font-size: 13px; padding: 4px 10px; } .bill-lines tr:nth-child(n + 4) { display: none; }
+  .ep3 .ep-stick { align-content: center; }
+  .big { font-size: clamp(60px, 19vw, 110px); }
+  .cards { gap: 10px; } .cards li { font-size: 16px; padding: 10px 16px 10px 10px; } .cards .ic { width: 34px; height: 34px; padding: 6px; }
+  .ep-note { padding: 0 8px; }
+  .letter-paper { padding: 14px 16px; font-size: 13px; line-height: 1.45; } .letter-paper h3 { font-size: 17px; margin-bottom: 6px; }
+  .lp-to { display: none; } .lp-body { min-height: 0; margin-bottom: 8px; } .sig { width: 170px; height: 46px; }  /* letter, pen and buttons in one phone screen */
+  .ep4 .ep-stick { gap: 12px; }
+  .envelope { width: 120px; height: 76px; right: -14px; bottom: -40px; }
+  .scroll-hint { bottom: 14px; }
+}
+@media (prefers-reduced-motion: reduce) { .story .ep { --p: 1 !important; height: auto !important; } .story .ep-stick { position: relative !important; height: auto !important; } }
+
+/* 1+ — the real photo with the boxes Super VL drew; each sheet leaves its box and lines up */
+.receipt-line { margin: 16px 0 0; font: 500 15px/1.4 var(--head); color: var(--muted); }
+.receipt-line b { color: var(--teal-ink); font-weight: 800; font-variant-numeric: tabular-nums; }
+.receipt-line span { display: block; font-size: 13px; }
+.ep1 .stage { height: auto; width: 100%; aspect-ratio: var(--ar); align-self: center; }
+.photo { position: absolute; left: 0; margin: 0; border-radius: 8px; background: #f1ece2; box-shadow: 0 30px 60px -20px rgba(70, 50, 20, .45), 0 4px 12px rgba(70, 50, 20, .15);
+  --f: clamp(0, var(--p) * 4, 1); transform-origin: 50% 100%;  /* lies on the table, stands up before the sheets leave it */
+  transform: perspective(1100px) rotateX(calc((1 - var(--f)) * 34deg)) rotate(calc(-2deg - (1 - var(--f)) * 4deg)) scale(calc(.94 + var(--f) * .06)); opacity: calc(1 - clamp(0, (var(--p) - .85) * 3, .45)); }
+.photo img, .photo svg { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 8px; }
+.photo img { object-fit: cover; }
+.photo rect { fill: rgba(240, 196, 100, .08); stroke: #e0a93a; stroke-width: 22; stroke-dasharray: 1; filter: drop-shadow(0 0 14px rgba(240, 190, 80, .9));
+  stroke-dashoffset: calc(1 - clamp(0, (var(--p) - var(--i) * .04) * 5, 1)); }
+.photo-cap { position: absolute; left: 0; width: 44%; top: calc(8% + 78.4% + 14px); margin: 0; text-align: center; font: 700 13px var(--head); color: var(--teal-ink);
+  background: rgba(255, 253, 249, .9); border-radius: 999px; padding: 4px 10px; box-sizing: border-box; }  /* flat, never tilted with the photo */
+.sheet2 { --a: clamp(0, (var(--p) - .25 - var(--i) * .07) * 2.6, 1); position: absolute; margin: 0; background: var(--paper); border-radius: 5px;
+  left: calc(var(--x0) + (48% + var(--i) * 10% - var(--x0)) * var(--a)); top: calc(var(--y0) + (4% + var(--i) * 10% - var(--y0)) * var(--a));
+  width: calc(var(--w0) + (17% - var(--w0)) * var(--a)); opacity: clamp(0, var(--a) * 8, 1);
+  box-shadow: 0 0 calc((1 - var(--a)) * 30px) rgba(245, 205, 110, .9), 0 30px 50px -18px rgba(70, 50, 20, calc(var(--a) * .35));
+  transform: perspective(1200px) rotateY(calc(var(--a) * -14deg)) rotate(calc(var(--a) * (var(--i) * 1.5deg - 2deg))); }
+.sheet2 img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: top; border-radius: 5px; }
+.sheet2 b { position: absolute; top: -20px; left: 50%; width: 40px; height: 40px; margin-left: -20px; border-radius: 50%; display: grid; place-items: center;
+  font: 800 19px var(--head); color: #fff; background: radial-gradient(circle at 35% 30%, #f0cc7a, var(--gold) 70%);
+  box-shadow: 0 0 0 4px rgba(255, 240, 200, .75), 0 0 18px rgba(240, 196, 100, .8); transform: scale(clamp(0, (var(--a) - .6) * 3, 1)); }
+
+/* 2+ — what the model got: the request text, word for word, slides in beside the bill */
+.ep2 .ep-art { position: relative; }
+.sent { position: absolute; right: -3%; bottom: -4%; width: min(440px, 64%); background: rgba(255, 253, 249, .97); border: 1px solid var(--teal-line); border-radius: 14px;
+  box-shadow: 0 30px 60px -20px rgba(13, 61, 58, .45); padding: 16px 18px 12px; --s: clamp(0, (var(--p) - .62) * 4, 1);
+  opacity: var(--s); transform: translateX(calc((1 - var(--s)) * 60px)); }
+.sent-h { margin: 0 0 8px; font: 700 14px var(--head); color: var(--teal-ink); }
+.sent pre { margin: 0; white-space: pre-wrap; word-break: break-word; font: 12px/1.5 ui-monospace, "SF Mono", Menlo, monospace; color: #34413f; max-height: 13.5em; overflow: hidden; }
+.sent mark { background: var(--teal); color: #fff; border-radius: 4px; padding: 0 3px; }
+.sent-f { margin: 8px 0 0; font-size: 12px; color: var(--muted); }
+.sent-f.short { display: none; }
+@media (max-width: 760px) {
+  .ep1 .stage { aspect-ratio: var(--ar); }
+  .photo-cap { font-size: 11px; width: 70%; padding: 3px 8px; }
+  .photo { opacity: 1; } .photo rect { stroke-width: 34; fill: rgba(240, 196, 100, .14); }
+  .sheet2 b { width: 28px; height: 28px; margin-left: -14px; top: -12px; font-size: 14px; }
+  .receipt-line { margin-top: 10px; font-size: 14px; }
+  .ep2 .ep-art { height: auto; display: grid; gap: 12px; }  /* the request sits under the bill, never over it */
+  .sent { position: relative; right: auto; bottom: auto; width: auto; padding: 12px; background: var(--paper); transform: translateY(calc((1 - var(--s)) * 20px)); }
+  .sent pre { max-height: 4.5em; font-size: 11px; } .sent-f { font-size: 11px; }
+  .ep2 .bill-lines { display: none; }
+  .ep2 .ep-text .model { display: none; } .ep2 .ep-sub { margin-bottom: 4px; }
+  .ep2 .bill-ids div { grid-template-columns: 124px 1fr; min-height: 26px; } .ep2 .bill-ids dt { font-size: 13px; } .ep2 .bill-head { padding-bottom: 8px; margin-bottom: 8px; }
+  .sent-f.long { display: none; } .sent-f.short { display: block; }  /* on a phone the names and tokens are the point; the panel needs the room */ .ep2 .bill-ids { gap: 4px; margin-bottom: 10px; } .ep2 .bill-ids div { min-height: 30px; } .ep2 .ep-stick { gap: 12px; }
+}
+
+/* the try block after the story */
+.story-try { position: relative; z-index: 1; padding: 72px var(--gutter) 56px; background: var(--cream); display: grid; justify-items: center; text-align: center; }
+.story-try h2 { font: 800 clamp(30px, 3vw, 46px)/1.1 var(--head); color: var(--teal-ink); margin: 0 0 26px; }
+.story-try ol { list-style: none; counter-reset: s; margin: 0 0 28px; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; max-width: 1120px; text-align: left; }
+.story-try li { counter-increment: s; background: var(--paper); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); padding: 22px 22px 22px 70px; position: relative; font-size: 15px; line-height: 1.5; }
+.story-try li::before { content: counter(s); position: absolute; left: 20px; top: 20px; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center;
+  font: 800 17px var(--head); color: #fff; background: radial-gradient(circle at 35% 30%, #f0cc7a, var(--gold) 70%); }
+.story-try .note { margin: 16px 0 0; color: var(--muted); font-size: 14px; }
+@media (max-width: 760px) { .story-try { padding: 48px 16px 36px; } .story-try ol { grid-template-columns: 1fr; } }
+
+/* a slight tilt after the pointer, desktop only (story.js sets --tx, --ty, --m) */
+.story.tilt .ep-art { perspective: 1400px; }
+.story.tilt .sheet2, .story.tilt .bill, .story.tilt .letter-paper, .story.tilt .photo {
+  rotate: calc(var(--ty, 0) * -1) calc(var(--tx, 0) + .0001) 0 calc(var(--m, 0) * 6deg); translate: calc(var(--tx, 0) * 6px) calc(var(--ty, 0) * 4px);
+  transition: rotate .25s ease-out, translate .25s ease-out; }
+@media (max-width: 380px) { .ep2 .bill-head span { display: none; } .ep2 .ep-text h2 { font-size: 29px; } .sent pre { max-height: 3em; } }
+.ep-kicker { margin: 0 0 16px; font: 700 15px/1.4 var(--head); color: var(--teal-dark); max-width: 34ch; }  /* what the product is, before the story starts */
+@media (max-width: 760px) { .ep-kicker { font-size: 13px; margin-bottom: 8px; } }
+.home-strip { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin: 40px 0 18px; padding: 24px 28px;
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--r); box-shadow: var(--shadow); }  /* one way in after the story */
+.home-strip p { margin: 0; max-width: 56ch; font-size: 17px; line-height: 1.45; }
+.home-strip .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+@media (max-width: 760px) { .home-strip { padding: 18px 16px; } .home-strip .cta .btn { width: 100%; } }
+@media (max-width: 380px) { .letter-paper { font-size: 12.5px; } .ep4 .ep-sub { margin-bottom: 8px; } }

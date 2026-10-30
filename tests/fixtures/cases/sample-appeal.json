@@ -1,0 +1,52 @@
+{
+  "_note": "SYNTHETIC. Fictional family, fictional hospital letterhead, fictional insurer (Sample Health Plan). A claim denied for missing prior authorization.",
+  "case_id": "sample-appeal",
+  "letterhead": "Lakeview Demo Hospital",
+  "policy_id": "memorial-2026-05",
+  "today": "2026-10-27",
+  "demo": true,
+  "profile": {
+    "household_size": 3,
+    "annual_income": "61000",
+    "insured": true,
+    "people": [
+      {"token": "PATIENT_1", "role": "mother"},
+      {"token": "PATIENT_2", "role": "newborn"}
+    ]
+  },
+  "documents": [
+    {
+      "doc_id": "S1",
+      "source": "paper",
+      "kind": "hospital_statement",
+      "patient": "PATIENT_1",
+      "provider": "Lakeview Demo Hospital",
+      "account_ref": "[ACCT_1]",
+      "statement_date": "2026-10-20",
+      "service_from": "2026-07-14",
+      "service_to": "2026-07-16",
+      "total_charges": "11240.00",
+      "insurance_paid": "2650.00",
+      "patient_balance": "7252.30",
+      "lines": [
+        {"line_no": 1, "service_date": "2026-07-14", "code": "0112", "description": "Room and board", "charges": "6840.00", "patient_responsibility": "6840.00", "claim_ref": "CLM-7765301"},
+        {"line_no": 2, "service_date": "2026-07-14", "code": "59409", "description": "Vaginal delivery", "charges": "4400.00", "patient_responsibility": "412.30", "claim_ref": "CLM-7765302"}
+      ]
+    },
+    {
+      "doc_id": "S2",
+      "source": "paper",
+      "kind": "eob",
+      "patient": "PATIENT_1",
+      "provider": "Sample Health Plan",
+      "member_ref": "[MEMBER_1]",
+      "statement_date": "2026-10-15",
+      "service_from": "2026-07-14",
+      "service_to": "2026-07-16",
+      "lines": [
+        {"line_no": 1, "service_date": "2026-07-14", "code": "0112", "description": "Room and board", "charges": "6840.00", "insurance_paid": "0.00", "patient_responsibility": "6840.00", "claim_ref": "CLM-7765301", "denial_codes": "P31"},
+        {"line_no": 2, "service_date": "2026-07-14", "code": "59409", "description": "Vaginal delivery", "charges": "4400.00", "insurance_paid": "2650.00", "patient_responsibility": "412.30", "claim_ref": "CLM-7765302", "denial_codes": "CO2"}
+      ]
+    }
+  ]
+}

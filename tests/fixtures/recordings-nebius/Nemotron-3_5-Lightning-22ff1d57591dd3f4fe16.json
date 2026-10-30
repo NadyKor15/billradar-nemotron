@@ -1,0 +1,50 @@
+{
+ "request_id": "9c047a8afb268f01a99d277388094f20",
+ "response": {
+  "id": "chatcmpl-e47884f1",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"items\": [{\"id\": \"subject\", \"text\": \"Disputa de factura: el mismo servicio facturado dos veces\"}, {\"id\": \"p0\", \"text\": \"Mi factura para la cuenta 44932556 lista el mismo servicio dos veces: l\u00edneas 1 y 2, c\u00f3digo 01960, el 11 de febrero de 2025, $4,944.00 cada una. Por favor, elimine el cargo duplicado y mi cuota de $196.82 por \u00e9l, ya que mi hoja de seguros lo muestra.\"}, {\"id\": \"p1\", \"text\": \"Por favor, corrija el balance, o expl\u00edquelo por escrito. La ley de Florida exige al hospital dar una primera respuesta a una disputa de factura dentro de 7 d\u00edas h\u00e1biles (Florida Statutes 395.301(6)).\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": null,
+     "reasoning_content": null
+    },
+    "stop_reason": null,
+    "token_ids": null
+   }
+  ],
+  "created": 1793277493,
+  "model": "nvidia/Nemotron-3_5-Lightning",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+   "completion_tokens": 209,
+   "prompt_tokens": 455,
+   "total_tokens": 664,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 0,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": null,
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 455
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null
+ }
+}

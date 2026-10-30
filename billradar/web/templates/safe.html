@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Is it safe? · BillRadar{% endblock %}
+{% block body %}
+<section class="safe">
+  <div>
+    <h1>Is it safe?</h1>
+    <p class="lead">We hide names before anything reaches the cloud.</p>
+    <div class="lockline"><span class="lk"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10V7a5 5 0 0110 0v3h1.5v11h-13V10zm2 0h6V7a3 3 0 00-6 0z"/></svg></span>Names hidden before upload<span class="sep"></span><span class="model device">On this device</span></div>
+    {% if pair %}<div class="safe-pair">
+      <figure><a href="{{ pair[0] }}"><img src="{{ pair[0] }}" alt="Sheet 1 as photographed"></a><figcaption>As you photographed it<small>stays on this device</small></figcaption></figure>
+      <figure><a href="{{ pair[1] }}"><img src="{{ pair[1] }}" alt="Sheet 1 with names and numbers covered"></a><figcaption>What the model got<small>names, member IDs, account numbers and addresses covered</small></figcaption></figure>
+    </div>
+    <div class="safe-zoom" aria-label="The same corner of the sheet, up close">
+      <figure><div class="zoom" role="img" aria-label="Name and address as photographed" style="background-image: url('{{ pair[0] }}')"></div><figcaption>Up close, as you photographed it</figcaption></figure>
+      <figure><div class="zoom" role="img" aria-label="The same place with tokens instead of the name and address" style="background-image: url('{{ pair[1] }}')"></div><figcaption>Up close, what the model got</figcaption></figure>
+    </div>
+    {% if sent_is_example %}<p class="known-gap">Covered on the device: names, member and account numbers, addresses with the apartment and ZIP+4, claim and statement codes, mailing lines and barcodes. Each sheet is read again before it leaves; if any of them can still be read, it is not sent.</p>{% endif %}{% elif sent %}<div class="safe-art"><img src="{{ sent[0] }}" alt="The copy the models got: names and account numbers covered"></div>{% endif %}
+  </div>
+  <div class="facts">
+    <div class="fact"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 18h10a4 4 0 00.5-8 6 6 0 00-11.4-1.5A4.5 4.5 0 007 18z"/><rect x="9.5" y="11.5" width="5" height="4" rx="1"/><path d="M10.5 11.5v-1a1.5 1.5 0 013 0v1"/></svg></span>
+      <div><h3>What goes to the cloud</h3><div class="sub">Only the covered copy.</div><p>Names, member IDs, addresses, phone and account numbers are covered on this device first. Dates, codes and amounts stay readable so the bill can be checked.</p></div></div>
+    <div class="fact"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 16h6"/></svg></span>
+      <div><h3>What stays with you</h3><div class="sub">Your originals and names.</div><p>The photos as you took them and the real names are kept with this case only. Letters get the names back on this device, for you to sign.</p></div></div>
+    <div class="fact"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#b98a33" stroke-width="1.8"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/></svg></span>
+      <div><h3>Delete this case anytime</h3><p>Removes the case and everything made for it: photos, sheets, letters and forms.</p></div>
+      {% if deletable %}<form method="post" action="/cases/{{ case_id }}/delete" onsubmit="return confirm('Delete this case and everything made for it? This cannot be undone.')"><button class="btn ghost" type="submit">Delete case</button></form>
+      {% elif case_id %}<span class="small">Only the browser that made this case can delete it.</span>
+      {% else %}<span class="small">Open a case to delete it.</span>{% endif %}</div>
+    {% if static %}<p class="small">This public copy counts page views anonymously. No bill data, names or files are sent.</p>{% endif %}
+    <div class="saw">
+      <div class="saw-head"><h3>What the models saw</h3><span class="switch" aria-hidden="true"></span></div>
+      <p>{% if sent_is_example %}From the sample case: the exact covered copy sent to the models.{% else %}The exact covered copy sent to the models for this case.{% endif %}</p>
+      {% if sent %}<img src="{{ sent[-1] }}" alt="What the models got, names covered">{% endif %}
+    </div>
+  </div>
+</section>
+{% endblock %}

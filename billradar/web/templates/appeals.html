@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}Your letters and appeals · BillRadar{% endblock %}
+{% set LABEL = {"prepared": "Prepared", "sent": "Sent", "waiting": "Waiting for reply", "reply": "Reply received", "next": "Next step"} %}
+{% block body %}
+<div class="appeals">
+  <section>
+    <a class="back" href="/cases/{{ case_id }}">‹ Back to the case</a>
+    <div class="eyebrow wide">Appeal and letters</div>
+    <h1>Track your appeals and letters,<br>from sent to <mark>resolved.</mark></h1>
+    <p class="lead">See where each letter stands and what comes next. We remind you before the deadlines.</p>
+    {% if current %}
+    <ol class="track" aria-label="{{ current.title }}">
+      {% for st in steps %}{% set i = steps.index(current.status) %}
+      <li class="{{ 'done' if loop.index0 < i else ('on' if loop.index0 == i else '') }}"><span class="n">{{ loop.index }}</span>
+        <b>{{ LABEL[st] }}</b>
+        {% if st == "sent" and current.sent_on %}<small>{{ current.sent_on.strftime("%b %-d, %Y") }}{% if current.confirmation %} · {{ current.confirmation }}{% endif %}</small>{% endif %}
+        {% if st == "waiting" and current.day %}<small>day {{ current.day }} of {{ current.of }}</small>{% endif %}
+        {% if st == "sent" and current.key.startswith("appeal-") %}{% if mdl.portal %}<span class="model">{{ mdl.portal }}</span>{% endif %}{% endif %}
+      </li>{% endfor %}
+    </ol>
+    {% endif %}
+    <h2 class="section-title">Your letters and appeals</h2>
+    <p class="small">A quick view of where things stand and what to do next.</p>
+    <div class="tcards">
+      {% for r in rows %}
+      <a class="tcard{% if current and r.key == current.key %} sel{% endif %}" href="/cases/{{ case_id }}/appeals?key={{ r.key }}">
+        <b>{{ r.title }}</b><small>{{ r.to.split("\n")[0] }}</small>
+        <span class="st {{ r.status }}">{{ LABEL[r.status]|lower }}</span>
+        {% if r.days_left is defined %}<small>last day to appeal: {{ r.appeal_by_on.strftime("%b %-d, %Y") }} ({{ r.days_left }} days)</small>{% endif %}
+        {% if r.decide_by is defined %}<small>plan decides by {{ r.decide_by }}</small>{% endif %}
+      </a>
+      {% endfor %}
+    </div>
+    {% if has_dates %}<p class="small"><a href="/cases/{{ case_id }}/appeals.ics">Add all reminders to my calendar</a> · a reminder 30 days after sending, and reminders 30 and 7 days before the last day to appeal.</p>
+    {% else %}<p class="small">Reminders appear here once a letter is marked sent.</p>{% endif %}
+  </section>
+  <aside class="side-card reply-card">
+    {% if current %}
+    {% if current.status == "prepared" %}
+    <h2>Sent it?</h2>
+    <p>When you have mailed or submitted it yourself, mark it here. We count the days and remind you.</p>
+    {% if can_change %}
+    <form method="post" action="/cases/{{ case_id }}/appeals/{{ current.key }}/sent" class="mini-form">
+      <label>Sent on <input type="date" name="on" value="{{ today.isoformat() }}" required></label>
+      <label>Confirmation number (optional) <input name="confirmation" maxlength="80"></label>
+      <button class="btn primary" type="submit">I sent it</button>
+    </form>
+    {% else %}<p class="small">Examples are read-only. {% if static %}<a href="{{ repo_tree }}">Run it with your own bills (GitHub) →</a>{% else %}<a href="/upload">Try with my bills →</a>{% endif %}</p>{% endif %}
+    {% else %}
+    <h2>Got a reply? Take a photo</h2>
+    <p>Upload the letter and we'll read it, find the decision and suggest what to do next.</p>
+    {% if msg == "not-live" %}<p class="notice warn-note">Reading replies starts when the model is switched on.</p>{% endif %}
+    {% if can_change %}
+    <form method="post" action="/cases/{{ case_id }}/appeals/{{ current.key }}/reply" enctype="multipart/form-data" class="mini-form">
+      <input type="file" name="photo" accept="image/jpeg" required>
+      <button class="btn primary" type="submit">Upload photo</button>
+    </form>
+    {% endif %}
+    <span class="model read">{{ mdl.read }} reads the reply</span>
+    {% if current.reply %}
+    <div class="parsed"><div class="eyebrow">Parsed result</div>
+      <b>{{ current.reply.decision|replace("_", " ")|capitalize }}</b>
+      {% if current.reply.decision_quote %}<q>{{ current.reply.decision_quote }}</q>{% endif %}
+      {% if current.reply.next_step %}<p>{{ current.reply.next_step }}</p>{% endif %}
+    </div>
+    {% endif %}
+    {% endif %}
+    {% endif %}
+  </aside>
+</div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{
+ "request_id": "6147bfe5027e0ee868546453285616af",
+ "response": {
+  "id": "chatcmpl-a004fb183fd8e155",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"title\": \"Memorial Healthcare System FINANCIAL ASSISTANCE POLICY Revised May 2026\", \"date_quote\": \"Revised May 2026\", \"tiers\": [{\"from_fpl_pct\": 0, \"up_to_fpl_pct\": 200, \"benefit\": \"free\", \"discount_pct\": 100, \"quote\": \"Up to 200% of FPG 100% Discount\"}, {\"from_fpl_pct\": 201, \"up_to_fpl_pct\": 250, \"benefit\": \"discount\", \"discount_pct\": 90, \"quote\": \"201% - 250% of FPG 90% Discount\"}, {\"from_fpl_pct\": 251, \"up_to_fpl_pct\": 300, \"benefit\": \"discount\", \"discount_pct\": 85, \"quote\": \"251% - 300% of FPG 85% Discount\"}, {\"from_fpl_pct\": 301, \"up_to_fpl_pct\": 350, \"benefit\": \"discount\", \"discount_pct\": 83, \"quote\": \"301% - 350% of FPG 83% Discount\"}, {\"from_fpl_pct\": 351, \"up_to_fpl_pct\": 400, \"benefit\": \"discount\", \"discount_pct\": 83, \"quote\": \"351% - 400% of FPG 83% Discount\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": "We need extract tiers for Memorial Regional Hospital. From attachment: lines show tiers.\n\nList each tier:\n\nUp to 200% of FPG -> 100% Discount.\nQuote: \"Up to 200% of FPG\" and \"100% Discount\". Need single quote containing both numbers? Must contain percent of poverty and benefit. Probably we need exact phrase showing both. Could take \"Up to 200% of FPG 100% Discount\". That appears together. Use that.\n\nSimilarly for others.\n\nExtract quotes:\n\"201% - 250% of FPG 90% Discount\"\n\"251% - 300% of FPG 85% Discount\"\n\"301% - 350% of FPG 83% Discount\"\n\"351% - 400% of FPG 83% Discount\"\n\nProvide JSON-like? Not specified format, just list rows maybe dict keys. We'll output list of objects.\n\nTitle: document title = \"Memorial Healthcare System FINANCIAL ASSISTANCE POLICY Revised May 2026\". Date quote: find line \"Revised May 2026\". So date_quote = \"Revised May 2026\".\n\nNow produce answer.",
+     "reasoning_content": "We need extract tiers for Memorial Regional Hospital. From attachment: lines show tiers.\n\nList each tier:\n\nUp to 200% of FPG -> 100% Discount.\nQuote: \"Up to 200% of FPG\" and \"100% Discount\". Need single quote containing both numbers? Must contain percent of poverty and benefit. Probably we need exact phrase showing both. Could take \"Up to 200% of FPG 100% Discount\". That appears together. Use that.\n\nSimilarly for others.\n\nExtract quotes:\n\"201% - 250% of FPG 90% Discount\"\n\"251% - 300% of FPG 85% Discount\"\n\"301% - 350% of FPG 83% Discount\"\n\"351% - 400% of FPG 83% Discount\"\n\nProvide JSON-like? Not specified format, just list rows maybe dict keys. We'll output list of objects.\n\nTitle: document title = \"Memorial Healthcare System FINANCIAL ASSISTANCE POLICY Revised May 2026\". Date quote: find line \"Revised May 2026\". So date_quote = \"Revised May 2026\".\n\nNow produce answer."
+    },
+    "stop_reason": null,
+    "token_ids": null,
+    "routed_experts": null
+   }
+  ],
+  "created": 1793314487,
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.1.dev1+g5001743e3-tp2-05adddbc",
+  "usage": {
+   "completion_tokens": 662,
+   "prompt_tokens": 5223,
+   "total_tokens": 5885,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 290,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": {
+    "audio_tokens": null,
+    "cached_tokens": 0,
+    "created_cache_tokens": 0,
+    "multimodal_tokens": null
+   },
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 5223
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "prompt_text": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+ }
+}

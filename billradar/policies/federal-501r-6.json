@@ -1,0 +1,28 @@
+{
+  "policy_id": "federal-501r-6",
+  "hospital": "Any nonprofit 501(c)(3) hospital",
+  "title": "26 CFR 1.501(r)-6, billing and collection",
+  "url": "https://www.ecfr.gov/current/title-26/section-1.501(r)-6",
+  "fragments": {
+    "no-eca-120-days": {
+      "page": 1,
+      "quote": "for at least 120 days from the date the hospital facility provides the first post-discharge billing statement for the care"
+    },
+    "notice-30-days": {
+      "page": 1,
+      "quote": "states a deadline after which such ECA(s) may be initiated that is no earlier than 30 days after the date that the written notice is provided"
+    },
+    "suspend-eca-pending": {
+      "page": 1,
+      "quote": "if an individual submits a FAP application during the application period, the hospital facility (or other authorized party) will have suspended ECAs for purposes of this paragraph (c) only if, after receiving the application, the hospital facility (or other authorized party) does not initiate, or take further action on any previously-initiated, ECAs"
+    },
+    "refund-overpaid": {
+      "page": 1,
+      "quote": "Refunds to the individual any amount he or she has paid for the care (whether to the hospital facility or any other party to whom the hospital facility has referred or sold the individual's debt for the care) that exceeds the amount he or she is determined to be personally responsible for paying as a FAP-eligible individual, unless such excess amount is less than $5"
+    },
+    "reverse-eca": {
+      "page": 1,
+      "quote": "Takes all reasonably available measures to reverse any ECA (with the exception of a sale of debt and an ECA described in paragraph (b)(1)(iii) of this section) taken against the individual to obtain payment for the care."
+    }
+  }
+}

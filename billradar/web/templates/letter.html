@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block title %}{{ l.subject }} · BillRadar{% endblock %}
+{% block body_class %}letter-page{% endblock %}
+{% block body %}
+<div class="letters-grid">
+  <aside class="letters-side">
+    <a class="back" href="/cases/{{ case_id }}">‹ Back to the case</a>
+    <h1>Letters and appeal</h1>
+    <p class="lead-s">Ready to review and send.</p>
+    {% for x in letters %}
+    <a class="lcard{% if x.kind == l.kind %} on{% endif %}" href="/cases/{{ case_id }}/letters/{{ x.kind }}">
+      <span class="lthumb paper" aria-hidden="true"><b>{{ x.subject }}</b>{% if x.paragraphs %}<span>{{ x.paragraphs[0].text[:180] }}</span>{% endif %}</span>
+      <span><b>{{ x.kind|letter_name }}</b><small>To: {{ x.to.split(",")[1] if x.to.count(",") > 1 else x.to }}</small><small class="muted">{{ x.subject }}</small></span><em>›</em>
+    </a>
+    {% endfor %}
+    {% for c in calls %}
+    <a class="lcard" href="/cases/{{ case_id }}/call/{{ c.to }}">
+      <span class="lthumb call" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.6 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.6 3.6a1 1 0 01-.25 1z"/></svg></span>
+      <span><b>Call cheat sheet</b><small>For your next call</small><small class="muted">Key points to discuss with {{ c.who }}.</small></span><em>›</em>
+    </a>
+    {% endfor %}
+  </aside>
+
+  <section class="paper-wrap">
+    <div class="seg lang" role="group" aria-label="Letter language">{% for code in langs %}<a class="{{ 'on' if code == lang }}" href="/cases/{{ case_id }}/letters/{{ l.kind }}?lang={{ code }}" hreflang="{{ code }}">{{ code|upper }}</a>{% endfor %}</div>
+    {% if note %}<p class="tr-note" role="note">{{ note }}</p>{% endif %}
+    {% if tr %}
+    <article class="letter translation" lang="{{ lang }}">
+      <h1>{{ tr.subject }}</h1>
+      {% for p in tr.paragraphs %}<p>{{ p }}</p>{% endfor %}
+    </article>
+    <p class="small center">English letter, the one that is sent:</p>
+    {% endif %}
+    <article class="letter" id="letter">
+      {% if case.demo %}<p class="stamp">SAMPLE — FICTIONAL DATA. NOT A REAL LETTER.</p>{% endif %}
+      <div class="dateline">{{ today.strftime("%B %-d, %Y") }}<br>To: {{ l.to }}</div>
+      <h1>{{ l.subject }}</h1>
+      <p>{{ greeting }}</p>
+      {% for p in l.paragraphs %}<p>{% if p.refs %}{{ p.text|quotes }}{% for c in chips[loop.index0] %} <span class="law" title="{{ c.title }}">{{ c.label }}</span>{% endfor %}{% else %}{{ p.text }}{% endif %}</p>{% endfor %}
+      {% if l.attachments %}<p>Attached: {{ l.attachments|join("; ") }}.</p>{% endif %}
+      <div class="sig">Sincerely,<br>{% for line in signature %}{{ line }}<br>{% endfor %}
+        <div class="line">Signature</div></div>
+      {% if sources %}
+      <div class="sources"><strong>Where this comes from</strong> (for you, not part of the letter)
+        <ul>{% for s in sources %}<li>{{ s.title }}, page {{ s.page }}: <q>{{ s.quote }}</q></li>{% endfor %}</ul>
+        {% if demo_rules %}<p class="small">{{ demo_rules }}</p>{% endif %}
+      </div>{% endif %}
+    </article>
+    <div class="letter-actions">
+      <button type="button" class="btn primary" id="copy" data-src="/cases/{{ case_id }}/letters/{{ l.kind }}/text?lang={{ lang }}">Copy</button>
+      <a class="btn ghost" id="save" href="/cases/{{ case_id }}/letters/{{ l.kind }}/text?lang={{ lang }}">Save</a>
+      <a class="btn ghost" id="pdf" href="/cases/{{ case_id }}/letters/{{ l.kind }}/pdf?lang={{ lang }}">PDF</a>
+    </div>
+    <p class="small center">You review and sign every letter.</p>
+  </section>
+
+  <aside class="letters-right">
+    {% if appeal %}
+    <div class="side-card">
+      <h2><span class="star" aria-hidden="true">✦</span>An agent can fill the insurer's appeal form</h2>
+      {% if mdl.portal %}<p>{{ mdl.portal }} fills the form on a copy of the insurer's portal and stops before Submit. You decide.</p>
+      <span class="model">{{ mdl.portal }}</span>{% else %}<p>Filling the insurer's portal form by an agent is not in this version. The appeal letter and the plan's form above are ready to send yourself.</p>{% endif %}
+      <p class="info">Stops before Submit. You decide.</p>
+      <p class="small">Starts when the model is switched on.</p>
+    </div>
+    <div class="side-card">
+      <h2><span class="cal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span>Deadline: {{ appeal.days or 180 }} days from denial</h2>
+      <p>Your appeal must be received within {{ appeal.days or 180 }} days of the denial date.</p>
+      <div class="deadline">Denial date: {{ appeal.denial_date }}<br><b>Deadline: {{ appeal.deadline }}</b></div>
+    </div>
+    {% elif apply_by %}
+    <div class="side-card">
+      <h2><span class="cal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span>Last day to apply</h2>
+      <p>Apply for financial assistance before this day.</p>
+      <div class="deadline"><span>Apply by</span> <b>{{ apply_by.strftime("%b %-d, %Y") }}</b></div>
+      <a class="btn ghost" href="/cases/{{ case_id }}/reminder.ics">Add to my calendar</a>
+    </div>
+    {% endif %}
+    <div class="side-card">
+      <h2>Where every line comes from</h2>
+      <p>Each rule in this letter is quoted from the hospital's published policy or the law, with its page. The quote was found in the source's own text before the letter was written.</p>
+    </div>
+  </aside>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+  document.getElementById('copy').addEventListener('click', e => {  // the same text "Save" downloads, built on the server
+    fetch(e.target.dataset.src).then(r => r.text()).then(t => navigator.clipboard.writeText(t)).then(() => { e.target.textContent = 'Copied'; })
+      .catch(() => { e.target.textContent = 'Copy failed'; });
+  });
+</script>
+{% endblock %}

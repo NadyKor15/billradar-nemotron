@@ -1,0 +1,58 @@
+{
+ "request_id": "ae84a36865572533844199e82ad5cc08",
+ "response": {
+  "id": "chatcmpl-ae84a36865572533844199e82ad5cc08",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"answer\": \"Based on the information provided, you could receive roughly **$1,399.71** in financial\u2011assistance relief \u2013 about a 90\u202f% reduction of the eligible portion of your hospital bill.\\n\\n<details><summary>Sources</summary>\\n<ul>\\n<li><p>Finding \u201cF1\u201d states: \\\"Household of 3, income $58,000: 212.3% of the poverty guideline. The policy gives 90\u202f% off at this level. Sheet D1 has no discount yet.\\\" (amount shown: 1399.71)</p>\\n<p>{\\\"source\\\": \\\"findings\\\", \\\"ref\\\": \\\"F1\\\", \\\"quote\\\": \\\"Household of 3, income $58,000: 212.3% of the poverty guideline. The policy gives 90% off at this level. Sheet D1 has no discount yet.\\\"}</p>\\n</li>\\n</ul>\\n</details>}\\n\\n*Note: Exact savings depend on final eligibility determination and any adjustments applied.*\", \"refused\": false, \"citations\": [{\"source\": \"policy\", \"ref\": \"memorial-2026-05#scale-mrh\", \"quote\": \"Memorial Regional Hospital BALANCES DUE FROM PATIENT INCOME AMOUNT OF DISCOUNT Up to 200% of FPG 100% Discount 201% - 250% of FPG 90% Discount 251% - 300% of FPG 85% Discount 301% - 350% of FPG 83% Discount 351% - 400% of FPG 83% Discount\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": "We need to answer using only given sources: policies etc.\n\nQuestion: \"How much could financial assistance take off my hospital bills?\"\n\nFrom findings: F1 says household of 3 income $58,000 -> qualifies, policy gives 90% off at this level. Sheet D1 has no discount yet. Amount: 1399.71 (presumably potential discount? Let's parse).\n\nFinding F1 detail: \"Household of 3, income $58,000: 212.3% of the poverty guideline. The policy gives 90% off at this level. Sheet D1 has no discount yet.\"\n\nAmount field: \"1399.71\". That seems maybe the total eligible reduction? We'll treat as estimate of how much FA could take off: $1,399.71.\n\nThus answer: Could reduce by around $1,399.71 (about 90% of applicable portion). Provide citation: finding F1 with quote showing policy gives 90% off and amount.\n\nNeed to include citations format: {\"source\":\"findings\",\"ref\":\"F1\",\"quote\":...}. Must find exact text. In JSON above, findings entry for F1:\n\n{\n    \"kind\": \"F1\",\n    \"title\": \"You likely qualify for financial assistance\",\n    \"detail\": \"Household of 3, income $58,000: 212.3% of the poverty guideline. The policy gives 90% off at this level. Sheet D1 has no discount yet.\",\n    \"amount\": \"1399.71\",\n    \"deadline\": null,\n    \"sheets\": [\"D1\"]\n}\n\nQuote should be exactly something from that detail. Use that sentence: \"Household of 3, income $58,000: 212.3% of the poverty guideline. The policy gives 90% off at this level. Sheet D1 has no discount yet.\"\n\nBut we need just part referencing amount? Probably quoting entire detail works but might exceed length; fine.\n\nAnswer: Using facts from sheets and policies: mention percent discount yields approximate savings $1,399.71 per finding.\n\nInclude citation: {\"source\":\"findings\",\"ref\":\"F1\",\"quote\":\"Household of 3, income $58,000: 212.3% of the poverty guideline. The policy gives 90% off at this level. Sheet D1 has no discount yet.\"}.\n\nAlso note that actual depends on qualifying etc. Plain English.",
+     "reasoning_content": "We need to answer using only given sources: policies etc.\n\nQuestion: \"How much could financial assistance take off my hospital bills?\"\n\nFrom findings: F1 says household of 3 income $58,000 -> qualifies, policy gives 90% off at this level. Sheet D1 has no discount yet. Amount: 1399.71 (presumably potential discount? Let's parse).\n\nFinding F1 detail: \"Household of 3, income $58,000: 212.3% of the poverty guideline. The policy gives 90% off at this level. Sheet D1 has no discount yet.\"\n\nAmount field: \"1399.71\". That seems maybe the total eligible reduction? We'll treat as estimate of how much FA could take off: $1,399.71.\n\nThus answer: Could reduce by around $1,399.71 (about 90% of applicable portion). Provide citation: finding F1 with quote showing policy gives 90% off and amount.\n\nNeed to include citations format: {\"source\":\"findings\",\"ref\":\"F1\",\"quote\":...}. Must find exact text. In JSON above, findings entry for F1:\n\n{\n    \"kind\": \"F1\",\n    \"title\": \"You likely qualify for financial assistance\",\n    \"detail\": \"Household of 3, income $58,000: 212.3% of the poverty guideline. The policy gives 90% off at this level. Sheet D1 has no discount yet.\",\n    \"amount\": \"1399.71\",\n    \"deadline\": null,\n    \"sheets\": [\"D1\"]\n}\n\nQuote should be exactly something from that detail. Use that sentence: \"Household of 3, income $58,000: 212.3% of the poverty guideline. The policy gives 90% off at this level. Sheet D1 has no discount yet.\"\n\nBut we need just part referencing amount? Probably quoting entire detail works but might exceed length; fine.\n\nAnswer: Using facts from sheets and policies: mention percent discount yields approximate savings $1,399.71 per finding.\n\nInclude citation: {\"source\":\"findings\",\"ref\":\"F1\",\"quote\":\"Household of 3, income $58,000: 212.3% of the poverty guideline. The policy gives 90% off at this level. Sheet D1 has no discount yet.\"}.\n\nAlso note that actual depends on qualifying etc. Plain English."
+    },
+    "stop_reason": null,
+    "token_ids": null,
+    "routed_experts": null
+   }
+  ],
+  "created": 1793106730,
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.1.dev1+g5001743e3-tp2-05adddbc",
+  "usage": {
+   "completion_tokens": 956,
+   "prompt_tokens": 13622,
+   "total_tokens": 14578,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 550,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": {
+    "audio_tokens": null,
+    "cached_tokens": 13600,
+    "created_cache_tokens": 0,
+    "multimodal_tokens": null
+   },
+   "prompt_cache_hit_tokens": 13600,
+   "prompt_cache_miss_tokens": 22
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "prompt_text": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+ }
+}

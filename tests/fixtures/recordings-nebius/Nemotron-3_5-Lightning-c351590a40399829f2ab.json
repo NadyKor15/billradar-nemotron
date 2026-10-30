@@ -1,0 +1,50 @@
+{
+ "request_id": "2a29a5cfd2ffbda981d5e7e9887cd02e",
+ "response": {
+  "id": "chatcmpl-2a29a5cfd2ffbda981d5e7e9887cd02e",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"answer\": \"Sheet S4 (your EOB) shows $2,575.10 as the patient responsibility for line 2 (Delivery).\\n\\nSource: {\\\"source\\\": \\\"sheet\\\", \\\"ref\\\": \\\"S4\\\", \\\"quote\\\": \\\"patient_responsibility\\\": \\\"2575.10\\\"}\", \"refused\": false, \"citations\": [{\"source\": \"sheet\", \"ref\": \"S4\", \"quote\": \"patient_responsibility\\\": \\\"2575.10\\\"\"}, {\"source\": \"policy\", \"ref\": \"fl-395-301#itemized-on-request\", \"quote\": \"Upon request, and after the patient's discharge or release from a facility, the facility must provide to the patient or to the patient's survivor or legal guardian, as appropriate, an itemized statement or a bill detailing in plain language\"}, {\"source\": \"policy\", \"ref\": \"fl-395-301#itemized-7-days\", \"quote\": \"The initial statement or bill shall be provided within 7 days after the patient's discharge or release or after a request for such statement or bill, whichever is later.\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": null,
+     "reasoning_content": null
+    },
+    "stop_reason": null,
+    "token_ids": null
+   }
+  ],
+  "created": 1793106532,
+  "model": "nvidia/Nemotron-3_5-Lightning",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+   "completion_tokens": 258,
+   "prompt_tokens": 3674,
+   "total_tokens": 3932,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 0,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": null,
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 3674
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null
+ }
+}

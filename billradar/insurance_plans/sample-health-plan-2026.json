@@ -1,0 +1,135 @@
+{
+  "_note": "SAMPLE. A fictional insurer and plan for the demo. Quotes are checked against the plan document's own text (sample-health-plan-2026.pdf).",
+  "plan_id": "sample-health-plan-2026",
+  "insurer": "Sample Health Plan",
+  "title": "Sample Health Plan Summary Plan Description, plan year 2026 (SAMPLE)",
+  "plan_type": "employer",
+  "sample": true,
+  "appeals_to": [
+    "Appeals Department",
+    "Sample Health Plan",
+    "PO Box 12345",
+    "Riverton, ST 12345"
+  ],
+  "appeal_days": 180,
+  "appeal_days_fragment": "appeal-180-days",
+  "decide_days_post_service": 60,
+  "decide_days_fragment": "decide-60-days",
+  "remark_codes": {
+    "P31": {
+      "fragment": "code-p31",
+      "denial": true
+    },
+    "M12": {
+      "fragment": "code-m12",
+      "denial": true
+    },
+    "N05": {
+      "fragment": "code-n05",
+      "denial": true
+    },
+    "CO2": {
+      "fragment": "code-co2",
+      "denial": false
+    },
+    "DD1": {
+      "fragment": "code-dd1",
+      "denial": false
+    }
+  },
+  "grounds": {
+    "P31": [
+      {
+        "fragment": "childbirth-covered",
+        "needs": "birth",
+        "say": "This claim is part of my hospital stay for the birth of my child."
+      },
+      {
+        "fragment": "no-auth-for-childbirth-stay",
+        "needs": "birth",
+        "say": "Please check my stay against this rule before asking for prior authorization."
+      },
+      {
+        "fragment": "emergency-auth",
+        "say": "If prior authorization could not be obtained in time, the plan does not allow a denial for that reason alone."
+      }
+    ],
+    "M12": [
+      {
+        "fragment": "childbirth-covered",
+        "needs": "birth",
+        "say": "This claim is part of my hospital stay for the birth of my child."
+      }
+    ],
+    "N05": [
+      {
+        "fragment": "newborn-covered",
+        "needs": "birth",
+        "say": "This care was for my newborn child during my hospital stay."
+      }
+    ]
+  },
+  "fragments": {
+    "childbirth-covered": {
+      "page": 2,
+      "quote": "Medically necessary inpatient care for childbirth and delivery is covered."
+    },
+    "newborn-covered": {
+      "page": 2,
+      "quote": "Care for a newborn child during the mother's covered inpatient stay is covered."
+    },
+    "no-auth-for-childbirth-stay": {
+      "page": 2,
+      "quote": "Prior authorization is not required for a hospital stay for childbirth of up to 48 hours after a vaginal delivery or 96 hours after a cesarean section."
+    },
+    "emergency-auth": {
+      "page": 2,
+      "quote": "In emergency situations or when prior authorization cannot be obtained, covered services will not be denied solely for lack of prior authorization."
+    },
+    "code-p31": {
+      "page": 3,
+      "quote": "P31 Prior authorization was not obtained for this service."
+    },
+    "code-m12": {
+      "page": 3,
+      "quote": "M12 This service was not found to be medically necessary."
+    },
+    "code-n05": {
+      "page": 3,
+      "quote": "N05 The patient was not enrolled in the plan on the date of service."
+    },
+    "code-co2": {
+      "page": 3,
+      "quote": "CO2 Coinsurance amount."
+    },
+    "code-dd1": {
+      "page": 3,
+      "quote": "DD1 Deductible amount."
+    },
+    "appeal-180-days": {
+      "page": 4,
+      "quote": "You may file an appeal within 180 days after you receive notice of a denial."
+    },
+    "appeal-address": {
+      "page": 4,
+      "quote": "Send your appeal in writing to: Appeals Department, Sample Health Plan, PO Box 12345, Riverton, ST 12345."
+    },
+    "appeal-contents": {
+      "page": 4,
+      "quote": "Include your name, member ID, claim number, and the reason you disagree. You may include documents, records and written comments."
+    },
+    "copies-free": {
+      "page": 4,
+      "quote": "You may ask for free copies of all documents, records and other information relevant to your claim."
+    },
+    "decide-60-days": {
+      "page": 4,
+      "quote": "We will decide an appeal about care you already received within 60 days after we receive it."
+    },
+    "external-review": {
+      "page": 4,
+      "quote": "If we uphold the denial, our letter will explain your right to an external review by an independent reviewer."
+    }
+  },
+  "_grounds_note": "'say' never states a fact about the family that is not in the case; 'needs: birth' means the case must show a birth (a newborn in the household or the 'birth' context chip)."
+}

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% if static %}<meta name="robots" content="noindex">{% endif %}
+  <title>{% block title %}BillRadar{% endblock %}</title>
+  <link rel="icon" href="/static/brand/shield.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/app.css?v={{ css_v }}">
+</head>
+<body class="{% if static %}static {% endif %}{% block body_class %}{% endblock %}">
+  <div class="glow" aria-hidden="true"></div>
+  {% block chrome %}
+  <header class="nav">
+    <a class="brand" href="/" aria-label="billradar home"><img class="shield" src="{{ asset('/static/brand/shield-cut.png') }}" alt=""><img class="wordmark" src="{{ asset('/static/brand/wordmark-cut.png') }}" alt="billradar"></a>
+    <nav class="links" aria-label="Main">
+      <a href="/cases" class="{{ 'on' if nav == 'cases' }}">Cases</a>
+      <a href="/upload" class="up {{ 'on' if nav == 'upload' }}">Upload</a>
+      <a href="/how" class="{{ 'on' if nav == 'how' }}">How it works</a>
+      <a href="/safe" class="{{ 'on' if nav == 'safe' }}">Is it safe?</a>
+      <a href="/agents" class="{{ 'on' if nav == 'agents' }}"><span class="long">For </span>AI agents</a>
+    </nav>
+    <div class="nav-right">{% block nav_right %}{% endblock %}</div>
+  </header>
+  {% endblock %}
+  {% block lead %}{% endblock %}
+  <main class="page">{% block body %}{% endblock %}</main>
+  {% block scripts %}{% endblock %}
+  {% if static %}<script defer src="https://t.retailbox-automation.com/t.js" data-asset="nebius-billradar"></script>{% endif %}
+</body>
+</html>

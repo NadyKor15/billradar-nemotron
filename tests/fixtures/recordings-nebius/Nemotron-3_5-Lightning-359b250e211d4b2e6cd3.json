@@ -1,0 +1,50 @@
+{
+ "request_id": "467a661c4bc6a1b0458bec63f049c9c6",
+ "response": {
+  "id": "chatcmpl-467a661c4bc6a1b0458bec63f049c9c6",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"items\": [{\"id\": \"subject\", \"text\": \"Disputa por cobro: el monto no coincide con mi seguro\"}, {\"id\": \"p0\", \"text\": \"Mi estado de cuenta para el n\u00famero 77472701 lista el mismo servicio dos veces: l\u00edneas 1 y 2, c\u00f3digo 01960, el 17 de febrero de 2025, $4,108.00 cada uno. Por favor, elimine el duplicado y el cargo por \u00e9l.\"}, {\"id\": \"p1\", \"text\": \"Por favor, corrija el saldo, o expl\u00edquelo por escrito. La ley de Florida exige que el hospital d\u00e9 una primera respuesta a una disputa de cobro en 7 d\u00edas h\u00e1biles (Florida Statutes 395.301(6)).\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": null,
+     "reasoning_content": null
+    },
+    "stop_reason": null,
+    "token_ids": null
+   }
+  ],
+  "created": 1793106835,
+  "model": "nvidia/Nemotron-3_5-Lightning",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+   "completion_tokens": 191,
+   "prompt_tokens": 332,
+   "total_tokens": 523,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 0,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": null,
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 332
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null
+ }
+}

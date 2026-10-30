@@ -1,0 +1,58 @@
+{
+ "request_id": "1f40bd4e0fc8dd0b1028e565ebbde04e",
+ "response": {
+  "id": "chatcmpl-8ca6ca7593de0939",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"title\": \"Financial Assistance Policy\", \"date_quote\": \"POLICY Effective Date: 01/01/2025\", \"tiers\": [{\"from_fpl_pct\": 0, \"up_to_fpl_pct\": 400, \"benefit\": \"free\", \"discount_pct\": 100, \"quote\": \"Charity Care will be made available to patients whose family income is at or below 400 percent of the current year\u2019s FPL.\"}, {\"from_fpl_pct\": 400, \"up_to_fpl_pct\": 400, \"benefit\": \"discount\", \"discount_pct\": 100, \"quote\": \"Uninsured\\\\n...\\\\n400%\\\\n100%\"}, {\"from_fpl_pct\": 400, \"up_to_fpl_pct\": 400, \"benefit\": \"discount\", \"discount_pct\": 100, \"quote\": \"Underinsured\\\\n...\\\\n400%\\\\n100%\"}, {\"from_fpl_pct\": 450, \"up_to_fpl_pct\": 450, \"benefit\": \"discount\", \"discount_pct\": 95, \"quote\": \"Uninsured\\\\n...\\\\n450%\\\\n95%\"}, {\"from_fpl_pct\": 450, \"up_to_fpl_pct\": 450, \"benefit\": \"discount\", \"discount_pct\": 90, \"quote\": \"Underinsured\\\\n...\\\\n450%\\\\n90%\"}, {\"from_fpl_pct\": 500, \"up_to_fpl_pct\": 500, \"benefit\": \"discount\", \"discount_pct\": 90, \"quote\": \"Uninsured\\\\n...\\\\n500%\\\\n90%\"}, {\"from_fpl_pct\": 500, \"up_to_fpl_pct\": 500, \"benefit\": \"discount\", \"discount_pct\": 80, \"quote\": \"Underinsured\\\\n...\\\\n500%\\\\n80%\"}, {\"from_fpl_pct\": 550, \"up_to_fpl_pct\": 550, \"benefit\": \"discount\", \"discount_pct\": 85, \"quote\": \"Uninsured\\\\n...\\\\n550%\\\\n85%\"}, {\"from_fpl_pct\": 550, \"up_to_fpl_pct\": 550, \"benefit\": \"discount\", \"discount_pct\": 70, \"quote\": \"Underinsured\\\\n...\\\\n550%\\\\n70%\"}, {\"from_fpl_pct\": 600, \"up_to_fpl_pct\": 0, \"benefit\": \"discount\", \"discount_pct\": 85, \"quote\": \"Uninsured\\\\n...\\\\n600%\\\\n85%\"}, {\"from_fpl_pct\": 600, \"up_to_fpl_pct\": 0, \"benefit\": \"discount\", \"discount_pct\": 60, \"quote\": \"Underinsured\\\\n...\\\\n600%\\\\n60%\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": "We extract charity care <=400% gives free =>100%. Then Table attachment B tiers.\n\nRows:\nUninsured column: 400% ->100%, 450%->95%, 500%->90%, 550%->85%, 600%->85%\nUnderinsured column: 400%->100%, 450%->90%, 500%->80%, 550%->70%, 600%->60%\n\nEach row separate tier.\n\nProvide fields.",
+     "reasoning_content": "We extract charity care <=400% gives free =>100%. Then Table attachment B tiers.\n\nRows:\nUninsured column: 400% ->100%, 450%->95%, 500%->90%, 550%->85%, 600%->85%\nUnderinsured column: 400%->100%, 450%->90%, 500%->80%, 550%->70%, 600%->60%\n\nEach row separate tier.\n\nProvide fields."
+    },
+    "stop_reason": null,
+    "token_ids": null,
+    "routed_experts": null
+   }
+  ],
+  "created": 1793314479,
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.1.dev1+g5001743e3-tp2-05adddbc",
+  "usage": {
+   "completion_tokens": 879,
+   "prompt_tokens": 8274,
+   "total_tokens": 9153,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 135,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": {
+    "audio_tokens": null,
+    "cached_tokens": 0,
+    "created_cache_tokens": 0,
+    "multimodal_tokens": null
+   },
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 8274
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "prompt_text": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+ }
+}

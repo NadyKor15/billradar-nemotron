@@ -1,0 +1,50 @@
+{
+ "request_id": "d6c263ed9cc19388681ab19961686b85",
+ "response": {
+  "id": "chatcmpl-d6c263ed9cc19388681ab19961686b85",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"items\": [{\"id\": \"subject\", \"text\": \"\u0417\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u0435 \u043d\u0430 \u0444\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u0443\u044e \u043f\u043e\u043c\u043e\u0449\u044c\"}, {\"id\": \"p0\", \"text\": \"\u042f \u043f\u043e\u0434\u0430\u044e \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u0435 \u043d\u0430 \u0444\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u0443\u044e \u043f\u043e\u043c\u043e\u0449\u044c. \u0412 \u043c\u043e\u0435\u043c \u0434\u043e\u043c\u0435 4 \u0447\u0435\u043b\u043e\u0432\u0435\u043a\u0430, \u0430 \u0433\u043e\u0434\u043e\u0432\u043e\u0439 \u0434\u043e\u0445\u043e\u0434 \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u0442 $74,000.00, \u0447\u0442\u043e \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u0442 224.2% \u043e\u0442 2026 \u0444\u0435\u0434\u0435\u0440\u0430\u043b\u044c\u043d\u044b\u0445\u6307\u5f15 \u043f\u043e \u043b\u0438\u043d\u0438\u0438 \u0431\u0435\u0434\u043d\u043e\u0441\u0442\u0438.\"}, {\"id\": \"p1\", \"text\": \"\u0412\u0430\u0448\u0430 \u041f\u043e\u043b\u0438\u0442\u0438\u043a\u0430 \u0444\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u043e\u0439 \u043f\u043e\u043c\u043e\u0449\u0438, \u043f\u0435\u0440\u0435\u0441\u043c\u043e\u0442\u0440\u0435\u043d\u043d\u0430\u044f \u0432 \u043c\u0430\u0435 2026 \u0433\u043e\u0434\u0430, \u043f\u043e \u044d\u0442\u043e\u043c\u0443 \u0443\u0440\u043e\u0432\u043d\u044e \u0434\u043e\u0445\u043e\u0434\u0430 \u043f\u0440\u0435\u0434\u043e\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u0442 \u0441\u043a\u0438\u0434\u043a\u0443 90%.\"}, {\"id\": \"p2\", \"text\": \"\u042f \u043f\u043e\u0434\u0430\u044e \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u0435 \u0434\u043e 8 \u0430\u043f\u0440\u0435\u043b\u044f 2026 \u0433\u043e\u0434\u0430, \u0432 \u043f\u0435\u0440\u0438\u043e\u0434 \u043f\u043e\u0434\u0430\u0447\u0438 \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u0439.\"}, {\"id\": \"p3\", \"text\": \"\u041f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u044b \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043d\u0430\u044f \u0424\u043e\u0440\u043c\u0430 \u0444\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u043e\u0439 \u043e\u0446\u0435\u043d\u043a\u0438 \u0438 \u0441\u043f\u0438\u0441\u043e\u043a \u0432 \u043d\u0435\u0439 \u0443\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0435 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b.\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": null,
+     "reasoning_content": null
+    },
+    "stop_reason": null,
+    "token_ids": null
+   }
+  ],
+  "created": 1793106837,
+  "model": "nvidia/Nemotron-3_5-Lightning",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+   "completion_tokens": 219,
+   "prompt_tokens": 341,
+   "total_tokens": 560,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 0,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": null,
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 341
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null
+ }
+}

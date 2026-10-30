@@ -1,0 +1,12 @@
+{
+  "policy_id": "federal-501r",
+  "hospital": "Any nonprofit 501(c)(3) hospital",
+  "title": "26 CFR 1.501(r)-1(b)(3), application period",
+  "url": "https://www.ecfr.gov/current/title-26/section-1.501(r)-1",
+  "fragments": {
+    "application-period": {
+      "page": 1,
+      "quote": "the application period begins on the date the care is provided and ends on the later of the 240th day after the date that the first post-discharge billing statement for the care is provided"
+    }
+  }
+}

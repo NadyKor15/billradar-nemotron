@@ -1,0 +1,67 @@
+{
+ "request_id": "e62bf2d080a6a1ef3fd1769281bbca7b",
+ "response": {
+  "id": "chatcmpl-e62bf2d080a6a1ef3fd1769281bbca7b",
+  "choices": [
+   {
+    "finish_reason": "tool_calls",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": null,
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": [
+      {
+       "id": "chatcmpl-tool-91410e915c4afdab",
+       "function": {
+        "arguments": "{\"fictional\": true, \"sample_pack\": \"brs1-birth-all-errors\"}",
+        "name": "analyze_case"
+       },
+       "type": "function"
+      }
+     ],
+     "reasoning": "We need to start by analyzing the case using sample pack. Then get findings, protections, deadlines, letters? The user asks to check bills with BillRadar. We should output analysis summary. Let's call analyze_case with fictional true and sample_pack.",
+     "reasoning_content": "We need to start by analyzing the case using sample pack. Then get findings, protections, deadlines, letters? The user asks to check bills with BillRadar. We should output analysis summary. Let's call analyze_case with fictional true and sample_pack."
+    },
+    "stop_reason": null,
+    "token_ids": null,
+    "routed_experts": null
+   }
+  ],
+  "created": 1793113140,
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.1.dev1+g5001743e3-tp2-05adddbc",
+  "usage": {
+   "completion_tokens": 98,
+   "prompt_tokens": 1761,
+   "total_tokens": 1859,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 52,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": {
+    "audio_tokens": null,
+    "cached_tokens": 0,
+    "created_cache_tokens": 0,
+    "multimodal_tokens": null
+   },
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 1761
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "prompt_text": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+ }
+}

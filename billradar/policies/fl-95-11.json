@@ -1,0 +1,12 @@
+{
+  "policy_id": "fl-95-11",
+  "hospital": "Any hospital licensed in Florida",
+  "title": "Florida Statutes 95.11(4), 2026",
+  "url": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0000-0099/0095/Sections/0095.11.html",
+  "fragments": {
+    "medical-debt-3-years": {
+      "page": 1,
+      "quote": "WITHIN THREE YEARS. — An action to collect medical debt for services rendered by a facility licensed under chapter 395, provided that the period of limitations shall run from the date on which the facility refers the medical debt to a third party for collection."
+    }
+  }
+}

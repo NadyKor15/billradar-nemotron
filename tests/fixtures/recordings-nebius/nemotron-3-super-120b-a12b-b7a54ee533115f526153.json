@@ -1,0 +1,58 @@
+{
+ "request_id": "ada04ad2e5868443279c9e7df8a823e0",
+ "response": {
+  "id": "chatcmpl-a69fcb6bc9b52394",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"title\": \"\", \"date_quote\": \"\", \"tiers\": [{\"from_fpl_pct\": 0, \"up_to_fpl_pct\": 225, \"benefit\": \"free\", \"discount_pct\": 100, \"quote\": \"If a validated financial statement application reflects an income at or below 225% of the most current Federal Poverty Level for the stated family size, the account will qualify for financial assistance in its entirety.\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": "We need extract tiers: Only mention \"If a validated financial statement application reflects an income at or below 225% of the most current Federal Poverty Level...\" So qualifies for full assistance: likely 100% discount. No lower threshold given => from 0 to 225%. Provide quote showing percent and benefit phrase. Quote: \"If a validated financial statement application reflects an income at or below 225% of the most current Federal Poverty Level for the stated family size, the account will qualify for financial assistance in its entirety.\" That gives percent but not explicit benefit wording; we infer free care (\"financial assistance in its entirety\"). Use that. Also maybe there is no other tiers. Return list with one entry. Provide title and date none present -> empty strings.",
+     "reasoning_content": "We need extract tiers: Only mention \"If a validated financial statement application reflects an income at or below 225% of the most current Federal Poverty Level...\" So qualifies for full assistance: likely 100% discount. No lower threshold given => from 0 to 225%. Provide quote showing percent and benefit phrase. Quote: \"If a validated financial statement application reflects an income at or below 225% of the most current Federal Poverty Level for the stated family size, the account will qualify for financial assistance in its entirety.\" That gives percent but not explicit benefit wording; we infer free care (\"financial assistance in its entirety\"). Use that. Also maybe there is no other tiers. Return list with one entry. Provide title and date none present -> empty strings."
+    },
+    "stop_reason": null,
+    "token_ids": null,
+    "routed_experts": null
+   }
+  ],
+  "created": 1793314484,
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.1.dev1+g5001743e3-tp2-05adddbc",
+  "usage": {
+   "completion_tokens": 269,
+   "prompt_tokens": 2745,
+   "total_tokens": 3014,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 164,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": {
+    "audio_tokens": null,
+    "cached_tokens": 0,
+    "created_cache_tokens": 0,
+    "multimodal_tokens": null
+   },
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 2745
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "prompt_text": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+ }
+}

@@ -1,0 +1,20 @@
+{
+  "policy_id": "erisa-2560-503-1",
+  "hospital": "Employer and other group health plans (ERISA)",
+  "title": "29 CFR 2560.503-1, claims procedure",
+  "url": "https://www.ecfr.gov/current/title-29/section-2560.503-1",
+  "fragments": {
+    "appeal-180-days": {
+      "page": 1,
+      "quote": "Provide claimants at least 180 days following receipt of a notification of an adverse benefit determination within which to appeal the determination;"
+    },
+    "decide-pre-service-30": {
+      "page": 1,
+      "quote": "In the case of a group health plan that provides for one appeal of an adverse benefit determination, such notification shall be provided not later than 30 days after receipt by the plan of the claimant's request for review of an adverse benefit determination."
+    },
+    "decide-post-service-60": {
+      "page": 1,
+      "quote": "In the case of a group health plan that provides for one appeal of an adverse benefit determination, such notification shall be provided not later than 60 days after receipt by the plan of the claimant's request for review of an adverse benefit determination."
+    }
+  }
+}

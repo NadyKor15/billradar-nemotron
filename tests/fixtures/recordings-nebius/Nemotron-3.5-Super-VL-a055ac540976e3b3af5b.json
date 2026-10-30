@@ -1,0 +1,57 @@
+{
+ "request_id": "ac64b1b8e84d5827cf8d672bda4021c4",
+ "response": {
+  "id": "chatcmpl-a8cba5b2605a2923",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\n  \"sheets\": [\n    {\n      \"box\": [\n        38,\n        22,\n        458,\n            478\n      ],\n      \"confidence\": 0.95\n    },\n    {\n      \"box\": [\n        516,\n        22,\n        948,\n        478\n      ],\n      \"confidence\": 0.95\n    },\n    {\n      \"box\": [\n        48,\n        516,\n        464,\n            969\n      ],\n      \"confidence\": 0.95\n    },\n    {\n      \"box\": [\n        522,\n        516,\n        942,\n            969\n      ],\n      \"confidence\": 0.95\n    }\n  ]\n}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning_content": null
+    },
+    "stop_reason": null,
+    "token_ids": null,
+    "routed_experts": null
+   }
+  ],
+  "created": 1793325352,
+  "model": "nvidia/Nemotron-3.5-Super-VL",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.1.dev1+g1bed5fc81-tp2-9705eecb",
+  "usage": {
+   "completion_tokens": 190,
+   "prompt_tokens": 853,
+   "total_tokens": 1043,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 0,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": {
+    "audio_tokens": null,
+    "cached_tokens": 0,
+    "created_cache_tokens": 0,
+    "multimodal_tokens": {
+     "image": 669
+    }
+   }
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "prompt_text": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+ }
+}

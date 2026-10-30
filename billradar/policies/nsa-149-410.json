@@ -1,0 +1,16 @@
+{
+  "policy_id": "nsa-149-410",
+  "hospital": "Health plans and providers covered by the No Surprises Act",
+  "title": "45 CFR 149.410(a), emergency services",
+  "url": "https://www.ecfr.gov/current/title-45/section-149.410",
+  "fragments": {
+    "emergency-cost-sharing": {
+      "page": 1,
+      "quote": "A nonparticipating emergency facility must not bill, and must not hold liable, the participant, beneficiary, or enrollee for a payment amount for such emergency services"
+    },
+    "emergency-provider": {
+      "page": 1,
+      "quote": "A nonparticipating provider must not bill, and must not hold liable, the participant, beneficiary, or enrollee for a payment amount for an emergency service"
+    }
+  }
+}

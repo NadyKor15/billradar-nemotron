@@ -1,0 +1,50 @@
+{
+ "request_id": "35e3345d22d3572da1f37a480a7d1ffe",
+ "response": {
+  "id": "chatcmpl-33347ade",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"items\": [{\"id\": \"subject\", \"text\": \"Disputa de factura: el mismo servicio facturado dos veces\"}, {\"id\": \"p0\", \"text\": \"Mi factura para la cuenta 44932556 lista el mismo servicio dos veces: l\u00edneas 1 y 2, c\u00f3digo 01960, el 11 de febrero de 2025, $4,944.00 cada una. Por favor, elimine el duplicado y mi $196.82 de \u00e9l, ya que mi hoja de seguro lo muestra.\"}, {\"id\": \"p1\", \"text\": \"Por favor, corrija el balance, o expl\u00edquelo por escrito. Por favor responda por escrito dentro de 30 d\u00edas.\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": null,
+     "reasoning_content": null
+    },
+    "stop_reason": null,
+    "token_ids": null
+   }
+  ],
+  "created": 1793278530,
+  "model": "nvidia/Nemotron-3_5-Lightning",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+   "completion_tokens": 178,
+   "prompt_tokens": 429,
+   "total_tokens": 607,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 0,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": null,
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 429
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null
+ }
+}

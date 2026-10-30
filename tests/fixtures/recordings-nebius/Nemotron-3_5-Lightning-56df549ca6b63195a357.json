@@ -1,0 +1,50 @@
+{
+ "request_id": "0b3ceb59acefab91e2e38e56e836e75b",
+ "response": {
+  "id": "chatcmpl-0b3ceb59acefab91e2e38e56e836e75b",
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "logprobs": null,
+    "message": {
+     "content": "{\"items\": [{\"id\": \"subject\", \"text\": \"Solicitud de un estado detallado\"}, {\"id\": \"p0\", \"text\": \"Estoy solicitando un estado detallado para cada una de estas cuentas: \u27e6V2\u27e7, cuenta 6189921, servicios del 29 de marzo de 2025 al 29 de marzo de 2025; \u27e6V4\u27e7, cuenta 77472701, servicios del 17 de febrero de 2025 al 17 de febrero de 2025; \u27e6V4\u27e7, cuenta 77472701, servicios del 17 de febrero de 2025 al 17 de febrero de 2025; \u27e6V4\u27e7, cuenta 77472701, servicios del 17 de febrero de 2025 al 17 de febrero de 2025; \u27e6V4\u27e7, cuenta 51502, servicios al ; \u27e6V4\u27e7, cuenta \u27e6V9\u27e7, servicios del 17 de febrero de 2025 al 19 de febrero de 2025; \u27e6V4\u27e7, cuenta \u27e6V9\u27e7, servicios del 17 de febrero de 2025 al 19 de febrero de 2025.\"}, {\"id\": \"p1\", \"text\": \"La ley de Florida dice que el hospital debe proporcionarlo despu\u00e9s del alta y previo solicitud, dentro de 7 d\u00edas de mi solicitud (Florida Statutes 395.301(1)(e)).\"}, {\"id\": \"p2\", \"text\": \"Por favor env\u00edelo a la direcci\u00f3n de abajo. Gracias.\"}]}",
+     "refusal": null,
+     "role": "assistant",
+     "annotations": null,
+     "audio": null,
+     "function_call": null,
+     "tool_calls": null,
+     "reasoning": null,
+     "reasoning_content": null
+    },
+    "stop_reason": null,
+    "token_ids": null
+   }
+  ],
+  "created": 1793106832,
+  "model": "nvidia/Nemotron-3_5-Lightning",
+  "object": "chat.completion",
+  "moderation": null,
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+   "completion_tokens": 421,
+   "prompt_tokens": 556,
+   "total_tokens": 977,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": null,
+    "audio_tokens": null,
+    "reasoning_tokens": 0,
+    "rejected_prediction_tokens": null
+   },
+   "prompt_tokens_details": null,
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 556
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null
+ }
+}

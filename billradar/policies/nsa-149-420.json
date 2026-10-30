@@ -1,0 +1,16 @@
+{
+  "policy_id": "nsa-149-420",
+  "hospital": "Health plans and providers covered by the No Surprises Act",
+  "title": "45 CFR 149.420, out-of-network care at an in-network facility",
+  "url": "https://www.ecfr.gov/current/title-45/section-149.420",
+  "fragments": {
+    "in-network-facility-cost-sharing": {
+      "page": 1,
+      "quote": "at a participating health care facility must not bill, and must not hold liable, a participant, beneficiary, or enrollee of such plan or coverage for a payment amount for such an item or service furnished by such provider with respect to a visit at the facility that exceeds the cost-sharing requirement"
+    },
+    "ancillary-no-waiver": {
+      "page": 1,
+      "quote": "a nonparticipating provider specified in paragraph (a) of this section will always be subject to the prohibitions in paragraph (a) of this section, with respect to the following services: (1) Ancillary services, meaning— (i) Items and services related to emergency medicine, anesthesiology, pathology, radiology, and neonatology, whether provided by a physician or non-physician practitioner;"
+    }
+  }
+}

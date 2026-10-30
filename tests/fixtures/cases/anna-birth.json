@@ -1,0 +1,59 @@
+{
+  "_note": "SYNTHETIC. Fictional family and fictional hospital letterhead. Checked against Memorial's public policy.",
+  "case_id": "anna-birth",
+  "letterhead": "Lakeview Demo Hospital",
+  "policy_id": "memorial-2026-05",
+  "today": "2026-06-15",
+  "profile": {
+    "household_size": 4,
+    "annual_income": "85000",
+    "liquid_assets": "6000",
+    "insured": true,
+    "people": [
+      {"token": "PATIENT_1", "role": "mother"},
+      {"token": "PATIENT_2", "role": "newborn"}
+    ]
+  },
+  "documents": [
+    {
+      "doc_id": "S1", "source": "paper", "kind": "hospital_statement", "patient": "PATIENT_1",
+      "provider": "Lakeview Demo Hospital", "account_ref": "[ACCT_1]",
+      "statement_date": "2025-09-12", "service_from": "2025-08-04", "service_to": "2025-08-06",
+      "total_charges": "17924.50", "insurance_paid": "13412.50", "fa_discount": "-3835.20", "patient_balance": "676.80",
+      "lines": [
+        {"line_no": 1, "service_date": "2025-08-04", "code": "0112", "description": "Room and board, OB", "patient_responsibility": "1624.50", "claim_ref": "C-1001"},
+        {"line_no": 2, "service_date": "2025-08-04", "code": "59409", "description": "Delivery", "patient_responsibility": "2887.50", "claim_ref": "C-1002"}
+      ]
+    },
+    {
+      "doc_id": "S2", "source": "paper", "kind": "hospital_statement", "patient": "PATIENT_2",
+      "provider": "Lakeview Demo Hospital", "account_ref": "[ACCT_2]",
+      "statement_date": "2025-09-15", "service_from": "2025-08-04", "service_to": "2025-08-06",
+      "total_charges": "6200.00", "insurance_paid": "4960.00", "patient_balance": "1240.00",
+      "lines": [
+        {"line_no": 1, "service_date": "2025-08-04", "code": "0170", "description": "Newborn nursery", "patient_responsibility": "1240.00", "claim_ref": "C-2001"}
+      ]
+    },
+    {
+      "doc_id": "S3", "source": "paper", "kind": "hospital_statement", "patient": "PATIENT_1",
+      "provider": "Lakeview Demo Hospital", "account_ref": "[ACCT_1]",
+      "statement_date": "2025-08-11", "service_from": "2025-08-04", "service_to": "2025-08-06",
+      "first_after_discharge": true, "lines": []
+    },
+    {
+      "doc_id": "S4", "source": "paper", "kind": "eob", "patient": "PATIENT_1", "provider": "Sample Health Plan",
+      "claim_ref": "C-1002", "insurance_payment_date": "2025-09-02",
+      "lines": [
+        {"line_no": 1, "service_date": "2025-08-04", "code": "0112", "description": "Room and board", "patient_responsibility": "1624.50", "claim_ref": "C-1001"},
+        {"line_no": 2, "service_date": "2025-08-04", "code": "59409", "description": "Delivery", "patient_responsibility": "2575.10", "claim_ref": "C-1002"}
+      ]
+    },
+    {
+      "doc_id": "S6", "source": "paper", "kind": "eob", "patient": "PATIENT_2", "provider": "Sample Health Plan",
+      "claim_ref": "C-2001", "insurance_payment_date": "2025-08-29",
+      "lines": [
+        {"line_no": 1, "service_date": "2025-08-04", "code": "0170", "description": "Newborn care", "patient_responsibility": "1240.00", "claim_ref": "C-2001"}
+      ]
+    }
+  ]
+}
