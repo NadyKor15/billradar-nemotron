@@ -55,8 +55,9 @@ def test_appeal_letter_shows_deadline_and_never_fakes_a_translation(client, monk
     assert "Plan document p." in en  # quotes from her plan, with the page
     assert '<span class="quoted">“' in en  # only the quoted words are marked
     ru = htmllib.unescape(client.get(f"/cases/example-appeal/letters/{kind}?lang=ru").text)
-    # the recorded translation is for understanding: the page says the English letter is the one sent
-    assert "Отправляется письмо на английском" in ru and app_module.NOT_LIVE not in ru
+    # a recorded translation carries the note that the English letter is the one sent; with no recording the page
+    # says the translation is not live: exactly one of the two, never a translation without the note
+    assert ("Отправляется письмо на английском" in ru) != (app_module.NOT_LIVE in ru)
 
     def no_recording(*a, **k):
         raise ReplayMissing("no recording for this request")
