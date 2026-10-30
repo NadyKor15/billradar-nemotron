@@ -209,6 +209,41 @@ def test_model_labels_come_from_the_run_not_hard_wired():
     assert "Nemotron 3 Ultra" in [t.label for t in view.models_for(f, reviewed)]
 
 
+def test_an_unconfirmed_card_never_prints_the_second_reads_own_words(client):
+    """Ultra's reason can hold "; " itself (the F2 card once printed "...the policy window ... gives 2026-02-11 or an
+    unknown date" after the cut): the card says who doubted it, the words stay in the case data."""
+    why = ("Nemotron-3-Ultra-550b-a55b: the quoted rule gives 2025-12-01; the policy window gives 2026-02-11 or an "
+           "unknown date; Nemotron-3-Ultra-550b-a55b could not check it from the papers")
+    shown = view._unsure(why)
+    assert "policy window" not in shown and "unknown date" not in shown and "2025-12-01" not in shown
+    assert shown.startswith("Nemotron 3 Ultra, the second read, could not confirm it") and "could not check" in shown
+    assert re.sub(r"Nemotron-3-Ultra-550b-a55b:[^;]*", "X", why).count("policy window") == 1  # must light: the old cut kept it
+    page = client.get("/example").text
+    assert "policy window" not in page and "unknown date" not in page
+
+
+def test_the_policy_finder_page_is_linked_from_how_and_the_example(client):
+    for path in ("/how", "/example"):
+        assert 'href="/policy-finder"' in client.get(path).text, path
+    assert client.get("/policy-finder").status_code == 200
+
+
+def test_the_doctors_bills_card_names_each_office_once_on_hover_too(client):
+    """The NM card's hover text once read "300_Women First OB/GYN Care, LLC, ..., Women First OB/GYN Care, LLC":
+    the raw words of the check, kept as they are in the case data. The hover now says what the card says."""
+    page = client.get("/example").text
+    assert "300_" not in page
+    m = re.search(r'<p title="([^"]*)">([^<]*)</p>', page[page.index("outside the hospital"):])
+    assert m and m.group(1) == m.group(2)
+
+
+def test_illustrations_are_said_once_on_the_home_page_not_as_badges(client):
+    home = client.get("/").text
+    assert home.count("Pictures on this page are illustrations; numbers and screens come from the app.") == 1
+    for path in ("/", "/how", "/safe", "/example"):
+        assert re.findall(r"(?i)illustration(?!s; numbers)", client.get(path).text) == [], path
+
+
 def test_borderline_findings_show_no_amount():
     from decimal import Decimal
 

@@ -1,0 +1,614 @@
+[
+ {
+  "path": "picked (qa_cite.answer)",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-all-errors",
+  "cls": "F1",
+  "question": "How much could financial assistance take off my hospital bills?",
+  "expect": [
+   "1,399.71",
+   "1399.71"
+  ],
+  "right": true,
+  "honest": true,
+  "refused": false,
+  "reason": "",
+  "answer": "Financial assistance could reduce your hospital bill by $1,399.71.",
+  "citations": [
+   {
+    "source": "sheet",
+    "ref": "D1",
+    "quote": "PATIENT_1",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "D1",
+    "quote": "Seaside Healthcare System",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "D1",
+    "quote": "[ACCT_1]",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "D1",
+    "quote": "2025-04-05",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "D1",
+    "quote": "2025-02-11",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "D1",
+    "quote": "2025-02-13",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "D1",
+    "quote": "12,529.00",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "D1",
+    "quote": "-10,973.77",
+    "url": ""
+   },
+   {
+    "source": "policy",
+    "ref": "memorial-2026-05#scale-mrh",
+    "quote": "Memorial Regional Hospital BALANCES DUE FROM PATIENT INCOME AMOUNT OF DISCOUNT Up to 200% of FPG 100% Discount 201% - 250% of FPG 90% Discount 251% - 300% of FPG 85% Discount 301% - 350% of FPG 83% Discount 351% - 400% of FPG 83% Discount",
+    "url": "https://www.mhs.net/-/media/mhs/files/patients-and-visitors/financial-assistance/en/full-policy.pdf"
+   },
+   {
+    "source": "policy",
+    "ref": "memorial-2026-05#insured-balances",
+    "quote": "This means all uninsured patient responsibility amounts as well as insured patient balances after insurance payment.",
+    "url": "https://www.mhs.net/-/media/mhs/files/patients-and-visitors/financial-assistance/en/full-policy.pdf"
+   },
+   {
+    "source": "policy",
+    "ref": "memorial-2026-05#insured-balances",
+    "quote": "This includes deductibles, coinsurance, copayments, and non-covered charges.",
+    "url": "https://www.mhs.net/-/media/mhs/files/patients-and-visitors/financial-assistance/en/full-policy.pdf"
+   },
+   {
+    "source": "policy",
+    "ref": "federal-501r-5#agb-limit",
+    "quote": "in the case of emergency or other medically necessary care, not more than the amounts generally billed to individuals who have insurance covering such care (AGB)",
+    "url": "https://www.ecfr.gov/current/title-26/section-1.501(r)-5"
+   },
+   {
+    "source": "policy",
+    "ref": "federal-501r-6#refund-overpaid",
+    "quote": "Refunds to the individual any amount he or she has paid for the care (whether to the hospital facility or any other party to whom the hospital facility has referred or sold the individual's debt for the care) that exceeds the amount he or she is determined to be personally responsible for paying as a FAP-eligible individual, unless such excess amount is less than $5",
+    "url": "https://www.ecfr.gov/current/title-26/section-1.501(r)-6"
+   },
+   {
+    "source": "policy",
+    "ref": "federal-501r-6#reverse-eca",
+    "quote": "Takes all reasonably available measures to reverse any ECA (with the exception of a sale of debt and an ECA described in paragraph (b)(1)(iii) of this section) taken against the individual to obtain payment for the care.",
+    "url": "https://www.ecfr.gov/current/title-26/section-1.501(r)-6"
+   }
+  ],
+  "dropped": []
+ },
+ {
+  "path": "picked (qa_cite.answer)",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-all-errors",
+  "cls": "F2",
+  "question": "What is the last day to apply for financial assistance?",
+  "expect": [
+   "2026-04-01",
+   "April 1, 2026",
+   "Apr 1, 2026",
+   "April 01, 2026",
+   "Apr 01, 2026",
+   "04/01/2026"
+  ],
+  "right": true,
+  "honest": true,
+  "refused": false,
+  "reason": "",
+  "answer": "The last day to apply for financial assistance is 2026-04-01.",
+  "citations": [
+   {
+    "source": "sheet",
+    "ref": "D1",
+    "quote": "PATIENT_1",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "D1",
+    "quote": "Seaside Healthcare System",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "D1",
+    "quote": "[ACCT_1]",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "D1",
+    "quote": "2025-04-05",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "D1",
+    "quote": "2025-02-11",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "D1",
+    "quote": "2025-02-13",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "D1",
+    "quote": "12,529.00",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "D1",
+    "quote": "-10,973.77",
+    "url": ""
+   },
+   {
+    "source": "policy",
+    "ref": "memorial-2026-05#window",
+    "quote": "Patients or responsible parties can apply for financial assistance for up to one year after the date of service or twelve months after last insurance payment.",
+    "url": "https://www.mhs.net/-/media/mhs/files/patients-and-visitors/financial-assistance/en/full-policy.pdf"
+   },
+   {
+    "source": "policy",
+    "ref": "federal-501r#application-period",
+    "quote": "the application period begins on the date the care is provided and ends on the later of the 240th day after the date that the first post-discharge billing statement for the care is provided",
+    "url": "https://www.ecfr.gov/current/title-26/section-1.501(r)-1"
+   }
+  ],
+  "dropped": []
+ },
+ {
+  "path": "picked (qa_cite.answer)",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-all-errors",
+  "cls": "E2",
+  "question": "Was any service billed twice, and how much too much was charged?",
+  "expect": [
+   "196.82",
+   "196.82"
+  ],
+  "right": true,
+  "honest": true,
+  "refused": false,
+  "reason": "",
+  "answer": "Yes \u2013 the anesthesia service (code\u202f01960, \u201cAnesthesia For Vaginal Delivery Only\u201d) was entered twice on sheet\u202fS10 (lines\u202f1 and\u202f2). The duplicate entry resulted in an excess charge of\u202f$196.82.",
+  "citations": [
+   {
+    "source": "sheet",
+    "ref": "S1",
+    "quote": "01960",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S1",
+    "quote": "4,944.00",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S1",
+    "quote": "787.29",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S1",
+    "quote": "3,959.89",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S1",
+    "quote": "196.82",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S1",
+    "quote": "731398027400",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S1",
+    "quote": "CDA",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S10",
+    "quote": "01960",
+    "url": ""
+   }
+  ],
+  "dropped": []
+ },
+ {
+  "path": "picked (qa_cite.answer)",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-all-errors",
+  "cls": "B1",
+  "question": "Was the baby's care billed under the wrong person's insurance? Which sheet shows it?",
+  "expect": [
+   "S2",
+   "S14"
+  ],
+  "right": true,
+  "honest": true,
+  "refused": false,
+  "reason": "",
+  "answer": "Yes \u2013 the newborn\u2019s services (codes\u202f0170,\u202f99460,\u202f99462,\u2026 ) appear on sheet\u202fS2 while the member field points to MEMBER_1, i.e., the mother\u2019s insurance.",
+  "citations": [
+   {
+    "source": "sheet",
+    "ref": "S2",
+    "quote": "99460",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S2",
+    "quote": "329.00",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S2",
+    "quote": "0170",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S2",
+    "quote": "5,818.00",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S2",
+    "quote": "0251",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S2",
+    "quote": "32.00",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S2",
+    "quote": "0302",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S2",
+    "quote": "235.00",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S2",
+    "quote": "0471",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S2",
+    "quote": "248.00",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S2",
+    "quote": "0306",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S2",
+    "quote": "104.00",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S2",
+    "quote": "2025-02-12",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S2",
+    "quote": "99462",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S2",
+    "quote": "278.00",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S2",
+    "quote": "731405113900",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S2",
+    "quote": "99238",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S2",
+    "quote": "356.00",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S2",
+    "quote": "731408711700",
+    "url": ""
+   }
+  ],
+  "dropped": []
+ },
+ {
+  "path": "picked (qa_cite.answer)",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-all-errors",
+  "cls": "E3",
+  "question": "Is there a credit or an overpayment I should get back? How much?",
+  "expect": [
+   "40.00",
+   "40.00"
+  ],
+  "right": false,
+  "honest": false,
+  "refused": true,
+  "reason": "no_citation",
+  "answer": "I could not find that in your papers or the policy.",
+  "citations": [],
+  "dropped": [
+   {
+    "source": "unknown",
+    "ref": ":C242",
+    "quote": "",
+    "url": ""
+   }
+  ]
+ },
+ {
+  "path": "picked (qa_cite.answer)",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-all-errors",
+  "cls": "E4",
+  "question": "Does any sheet ask me to pay two different amounts? Which amount does it ask?",
+  "expect": [
+   "0.00",
+   "0.00"
+  ],
+  "right": true,
+  "honest": true,
+  "refused": false,
+  "reason": "",
+  "answer": "Yes, sheet S13 shows a patient balance of $0.00 while also asking you to pay $719.03 (the amount\u2011due coupon).",
+  "citations": [
+   {
+    "source": "sheet",
+    "ref": "S13",
+    "quote": "0.00",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S13",
+    "quote": "719.03",
+    "url": ""
+   }
+  ],
+  "dropped": []
+ },
+ {
+  "path": "picked (qa_cite.answer)",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-newborn-duplicate",
+  "cls": "F1",
+  "question": "How much could financial assistance take off my hospital bills?",
+  "expect": [
+   "1,615.73",
+   "1615.73"
+  ],
+  "right": true,
+  "honest": true,
+  "refused": false,
+  "reason": "",
+  "answer": "Financial assistance could reduce your hospital bill by $1,615.73.",
+  "citations": [
+   {
+    "source": "sheet",
+    "ref": "D1",
+    "quote": "1,795.25",
+    "url": ""
+   },
+   {
+    "source": "policy",
+    "ref": "memorial-2026-05#scale-mrh",
+    "quote": "Memorial Regional Hospital BALANCES DUE FROM PATIENT INCOME AMOUNT OF DISCOUNT Up to 200% of FPG 100% Discount 201% - 250% of FPG 90% Discount 251% - 300% of FPG 85% Discount 301% - 350% of FPG 83% Discount 351% - 400% of FPG 83% Discount",
+    "url": "https://www.mhs.net/-/media/mhs/files/patients-and-visitors/financial-assistance/en/full-policy.pdf"
+   }
+  ],
+  "dropped": []
+ },
+ {
+  "path": "picked (qa_cite.answer)",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-newborn-duplicate",
+  "cls": "F2",
+  "question": "What is the last day to apply for financial assistance?",
+  "expect": [
+   "2026-04-08",
+   "April 8, 2026",
+   "Apr 8, 2026",
+   "April 08, 2026",
+   "Apr 08, 2026",
+   "04/08/2026"
+  ],
+  "right": false,
+  "honest": false,
+  "refused": false,
+  "reason": "",
+  "answer": "April\u202f8\u202f2026 is the last day you can apply for financial assistance.",
+  "citations": [
+   {
+    "source": "sheet",
+    "ref": "D1",
+    "quote": "2025-04-09",
+    "url": ""
+   },
+   {
+    "source": "policy",
+    "ref": "memorial-2026-05#window",
+    "quote": "Patients or responsible parties can apply for financial assistance for up to one year after the date of service or twelve months after last insurance payment.",
+    "url": "https://www.mhs.net/-/media/mhs/files/patients-and-visitors/financial-assistance/en/full-policy.pdf"
+   },
+   {
+    "source": "policy",
+    "ref": "federal-501r#application-period",
+    "quote": "the application period begins on the date the care is provided and ends on the later of the 240th day after the date that the first post-discharge billing statement for the care is provided",
+    "url": "https://www.ecfr.gov/current/title-26/section-1.501(r)-1"
+   }
+  ],
+  "dropped": []
+ },
+ {
+  "path": "picked (qa_cite.answer)",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-newborn-duplicate",
+  "cls": "E2",
+  "question": "Was any service billed twice, and how much too much was charged?",
+  "expect": [
+   "177.41",
+   "177.41"
+  ],
+  "right": true,
+  "honest": true,
+  "refused": false,
+  "reason": "",
+  "answer": "Yes \u2013 the anesthesia service (code\u202f01960) appears twice on sheet\u202fS10, creating an extra charge of $177.41 (the patient\u2011responsibility amount shown for the second line).",
+  "citations": [
+   {
+    "source": "sheet",
+    "ref": "S1",
+    "quote": "01960",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S1",
+    "quote": "4,108.00",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S1",
+    "quote": "709.65",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S1",
+    "quote": "3,220.94",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S1",
+    "quote": "177.41",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S1",
+    "quote": "731816426800",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S1",
+    "quote": "CDA",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S10",
+    "quote": "01960",
+    "url": ""
+   }
+  ],
+  "dropped": []
+ },
+ {
+  "path": "picked (qa_cite.answer)",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "pack": "brs1-birth-newborn-duplicate",
+  "cls": "B1",
+  "question": "Was the baby's care billed under the wrong person's insurance? Which sheet shows it?",
+  "expect": [
+   "S2",
+   "S14"
+  ],
+  "right": true,
+  "honest": true,
+  "refused": false,
+  "reason": "",
+  "answer": "Yes \u2013 the baby\u2019s care was billed under the mother\u2019s insurance. This is shown on sheet\u202fS2, where the patient is PATIENT_1 (the mother) and the member reference is MEMBER_1 (the mother\u2019s insurance).",
+  "citations": [
+   {
+    "source": "sheet",
+    "ref": "S2",
+    "quote": "PATIENT_1",
+    "url": ""
+   },
+   {
+    "source": "sheet",
+    "ref": "S2",
+    "quote": "MEMBER_1",
+    "url": ""
+   }
+  ],
+  "dropped": []
+ }
+]

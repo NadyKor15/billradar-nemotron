@@ -424,7 +424,8 @@ def row(f: Finding, case: Case, policy_id: str, run_info: dict) -> Row:
     from billradar.i18n import plain
     title, detail = plain(title, case), plain(detail, case)  # tokens the model saw, in words for the family
     return Row(f.kind.value, level, label, title, _where(f), detail, models_for(f, run_info), value, caption,
-               plain(f.detail, case), _law_chips(f), refs, plain(getattr(f, "explain", None) or "", case), getattr(f, "confidence", None),
+               detail if f.kind == Kind.NM else plain(f.detail, case),  # NM: the offices named once, on hover too
+               _law_chips(f), refs, plain(getattr(f, "explain", None) or "", case), getattr(f, "confidence", None),
                _unsure(f.math.get("why_unsure", "")), _plain_lines(f, case))
 
 
@@ -437,10 +438,13 @@ def _unsure(why: str) -> str:
     """Why a finding is not confirmed, in words the card can stand behind. The second read's own text can name dates
     and sheets the code has already worked out otherwise (the F2 card once said "an unknown date" next to the code's
     "Mar 21, 2026"): the card says who doubted it and points to the case data, where its words are kept as given."""
-    if "Nemotron-3-Ultra-550b-a55b:" in why:
-        why = re.sub(r"Nemotron-3-Ultra-550b-a55b:[^;]*", "Nemotron 3 Ultra, the second read, could not confirm it from "
-                     "the papers; its notes are in the case data", why)
-    return why
+    said = "Nemotron 3 Ultra, the second read, could not confirm it from the papers; its notes are in the case data"
+    out = []
+    for part in re.split(r"; (?=Nemotron-3-Ultra-550b-a55b)", why):  # one entry per doubt; a reason may hold "; " itself
+        part = said if part.startswith("Nemotron-3-Ultra-550b-a55b:") else part
+        if part not in out:
+            out.append(part)
+    return "; ".join(out)
 
 
 def _plain_lines(f: Finding, case: Case) -> list[str]:

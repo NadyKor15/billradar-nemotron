@@ -2,13 +2,21 @@
 
 import json
 
-from billradar import ask, checks
+import pytest
+
+from billradar import ask, checks, qa_cite
 from billradar.nemotron_client import NemotronClient
 from billradar.nemotron_client import ReplayTransport
 from tests.test_checks import load, needs_text
 from tests.fakes import FakeClient
 
 pytestmark = needs_text
+
+
+@pytest.fixture(autouse=True)
+def typed_quotes(monkeypatch):
+    """These tests are about quotes the model types (BILLRADAR_QA_CITE=0); test_qa_cite.py covers picked ones."""
+    monkeypatch.setattr(qa_cite, "ENABLED", False)
 
 
 class Fake:

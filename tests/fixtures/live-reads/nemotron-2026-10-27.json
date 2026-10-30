@@ -1,5 +1,5 @@
 {
- "_note": "SYNTHETIC packs (BRS1 generator, fictional people). Fields as read live by NVIDIA Nemotron 3.5 Super VL in lane SLK1 on 2026-10-27 (runs live-1, live-1t, live-priv); only the fields the page and people checks use.",
+ "_note": "SYNTHETIC packs (BRS1 generator, fictional people). Fields as read live by NVIDIA Nemotron 3.5 Super VL on 2026-10-27 (runs live-1, live-1t, live-priv); only the fields the page and people checks use.",
  "reads": {
   "live-1/brs1-birth-all-errors": {
    "people": [

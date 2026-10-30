@@ -8,6 +8,7 @@ Order:
      part of a fragment that passed policy.verified(). Citations that fail are dropped; an answer with no
      citation left is not shown.
   4. An answer that sounds like medical advice is not shown either.
+By default the quotes are not typed by the model but picked by id from candidates the code found (qa_cite.py).
 Until credits arrive the model is replayed; with no recording the family sees "no answer yet", not a guess.
 """
 
@@ -134,6 +135,14 @@ def check_citation(case: Case, c: Citation) -> bool:
 
 
 def answer(client, case: Case, report: Report, question: str) -> Answer:
+    from billradar import qa_cite
+    if qa_cite.ENABLED:  # quotes picked by code (scripts/qa_eval.py, 2026-10-30: 9 of 10 against 6 of 10 typed)
+        return qa_cite.answer(client, case, report, question)
+    return answer_typed(client, case, report, question)
+
+
+def answer_typed(client, case: Case, report: Report, question: str) -> Answer:
+    """The model types its quotes; BILLRADAR_QA_CITE=0 brings this back."""
     if is_health_question(question):
         return Answer(DECLINE, refused=True, reason="health")
     try:

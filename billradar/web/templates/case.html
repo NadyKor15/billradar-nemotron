@@ -143,7 +143,7 @@
     {% if chips %}<p class="small">You said: {% for c in chips %}<span class="law">{{ c.label }}</span> {% endfor %}</p>{% endif %}
 
     <h2 class="section-title" id="how-made">How this case was checked</h2>
-    {% if example %}<p class="small">Checked against the hospital's current public policy.</p>{% endif %}
+    {% if example %}<p class="small">Checked against the hospital's current public policy. <a href="/policy-finder">How BillRadar finds a hospital's own policy →</a></p>{% endif %}
     <ol class="made">
       {% for st in steps %}<li><span class="step-n">{{ st.n }}</span><div><b>{{ st.title }}</b><span>{{ st.detail }}</span></div>{{ model_chip(st.tag) }}</li>{% endfor %}
     </ol>

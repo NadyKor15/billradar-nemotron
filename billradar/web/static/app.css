@@ -684,8 +684,7 @@ body { overflow-x: clip; }
 .how-steps { align-items: stretch; }
 .hcol { display: flex; flex-direction: column; }
 .hcol .hstep { flex: 1; }
-.how-art .illus { position: absolute; z-index: 3; bottom: 52px; left: 8px; font: 600 11px var(--head); letter-spacing: .08em; text-transform: uppercase;
-  color: var(--muted); background: rgba(255, 253, 249, .9); border-radius: 999px; padding: 2px 8px; }
+.illus-note { text-align: center; color: var(--muted); margin: 8px 0 24px; }  /* the one line that says the pictures are illustrations */
 .known-gap { margin: 12px 0 0; padding: 10px 14px; border-radius: 10px; background: var(--gold-soft); border: 1px solid var(--gold-line); font-size: 14px; color: #5a4718; }  /* said plainly, next to the close-up that shows it */
 .example-bar .warn { flex: none; }
 .example-bar .ex-text { flex: 1; min-width: 0; }

@@ -26,7 +26,7 @@ Other AI agents can call BillRadar as a tool over MCP and A2A (`/mcp`, `/a2a`, `
 | Read every sheet and file | `nvidia/Nemotron-3.5-Super-VL`, reasoning on (64K budget) | same; strict JSON schema |
 | Count money and dates | none (plain code) | a model never decides whether there is money |
 | Second read of the case | `nvidia/Nemotron-3-Ultra-550b-a55b` | doubted 6 of 8 wrong findings; Super doubted 0 of 8 |
-| Questions about the case, answered only with a quote found on a sheet | `nvidia/nemotron-3-super-120b-a12b` | 7 of 10 right; Lightning 1 of 10 |
+| Questions about the case, answered only with a quote found on a sheet | `nvidia/nemotron-3-super-120b-a12b` | 8 of 10 right; Lightning 1 of 10 |
 | Letters into Spanish and Russian, every number and quote kept | `nvidia/Nemotron-3_5-Lightning`, no reasoning | 53 of 56 parts versus 54 of 56 on Super, about 5.5 times cheaper |
 
 The model choices were measured on fictional bill packs with `scripts/eval_routing.py` and `scripts/eval_review.py` (October 27, 2026, live). Details, prices and what we learned about the platform: [docs/NEBIUS.md](docs/NEBIUS.md).

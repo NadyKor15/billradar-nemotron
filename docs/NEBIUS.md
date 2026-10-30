@@ -23,7 +23,7 @@ Text steps by size (measured with `scripts/eval_routing.py` on the three fiction
 
 | Text step | Nemotron 3.5 Lightning ($0.06 / $0.24) | Nemotron 3 Super ($0.30 / $0.90) | Chosen |
 |---|---|---|---|
-| Questions about the case, answered only with a verified citation | 1 of 10 right, 9 refused (citations it gave could not be found on the papers), $0.009 | 7 of 10 right (an earlier run, rescored with the same checker on its saved answers: at least 5 of 10), $0.050 | Super |
+| Questions about the case, answered only with a verified citation | 1 of 10 right, 9 refused (citations it gave could not be found on the papers), $0.009 | 8 of 10 right, $0.097 | Super |
 | Letters into Russian and Spanish, every number and quote kept | 53 of 56 parts, $0.0014, 1.9 s | 54 of 56 parts, $0.0077, 3.2 s | Lightning |
 
 Second read of the case (measured with `scripts/eval_review.py` on the live private-mode readings of the same three packs, 17 findings, 8 of them wrong by the pack keys):
